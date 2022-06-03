@@ -16,3 +16,6 @@ Split between the 3 of us
 # No one can backout after application is accepted
 
 # In case of emergency, person will pay rent.
+
+# Guest Policy-
+1 week at most
