@@ -74,3 +74,16 @@ https://www.rentals.com/California/Santa-Cruz/lv224321629/
 
 
 https://www.zillow.com/homedetails/102-Pine-Pl-Santa-Cruz-CA-95060/2099777430_zpid/
+
+
+# Apartments web-
+
+https://www.1010pacificapts.com/apartments/ca/santa-cruz/apply
+
+https://www.nandaonpacific.com/#
+
+https://www.five55santacruz.com/home.aspx
+
+https://www.oceanview-apartments.com/santa-cruz/oceanview/conventional/
+
+westmont
