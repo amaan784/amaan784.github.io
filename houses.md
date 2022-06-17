@@ -47,3 +47,30 @@ https://www.apartmenthomeliving.com/apartment-finder/The-Hilltop-Santa-Cruz-CA-9
 
 - 314 Laurel St #4, Santa Cruz, CA 95060
 https://www.zillow.com/homedetails/314-Laurel-St-4-Santa-Cruz-CA-95060/2070438689_zpid/
+
+
+House Search 2.0-
+
+
+https://www.zillow.com/homedetails/216-National-St-Santa-Cruz-CA-95060/16105332_zpid/
+
+
+https://www.zillow.com/homedetails/134-Anita-St-Santa-Cruz-CA-95060/16101568_zpid/
+
+
+https://www.zillow.com/homedetails/531-Dufour-St-Santa-Cruz-CA-95060/16104305_zpid/
+
+
+https://www.zillow.com/homedetails/223-California-St-Santa-Cruz-CA-95060/16104163_zpid/
+
+
+https://www.zillow.com/homedetails/220-Cleveland-Ave-Santa-Cruz-CA-95060/16107511_zpid/
+
+
+https://www.homes.com/property/314-everson-dr-santa-cruz-ca-95060/id-1000242275551/
+
+
+https://www.rentals.com/California/Santa-Cruz/lv224321629/
+
+
+https://www.zillow.com/homedetails/102-Pine-Pl-Santa-Cruz-CA-95060/2099777430_zpid/
