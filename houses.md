@@ -31,11 +31,6 @@ https://www.rentcafe.com/apartments/ca/santa-cruz/westmont-place-townhomes/defau
 https://www.1010pacificapts.com/apartments/ca/santa-cruz/floor-plans#/categories/202395829/floorplans
 
 
-- 314 Spruce Street 7 Units 95060
-(shady)
-https://www.rentcafe.com/apartments/ca/santa-cruz/314-spruce-street-7-units-95060/default.aspx
-
-
 - Pacific View Courts Apartments 81 Front St, Santa Cruz, CA 95060
 (small bathroom)
 https://www.forrent.com/ca/santa-cruz/pacific-view-courts/8r99mc2
