@@ -76,6 +76,9 @@ https://www.rentals.com/California/Santa-Cruz/lv224321629/
 https://www.zillow.com/homedetails/102-Pine-Pl-Santa-Cruz-CA-95060/2099777430_zpid/
 
 
+https://www.zillow.com/homedetails/312-Getchell-St-Santa-Cruz-CA-95060/16103179_zpid/
+
+
 # Apartments web-
 
 https://www.1010pacificapts.com/apartments/ca/santa-cruz/apply
