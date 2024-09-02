@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "https://amaan784.github.io",
+  "name": "Amaan's Portfolio",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://amaan784.github.io",
   "scripts": {
     "build": "react-scripts --openssl-legacy-provider build",
     "predeploy": "npm run build",

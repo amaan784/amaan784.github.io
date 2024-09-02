@@ -255,54 +255,30 @@ const skills = {
 // Education Page
 const competitiveSites = {
   competitiveSites: [
-    {
-      siteName: "LeetCode",
-      iconifyClassname: "simple-icons:leetcode",
-      style: {
-        color: "#F79F1B",
-      },
-      profileLink: "https://leetcode.com/layman_brother/",
-    },
-    {
-      siteName: "HackerRank",
-      iconifyClassname: "simple-icons:hackerrank",
-      style: {
-        color: "#2EC866",
-      },
-      profileLink: "https://www.hackerrank.com/layman_brother",
-    },
-    {
-      siteName: "Codechef",
-      iconifyClassname: "simple-icons:codechef",
-      style: {
-        color: "#5B4638",
-      },
-      profileLink: "https://www.codechef.com/users/ashutosh_1919",
-    },
-    {
-      siteName: "Codeforces",
-      iconifyClassname: "simple-icons:codeforces",
-      style: {
-        color: "#1F8ACB",
-      },
-      profileLink: "http://codeforces.com/profile/layman_brother",
-    },
-    {
-      siteName: "Hackerearth",
-      iconifyClassname: "simple-icons:hackerearth",
-      style: {
-        color: "#323754",
-      },
-      profileLink: "https://www.hackerearth.com/@ashutosh391",
-    },
-    {
-      siteName: "Kaggle",
-      iconifyClassname: "simple-icons:kaggle",
-      style: {
-        color: "#20BEFF",
-      },
-      profileLink: "https://www.kaggle.com/laymanbrother",
-    },
+    // {
+    //   siteName: "LeetCode",
+    //   iconifyClassname: "simple-icons:leetcode",
+    //   style: {
+    //     color: "#F79F1B",
+    //   },
+    //   profileLink: "https://leetcode.com/",
+    // },
+  //   {
+  //     siteName: "HackerRank",
+  //     iconifyClassname: "simple-icons:hackerrank",
+  //     style: {
+  //       color: "#2EC866",
+  //     },
+  //     profileLink: "https://www.hackerrank.com/layman_brother",
+  //   },
+  //   {
+  //     siteName: "Kaggle",
+  //     iconifyClassname: "simple-icons:kaggle",
+  //     style: {
+  //       color: "#20BEFF",
+  //     },
+  //     profileLink: "https://www.kaggle.com/laymanbrother",
+  //   },
   ],
 };
 
@@ -315,7 +291,7 @@ const degrees = {
       alt_name: "University of California, Santa Cruz",
       duration: "2019 - 2023",
       descriptions: [
-        "⚡ I have taken a variety of courses related to Software Engineering, Artificial Intelligence",
+        "⚡ I have taken a variety of courses related to Software Engineering, Artificial Intelligence, Systems",
         "⚡ I was a tutor and a grader for CSE 101 and CSE 183",
         "⚡ I graduated with honors",
       ],
