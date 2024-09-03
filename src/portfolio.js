@@ -449,14 +449,14 @@ const experience = {
         },
         {
           title: "Data Science Intern",
-          company: "Intel Indexer LLC",
+          company: "Johnson & Johnson India",
           company_url:
             "https://opencorporates.com/companies/us_dc/EXTUID_4170286",
           logo_path: "intel_logo.jpg",
           duration: "Nov 2018 - Dec 2018",
           location: "Work From Home",
           description:
-            "This is financial Solution Company. I have made Supervised Learning model for the company which can perform time series analysis on Stock price data for 32 companies. I have built LSTM Neural Networks Model and trained the data of 32 companies for last 2 years. This model is also used for forecasting.",
+           "",
           color: "#0071C5",
         },
       ],
