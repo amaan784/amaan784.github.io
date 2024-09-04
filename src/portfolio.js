@@ -391,7 +391,7 @@ const experience = {
   title: "Experience",
   subtitle: "Work, Internship and Volunteership",
   description:
-    "I have worked with many evolving startups and MNCs as ML and DL Developer, Designer and Software Architect. I have also worked with some well established companies mostly as AI Developer. I love organising events and that is why I am also involved with many opensource communities as a representative.",
+    "I have worked with many evolving startups and MNCs as ML and DL Developer, and Software Engineer.",
   header_image_path: "experience.svg",
   sections: [
     {
@@ -428,8 +428,8 @@ const experience = {
         {
           title: "Intern",
           company: "Cloud Brigade",
-          company_url: "",
-          logo_path: "",
+          company_url: "https://www.cloudbrigade.com/",
+          logo_path: "cloudbrigade_logo.jpg",
           duration: "July 2022 - Aug 2022",
           location: "Santa Cruz, USA",
           description:
@@ -439,8 +439,8 @@ const experience = {
         {
           title: "Data Science Intern",
           company: "BlokTrek",
-          company_url: "",
-          logo_path: "",
+          company_url: "https://privateblok.ai/home",
+          logo_path: "bloktrek_logo.jpeg",
           duration: "Jun 2022 - Sept 2022",
           location: "Princeton, USA",
           description:
@@ -450,8 +450,8 @@ const experience = {
         {
           title: "Data Science Intern",
           company: "CLOUDSUFI",
-          company_url: "",
-          logo_path: "",
+          company_url: "https://www.cloudsufi.com/",
+          logo_path: "cloudsufi_logo.jpg",
           duration: "Jun 2021 - Sept 2021",
           location: "Remote",
           description:
@@ -461,8 +461,8 @@ const experience = {
         {
           title: "Intern",
           company: "KPMG India",
-          company_url: "",
-          logo_path: "",
+          company_url: "https://kpmg.com/in/en/home.html",
+          logo_path: "kpmg_logo.jpg",
           duration: "Sep 2020 - Oct 2020",
           location: "Mumbai, India",
           description:
@@ -472,9 +472,9 @@ const experience = {
         {
           title: "Intern",
           company: "Johnson & Johnson India",
-          company_url: "",
-          logo_path: "",
-          duration: "May 2019 - Aug 2018",
+          company_url: "https://www.jnj.com/",
+          logo_path: "jnj_logo.png",
+          duration: "May 2019 - Aug 2019",
           location: "Mumbai, India",
           description:
            "",
@@ -485,28 +485,28 @@ const experience = {
     {
       title: "Volunteerships",
       experiences: [
-        {
-          title: "Google Explore ML Facilitator",
-          company: "Google",
-          company_url: "https://about.google/",
-          logo_path: "google_logo.png",
-          duration: "June 2019 - April 2020",
-          location: "Hyderabad, Telangana",
-          description:
-            "Explore Machine Learning (ML) is a Google-sponsored program for university students to get started with Machine Learning. The curriculum offers 3 tracks of ML Content (Beginner, Intermediate, Advanced) and relies on university student facilitators to train other students on campus and to build opensource projects under this program.",
-          color: "#4285F4",
-        },
-        {
-          title: "Microsoft Student Partner",
-          company: "Microsoft",
-          company_url: "https://www.microsoft.com/",
-          logo_path: "microsoft_logo.png",
-          duration: "Aug 2019 - May 2020",
-          location: "Hyderabad, Telangana",
-          description:
-            "Microsoft Student Partner is a program for university students to lead the awareness and use of Cloud especially Azure tools in the development of their projects and startups. Under this program, I have organised hands on workshops and seminars to teach Cloud Computing concepts to students.",
-          color: "#D83B01",
-        },
+        // {
+        //   title: "Google Explore ML Facilitator",
+        //   company: "Google",
+        //   company_url: "https://about.google/",
+        //   logo_path: "google_logo.png",
+        //   duration: "June 2019 - April 2020",
+        //   location: "Hyderabad, Telangana",
+        //   description:
+        //     "Explore Machine Learning (ML) is a Google-sponsored program for university students to get started with Machine Learning. The curriculum offers 3 tracks of ML Content (Beginner, Intermediate, Advanced) and relies on university student facilitators to train other students on campus and to build opensource projects under this program.",
+        //   color: "#4285F4",
+        // },
+        // {
+        //   title: "Microsoft Student Partner",
+        //   company: "Microsoft",
+        //   company_url: "https://www.microsoft.com/",
+        //   logo_path: "microsoft_logo.png",
+        //   duration: "Aug 2019 - May 2020",
+        //   location: "Hyderabad, Telangana",
+        //   description:
+        //     "Microsoft Student Partner is a program for university students to lead the awareness and use of Cloud especially Azure tools in the development of their projects and startups. Under this program, I have organised hands on workshops and seminars to teach Cloud Computing concepts to students.",
+        //   color: "#D83B01",
+        // },
       ],
     },
   ],
