@@ -395,7 +395,7 @@ const experience = {
   header_image_path: "experience.svg",
   sections: [
     {
-      title: "Full Time Job and Part Time Job",
+      title: "Full Time and Part Time Jobs",
       work: true,
       experiences: [
         {
@@ -427,34 +427,55 @@ const experience = {
       experiences: [
         {
           title: "Intern",
-          company: "TikTok Inc.",
-          company_url: "https://www.tiktok.com/en/",
-          logo_path: "tiktok_logo.png",
-          duration: "May 2022 - Aug 2022",
-          location: "San Francisco, USA",
+          company: "Cloud Brigade",
+          company_url: "",
+          logo_path: "",
+          duration: "July 2022 - Aug 2022",
+          location: "Santa Cruz, USA",
           description:
-            "Building new features on the backend recommendation system, specifically ranking algorithms for Ads that touch hundreds of millions of people around the world. Improving online and offline content ranking algorithms by performing hard sample data replays for training steps.",
+            "",
           color: "#000000",
         },
         {
-          title: "Data Science Research Intern",
-          company: "Delhivery Pvt. Ltd.",
-          company_url: "https://www.delhivery.com/",
-          logo_path: "delhivery_logo.png",
-          duration: "May 2019 - Sept 2019",
-          location: "Gurgaon, Haryana",
+          title: "Data Science Intern",
+          company: "BlokTrek",
+          company_url: "",
+          logo_path: "",
+          duration: "Jun 2022 - Sept 2022",
+          location: "Princeton, USA",
           description:
-            "I have worked on project of predicting freight rates based on previous data. There were two objectives: (1) To build a forecasting engine to predict daily freight rates. (2) To embed feature in the model which can explain the seasonal major changes in freight rate based on regions and locations. I have closely worked with deep learning models in combination with statistical methods to create solution for this. At the end of internship, I had created model deployed on AWS EC2 with the use of Kafka stream jobs, ElasticSearch and PostgreSQL.",
+            "",
           color: "#ee3c26",
         },
         {
           title: "Data Science Intern",
+          company: "CLOUDSUFI",
+          company_url: "",
+          logo_path: "",
+          duration: "Jun 2021 - Sept 2021",
+          location: "Remote",
+          description:
+            "",
+          color: "#ee3c26",
+        },
+        {
+          title: "Intern",
+          company: "KPMG India",
+          company_url: "",
+          logo_path: "",
+          duration: "Sep 2020 - Oct 2020",
+          location: "Mumbai, India",
+          description:
+            "",
+          color: "#ee3c26",
+        },
+        {
+          title: "Intern",
           company: "Johnson & Johnson India",
-          company_url:
-            "https://opencorporates.com/companies/us_dc/EXTUID_4170286",
-          logo_path: "intel_logo.jpg",
-          duration: "Nov 2018 - Dec 2018",
-          location: "Work From Home",
+          company_url: "",
+          logo_path: "",
+          duration: "May 2019 - Aug 2018",
+          location: "Mumbai, India",
           description:
            "",
           color: "#0071C5",
