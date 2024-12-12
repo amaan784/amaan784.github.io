@@ -488,7 +488,7 @@ const experience = {
       ],
     },
     {
-      title: "Volunteerships",
+      title: "Freelance and Volunteerships",
       experiences: [
         // {
         //   title: "Google Explore ML Facilitator",
