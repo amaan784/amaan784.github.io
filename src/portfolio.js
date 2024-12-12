@@ -2,7 +2,7 @@
 
 // Website related settings
 const settings = {
-  isSplash: true, // Change this to false if you don't want Splash screen.
+  isSplash: false, // Change this to false if you don't want Splash screen.
 };
 
 //SEO Related settings
@@ -300,8 +300,10 @@ const degrees = {
   ],
 };
 
+
 const certifications = {
   certifications: [
+  /*
     {
       title: "Machine Learning",
       subtitle: "- Andrew Ng",
@@ -383,15 +385,18 @@ const certifications = {
       alt_name: "Coursera",
       color_code: "#2A73CC",
     },
+    */
   ],
+  
 };
+
 
 // Experience Page
 const experience = {
   title: "Experience",
   subtitle: "Work, Internship and Volunteership",
   description:
-    "I have worked with many evolving startups and MNCs as ML and DL Developer, and Software Engineer.",
+    "I have worked with many evolving startups and MNCs as a Data Science Intern and in Software Engineer roles.",
   header_image_path: "experience.svg",
   sections: [
     {
