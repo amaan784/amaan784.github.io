@@ -199,6 +199,7 @@ If you are stuck somewhere and want to observe the deployment process in depth, 
 - [react-reveal](https://www.react-reveal.com/)
 - [styled-components](https://styled-components.com/)
 
+
 # illustrations 🍥
 
 - [UnDraw](https://undraw.co/illustrations)
@@ -209,5 +210,20 @@ This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE)
 
 # References 👏🏻
 
+- This repo is a modified clone of https://github.com/ashutosh1919/masterPortfolio
 - Some Design and Implementation Ideas are taken from [Saad Pasta's Portfolio Project](https://github.com/saadpasta/developerFolio).
 - The Logo of MasterPortfolio is inspired from [prettier-logo](https://github.com/prettier/prettier-logo) for [prettier](https://github.com/prettier/prettier) designed by @ianstormtaylor.
+
+# References for Icons-
+- [Icons Set](https://icon-sets.iconify.design/)
+- [Simple Icons](https://simpleicons.org/)
+
+# References for University Images-
+- [UCSC Logo Website](https://communications.ucsc.edu/visual-design/logos-imagery/)
+- [Baskin Engineering Logo Website](https://toolkit.engineering.ucsc.edu/baskin-engineering-brand/)
+- [Baskin Day Website](https://baskinday.soe.ucsc.edu/)
+
+# References for Company Images-
+- [Brand Fetch (the best one for sure)](https://brandfetch.com/)
+- [Clean PNG](https://www.cleanpng.com/)
+- [Companies Logo](https://companieslogo.com/)

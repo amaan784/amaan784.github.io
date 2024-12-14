@@ -60,7 +60,7 @@ const skills = {
       skills: [
         "⚡ Developing highly scalable production ready models for various deeplearning and statistical use cases",
         "⚡ Experience of working with Computer Vision and NLP projects",
-        "⚡ Complex quantitative modelling for dynamic forecasting and time series analysis",
+        "⚡ Experience with building frameworks for forecasting and time series analysis",
       ],
       softwareSkills: [
         {
@@ -79,8 +79,29 @@ const skills = {
           },
         },
         {
-          skillName: "PyTorch",
-          fontAwesomeClassname: "logos-pytorch",
+          skillName: "Scikit-learn",
+          fontAwesomeClassname: "simple-icons:scikitlearn",
+          style: {
+            color: "#F7931E",
+          },
+        },
+        {
+          skillName: "Spark",
+          fontAwesomeClassname: "simple-icons:apachespark",
+          style: {
+            backgroundColor: "transparent",
+          },
+        },
+        {
+          skillName: "Hugging Face",
+          fontAwesomeClassname: "simple-icons:huggingface",
+          style: {
+            backgroundColor: "transparent",
+          },
+        },
+        {
+          skillName: "LangChain",
+          fontAwesomeClassname: "simple-icons:langchain",
           style: {
             backgroundColor: "transparent",
           },
@@ -104,8 +125,8 @@ const skills = {
       fileName: "FullStackImg",
       skills: [
         "⚡ Building responsive website front end using React-Redux",
-        "⚡ Developing mobile applications using Flutter, React Native and solo android apps using Kotlin",
-        "⚡ Creating application backend in Node, Express & Flask",
+        "⚡ Developing cross platform applications using React Native",
+        "⚡ Creating application backend in Node, Express & Fastapi",
       ],
       softwareSkills: [
         {
@@ -145,10 +166,24 @@ const skills = {
           },
         },
         {
-          skillName: "NodeJS",
+          skillName: "ExpressJS-NodeJS",
           fontAwesomeClassname: "devicon-plain:nodejs-wordmark",
           style: {
             color: "#339933",
+          },
+        },
+        {
+          skillName: "Fastapi",
+          fontAwesomeClassname: "simple-icons:fastapi",
+          style: {
+            color: "#009688",
+          },
+        },
+        {
+          skillName: "Streamlit",
+          fontAwesomeClassname: "simple-icons:streamlit",
+          style: {
+            color: "#FF4B4B",
           },
         },
         {
@@ -165,20 +200,6 @@ const skills = {
             color: "#2C8EBB",
           },
         },
-        {
-          skillName: "Gatsby",
-          fontAwesomeClassname: "simple-icons:gatsby",
-          style: {
-            color: "#663399",
-          },
-        },
-        {
-          skillName: "Flutter",
-          fontAwesomeClassname: "simple-icons:flutter",
-          style: {
-            color: "#02569B",
-          },
-        },
       ],
     },
     {
@@ -187,8 +208,8 @@ const skills = {
       skills: [
         "⚡ Experience working on multiple cloud platforms",
         "⚡ Hosting and maintaining websites on virtual machine instances along with integration of databases",
-        "⚡ Deploying deep learning models on cloud to use on mobile devices",
-        "⚡ Setting up streaming jobs from DB to Server or vice-versa on GCP and AWS",
+        "⚡ Deploying deep learning models on cloud",
+        "⚡ Engineering data from CDL to EDL",
       ],
       softwareSkills: [
         {
@@ -213,10 +234,10 @@ const skills = {
           },
         },
         {
-          skillName: "Firebase",
-          fontAwesomeClassname: "simple-icons:firebase",
+          skillName: "Databricks",
+          fontAwesomeClassname: "simple-icons:databricks",
           style: {
-            color: "#FFCA28",
+            color: "#FF3621",
           },
         },
         {
@@ -227,10 +248,10 @@ const skills = {
           },
         },
         {
-          skillName: "MongoDB",
-          fontAwesomeClassname: "simple-icons:mongodb",
+          skillName: "Neo4j",
+          fontAwesomeClassname: "simple-icons:neo4j",
           style: {
-            color: "#47A248",
+            color: "#4581C3",
           },
         },
         {
@@ -240,13 +261,6 @@ const skills = {
             color: "#1488C6",
           },
         },
-        {
-          skillName: "Kubernetes",
-          fontAwesomeClassname: "simple-icons:kubernetes",
-          style: {
-            color: "#326CE5",
-          },
-        },
       ],
     },
   ],
@@ -254,31 +268,32 @@ const skills = {
 
 // Education Page
 const competitiveSites = {
+      // others to maybe consider: CodeChef, Codeforces, Hackerearth
   competitiveSites: [
-    // {
-    //   siteName: "LeetCode",
-    //   iconifyClassname: "simple-icons:leetcode",
-    //   style: {
-    //     color: "#F79F1B",
-    //   },
-    //   profileLink: "https://leetcode.com/",
-    // },
-  //   {
-  //     siteName: "HackerRank",
-  //     iconifyClassname: "simple-icons:hackerrank",
-  //     style: {
-  //       color: "#2EC866",
-  //     },
-  //     profileLink: "https://www.hackerrank.com/layman_brother",
-  //   },
-  //   {
-  //     siteName: "Kaggle",
-  //     iconifyClassname: "simple-icons:kaggle",
-  //     style: {
-  //       color: "#20BEFF",
-  //     },
-  //     profileLink: "https://www.kaggle.com/laymanbrother",
-  //   },
+    {
+      siteName: "LeetCode",
+      iconifyClassname: "simple-icons:leetcode",
+      style: {
+        color: "#F79F1B",
+      },
+      profileLink: "https://leetcode.com/",
+    },
+    {
+      siteName: "HackerRank",
+      iconifyClassname: "simple-icons:hackerrank",
+      style: {
+        color: "#2EC866",
+      },
+      profileLink: "https://www.hackerrank.com/profile/amaan784",
+    },
+    {
+      siteName: "Kaggle",
+      iconifyClassname: "simple-icons:kaggle",
+      style: {
+        color: "#20BEFF",
+      },
+      profileLink: "https://www.kaggle.com/amaan784",
+    },
   ],
 };
 
@@ -287,12 +302,12 @@ const degrees = {
     {
       title: "University of California, Santa Cruz",
       subtitle: "B.S. in Computer Science", 
-      logo_path: "ucsc_seal.jpg",
+      logo_path: "uc_seal_hd.png",
       alt_name: "University of California, Santa Cruz",
       duration: "2019 - 2023",
       descriptions: [
         "⚡ I have taken a variety of courses related to Software Engineering, Artificial Intelligence, Systems",
-        "⚡ I was a tutor and a grader for CSE 101 and CSE 183",
+        "⚡ I was a tutor and a grader for CSE 101: Data Structures and Algorithms and grader for CSE 183: Web Applications",
         "⚡ I graduated with honors",
       ],
       website_link: "https://www.ucsc.edu/",
@@ -396,7 +411,7 @@ const experience = {
   title: "Experience",
   subtitle: "Work, Internship and Volunteership",
   description:
-    "I have worked with many evolving startups and MNCs as a Data Science Intern and in Software Engineer roles.",
+    "I have worked with many evolving startups and MNCs as a Data Science Intern and in Data and Software Engineering roles.",
   header_image_path: "experience.svg",
   sections: [
     {
@@ -407,7 +422,7 @@ const experience = {
           title: "Software Engineer",
           company: "Kenvue",
           company_url: "https://www.kenvue.com/",
-          logo_path: "kenvue_logo.jpg",
+          logo_path: "kenvue_standalone.jpeg",
           duration: "Oct 2023 - Present",
           location: "Skillman, NJ, USA",
           description:
@@ -416,9 +431,9 @@ const experience = {
         },
         {
           title: "Academic Tutor and Grader",
-          company: "UCSC BSOE",
+          company: "UCSC Baskin School of Engineering",
           company_url: "https://engineering.ucsc.edu/",
-          logo_path: "ucsc_bsoe.png",
+          logo_path: "ucsc_baskin_engineering.png",
           duration: "Feb 2023 - Jun 2023",
           location: "Santa Cruz, CA, USA",
           description:
@@ -434,11 +449,11 @@ const experience = {
           title: "Intern",
           company: "Cloud Brigade",
           company_url: "https://www.cloudbrigade.com/",
-          logo_path: "cloudbrigade_logo.jpg",
+          logo_path: "cloud_brigade.svg",
           duration: "July 2022 - Aug 2022",
           location: "Santa Cruz, USA",
           description:
-            "",
+            "Part time Intern",
           color: "#000000",
         },
         {
@@ -449,7 +464,7 @@ const experience = {
           duration: "Jun 2022 - Sept 2022",
           location: "Princeton, USA",
           description:
-            "",
+            "One of the first interns / employees of the new Blockchain Intelligence and Finance Copilot Startup called PrivateBlok (BlokTrek)",
           color: "#ee3c26",
         },
         {
@@ -460,29 +475,29 @@ const experience = {
           duration: "Jun 2021 - Sept 2021",
           location: "Remote",
           description:
-            "",
+            "Part of the Data Science Team.",
           color: "#ee3c26",
         },
         {
           title: "Intern",
           company: "KPMG India",
           company_url: "https://kpmg.com/in/en/home.html",
-          logo_path: "kpmg_logo.jpg",
+          logo_path: "kpmg_logo.jpeg",
           duration: "Sep 2020 - Oct 2020",
           location: "Mumbai, India",
           description:
-            "",
+            "Part of the Advanced Analytics team in ITA Lighthouse, at KPMG India.",
           color: "#ee3c26",
         },
         {
           title: "Intern",
           company: "Johnson & Johnson India",
           company_url: "https://www.jnj.com/",
-          logo_path: "jnj_logo.png",
+          logo_path: "jnj_logo_hd.png",
           duration: "May 2019 - Aug 2019",
           location: "Mumbai, India",
           description:
-           "",
+           "Part of the Global Make Analytics Function in the Consumer Supply Chain Analytics team",
           color: "#0071C5",
         },
       ],
@@ -490,28 +505,28 @@ const experience = {
     {
       title: "Freelance and Volunteerships",
       experiences: [
-        // {
-        //   title: "Google Explore ML Facilitator",
-        //   company: "Google",
-        //   company_url: "https://about.google/",
-        //   logo_path: "google_logo.png",
-        //   duration: "June 2019 - April 2020",
-        //   location: "Hyderabad, Telangana",
-        //   description:
-        //     "Explore Machine Learning (ML) is a Google-sponsored program for university students to get started with Machine Learning. The curriculum offers 3 tracks of ML Content (Beginner, Intermediate, Advanced) and relies on university student facilitators to train other students on campus and to build opensource projects under this program.",
-        //   color: "#4285F4",
-        // },
-        // {
-        //   title: "Microsoft Student Partner",
-        //   company: "Microsoft",
-        //   company_url: "https://www.microsoft.com/",
-        //   logo_path: "microsoft_logo.png",
-        //   duration: "Aug 2019 - May 2020",
-        //   location: "Hyderabad, Telangana",
-        //   description:
-        //     "Microsoft Student Partner is a program for university students to lead the awareness and use of Cloud especially Azure tools in the development of their projects and startups. Under this program, I have organised hands on workshops and seminars to teach Cloud Computing concepts to students.",
-        //   color: "#D83B01",
-        // },
+        {
+          title: "Developer",
+          company: "Handshake.fyi",
+          company_url: "https://handshake.fyi/",
+          logo_path: "handshake_fyi_logo.png",
+          duration: "2024",
+          location: "NJ / CA",
+          description:
+            "Developed a full-stack Generative AI chatbot for Handshake.fyi, implementing text-to-SQL conversion to query a large dataset owned by the San Francisco Municipal Transportation Agency (SFMTA). Optimized the chatbot’s performance by providing contextual data, enabling accurate query execution and improving data retrieval efficiency",
+          color: "#D83B01",
+        },
+        {
+          title: "Volunteering Intern",
+          company: "iDream Education",
+          company_url: "https://www.idreameducation.org/",
+          logo_path: "idream_logo.jpeg",
+          duration: "Feb 2017 - April 2017",
+          location: "Mumbai, India",
+          description:
+            "Worked with Content Development Team to aggregate most suitable local language learning apps for underprivileged children in Rural India.",
+          color: "#4285F4",
+        },
       ],
     },
   ],
