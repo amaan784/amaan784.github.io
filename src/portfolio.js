@@ -294,6 +294,14 @@ const competitiveSites = {
       },
       profileLink: "https://www.kaggle.com/amaan784",
     },
+    {
+      siteName: "Devpost",
+      iconifyClassname: "simple-icons:devpost",
+      style: {
+        color: "#003E54",
+      },
+      profileLink: "https://devpost.com/amaan784",
+    },
   ],
 };
 
