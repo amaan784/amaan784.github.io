@@ -213,4 +213,4 @@ export const dark_blueTheme = {
 // default theme -
 // export const chosenTheme = blueTheme;
 
-export const chosenTheme = materialDarkTheme;
+export const chosenTheme = materialTealTheme;
