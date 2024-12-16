@@ -209,7 +209,7 @@ const skills = {
         "⚡ Experience working on multiple cloud platforms",
         "⚡ Hosting and maintaining websites on virtual machine instances along with integration of databases",
         "⚡ Deploying deep learning models on cloud",
-        "⚡ Engineering data from CDL to EDL",
+        "⚡ Migrating and Engineering big data from EDL to CDL",
       ],
       softwareSkills: [
         {
