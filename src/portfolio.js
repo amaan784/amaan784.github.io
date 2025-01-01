@@ -25,7 +25,7 @@ const greeting = {
   subTitle:
     "Inquisitive about Tech and Data to unleash it and make a difference!",
   resumeLink:
-    "https://drive.google.com/file/d/1D7vwqgJxITE5o04F1LJ_olIXWuAyBSMr/view?usp=sharing",
+    "https://drive.google.com/file/d/1EYX2roEnKYXGjMc860Wgi6jaxAdEuihM/view?usp=sharing",
   portfolio_repository: "https://github.com/amaan784/amaan784.github.io/",
   githubProfile: "https://github.com/amaan784/",
 };
