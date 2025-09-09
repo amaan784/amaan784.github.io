@@ -25,7 +25,8 @@ const greeting = {
   subTitle:
     "Inquisitive about Tech and Data to unleash it and make a difference!",
   resumeLink:
-    "https://drive.google.com/file/d/1EYX2roEnKYXGjMc860Wgi6jaxAdEuihM/view?usp=sharing",
+    "https://drive.google.com/file/d/1b8XLxrE2E0SWsGSwD4ZX4aHGif-e4yzj/view?usp=sharing",
+
   portfolio_repository: "https://github.com/amaan784/amaan784.github.io/",
   githubProfile: "https://github.com/amaan784/",
 };
@@ -268,7 +269,7 @@ const skills = {
 
 // Education Page
 const competitiveSites = {
-      // others to maybe consider: CodeChef, Codeforces, Hackerearth
+  // others to maybe consider: CodeChef, Codeforces, Hackerearth
   competitiveSites: [
     {
       siteName: "LeetCode",
@@ -308,25 +309,33 @@ const competitiveSites = {
 const degrees = {
   degrees: [
     {
+      title: "Columbia University",
+      subtitle: "M.S. in Computer Science - Machine Learning",
+      logo_path: "Columbia_logo.png",
+      alt_name: "Columbia University",
+      duration: "2025 - Present",
+      descriptions: ["⚡ Machine Learning Specialization"],
+      website_link: "https://www.columbia.edu/",
+    },
+    {
       title: "University of California, Santa Cruz",
-      subtitle: "B.S. in Computer Science", 
+      subtitle: "B.S. in Computer Science",
       logo_path: "uc_seal_hd.png",
       alt_name: "University of California, Santa Cruz",
       duration: "2019 - 2023",
       descriptions: [
         "⚡ I have taken a variety of courses related to Software Engineering, Artificial Intelligence, Systems",
         "⚡ I was a tutor and a grader for CSE 101: Data Structures and Algorithms and grader for CSE 183: Web Applications",
-        "⚡ I graduated with honors",
+        "⚡ Honors: Undergraduate Dean’s Scholarship, Dean’s Honors (4 times), Honors in the Major",
       ],
       website_link: "https://www.ucsc.edu/",
     },
   ],
 };
 
-
 const certifications = {
   certifications: [
-  /*
+    /*
     {
       title: "Machine Learning",
       subtitle: "- Andrew Ng",
@@ -410,9 +419,7 @@ const certifications = {
     },
     */
   ],
-  
 };
-
 
 // Experience Page
 const experience = {
@@ -431,10 +438,9 @@ const experience = {
           company: "Kenvue",
           company_url: "https://www.kenvue.com/",
           logo_path: "kenvue_standalone.jpeg",
-          duration: "Oct 2023 - Present",
+          duration: "Oct 2023 - Aug 2025",
           location: "Skillman, NJ, USA",
-          description:
-            "Part of the Supply Chain Technology and Data team",
+          description: "Part of the Supply Chain Technology and Data team",
           color: "#000000",
         },
         {
@@ -460,8 +466,7 @@ const experience = {
           logo_path: "cloud_brigade.svg",
           duration: "July 2022 - Aug 2022",
           location: "Santa Cruz, USA",
-          description:
-            "Part time Intern",
+          description: "Part time Intern",
           color: "#000000",
         },
         {
@@ -482,8 +487,7 @@ const experience = {
           logo_path: "cloudsufi_logo.jpg",
           duration: "Jun 2021 - Sept 2021",
           location: "Remote",
-          description:
-            "Part of the Data Science Team.",
+          description: "Part of the Data Science Team.",
           color: "#ee3c26",
         },
         {
@@ -505,7 +509,7 @@ const experience = {
           duration: "May 2019 - Aug 2019",
           location: "Mumbai, India",
           description:
-           "Part of the Global Make Analytics Function in the Consumer Supply Chain Analytics team",
+            "Part of the Global Make Analytics Function in the Consumer Supply Chain Analytics team",
           color: "#0071C5",
         },
       ],
@@ -585,8 +589,7 @@ const contactPageData = {
   contactSection: {
     title: "Contact Me",
     profile_image_path: "smile_bitmoji.png",
-    description:
-      "Feel free to reach out if you have any questions.",
+    description: "Feel free to reach out if you have any questions.",
   },
 };
 
