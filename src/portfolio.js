@@ -315,6 +315,13 @@ const degrees = {
       alt_name: "Columbia University",
       duration: "2025 - Present",
       descriptions: ["⚡ Machine Learning Specialization"],
+      coursework: [
+        "Machine Learning",
+        "Deep Learning",
+        "Natural Language Processing",
+        "Computer Vision",
+        "Algorithms for Data Science",
+      ],
       website_link: "https://www.columbia.edu/",
     },
     {

@@ -85,7 +85,7 @@ const query_issue = {
 const query_org = {
   query: `query{
 	user(login: "${openSource.githubUserName}") {
-	    repositoriesContributedTo(last: 100){
+	    repositoriesContributedTo(first: 100){
 	      totalCount
 	      nodes{
 	        owner{
@@ -93,6 +93,20 @@ const query_org = {
 	          avatarUrl
 	          __typename
 	        }
+	      }
+	    }
+	  }
+	}`,
+};
+
+const query_org_memberships = {
+  query: `query{
+	user(login: "${openSource.githubUserName}") {
+	    organizations(first: 100){
+	      totalCount
+	      nodes{
+	        login
+	        avatarUrl
 	      }
 	    }
 	  }
@@ -206,33 +220,54 @@ fetch(baseUrl, {
   })
   .catch((error) => console.log(JSON.stringify(error)));
 
-fetch(baseUrl, {
-  method: "POST",
-  headers: headers,
-  body: JSON.stringify(query_org),
-})
-  .then((response) => response.text())
-  .then((txt) => {
-    const data = JSON.parse(txt);
-    const orgs = data["data"]["user"]["repositoriesContributedTo"]["nodes"];
+Promise.all([
+  fetch(baseUrl, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(query_org),
+  }).then((response) => response.text()),
+  fetch(baseUrl, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(query_org_memberships),
+  }).then((response) => response.text()),
+])
+  .then(([contribTxt, membershipTxt]) => {
+    const contribData = JSON.parse(contribTxt);
+    const membershipData = JSON.parse(membershipTxt);
+
+    const seen = new Set();
     var newOrgs = { data: [] };
-    for (var i = 0; i < orgs.length; i++) {
-      var obj = orgs[i]["owner"];
-      if (obj["__typename"] === "Organization") {
-        var flag = 0;
-        for (var j = 0; j < newOrgs["data"].length; j++) {
-          if (JSON.stringify(obj) === JSON.stringify(newOrgs["data"][j])) {
-            flag = 1;
-            break;
-          }
-        }
-        if (flag === 0) {
-          newOrgs["data"].push(obj);
-        }
+
+    // Add orgs from direct memberships
+    const memberships =
+      membershipData["data"]["user"]["organizations"]["nodes"] || [];
+    for (var i = 0; i < memberships.length; i++) {
+      var obj = memberships[i];
+      if (!seen.has(obj["login"])) {
+        seen.add(obj["login"]);
+        newOrgs["data"].push({
+          login: obj["login"],
+          avatarUrl: obj["avatarUrl"],
+          __typename: "Organization",
+        });
       }
     }
 
-    console.log("Fetching the Contributed Organization Data.\n");
+    // Add orgs from repositories contributed to
+    const contribs =
+      contribData["data"]["user"]["repositoriesContributedTo"]["nodes"] || [];
+    for (var i = 0; i < contribs.length; i++) {
+      var obj = contribs[i]["owner"];
+      if (obj["__typename"] === "Organization" && !seen.has(obj["login"])) {
+        seen.add(obj["login"]);
+        newOrgs["data"].push(obj);
+      }
+    }
+
+    console.log(
+      `Fetching the Contributed Organization Data. Found ${newOrgs["data"].length} organizations.\n`
+    );
     fs.writeFile(
       "./src/shared/opensource/organizations.json",
       JSON.stringify(newOrgs),
