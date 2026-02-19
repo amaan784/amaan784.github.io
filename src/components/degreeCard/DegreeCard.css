@@ -71,6 +71,22 @@
   font-family: "Google Sans Regular";
 }
 
+.coursework-section {
+  padding: 5px 10px 10px 10px;
+}
+
+.coursework-label {
+  font-family: "Google Sans Medium";
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.coursework-list {
+  font-family: "Google Sans Regular";
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 .card-body {
   /* background-color: #00FF00; */
   border-bottom: 1px solid #d9dbdf;

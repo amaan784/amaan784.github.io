@@ -54,6 +54,19 @@ class DegreeCard extends Component {
                   </p>
                 );
               })}
+              {degree.coursework && degree.coursework.length > 0 && (
+                <div className="coursework-section">
+                  <p className="coursework-label" style={{ color: theme.text }}>
+                    Relevant Coursework:
+                  </p>
+                  <p
+                    className="coursework-list"
+                    style={{ color: theme.secondaryText }}
+                  >
+                    {degree.coursework.join(" | ")}
+                  </p>
+                </div>
+              )}
               {degree.website_link && (
                 <a
                   href={degree.website_link}

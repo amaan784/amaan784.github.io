@@ -315,6 +315,12 @@ const degrees = {
       alt_name: "Columbia University",
       duration: "2025 - Present",
       descriptions: ["⚡ Machine Learning Specialization"],
+      coursework: [
+        "High Performance Machine Learning",
+        "Deep Learning for Computer Vision",
+        "Natural Language Processing",
+        "Analysis of Algorithms",
+      ],
       website_link: "https://www.columbia.edu/",
     },
     {
@@ -326,7 +332,7 @@ const degrees = {
       descriptions: [
         "⚡ I have taken a variety of courses related to Software Engineering, Artificial Intelligence, Systems",
         "⚡ I was a tutor and a grader for CSE 101: Data Structures and Algorithms and grader for CSE 183: Web Applications",
-        "⚡ Honors: Undergraduate Dean’s Scholarship, Dean’s Honors (4 times), Honors in the Major",
+        "⚡ Honors: Undergraduate Dean's Scholarship, Dean's Honors (4 times), Honors in the Major",
       ],
       website_link: "https://www.ucsc.edu/",
     },
