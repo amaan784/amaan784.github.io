@@ -85,7 +85,14 @@ const query_issue = {
 const query_org = {
   query: `query{
 	user(login: "${openSource.githubUserName}") {
-	    repositoriesContributedTo(first: 100){
+	    organizations(first: 100){
+	      totalCount
+	      nodes{
+	        login
+	        avatarUrl
+	      }
+	    }
+	    repositoriesContributedTo(last: 100){
 	      totalCount
 	      nodes{
 	        owner{
@@ -93,20 +100,6 @@ const query_org = {
 	          avatarUrl
 	          __typename
 	        }
-	      }
-	    }
-	  }
-	}`,
-};
-
-const query_org_memberships = {
-  query: `query{
-	user(login: "${openSource.githubUserName}") {
-	    organizations(first: 100){
-	      totalCount
-	      nodes{
-	        login
-	        avatarUrl
 	      }
 	    }
 	  }
@@ -220,28 +213,20 @@ fetch(baseUrl, {
   })
   .catch((error) => console.log(JSON.stringify(error)));
 
-Promise.all([
-  fetch(baseUrl, {
-    method: "POST",
-    headers: headers,
-    body: JSON.stringify(query_org),
-  }).then((response) => response.text()),
-  fetch(baseUrl, {
-    method: "POST",
-    headers: headers,
-    body: JSON.stringify(query_org_memberships),
-  }).then((response) => response.text()),
-])
-  .then(([contribTxt, membershipTxt]) => {
-    const contribData = JSON.parse(contribTxt);
-    const membershipData = JSON.parse(membershipTxt);
-
+fetch(baseUrl, {
+  method: "POST",
+  headers: headers,
+  body: JSON.stringify(query_org),
+})
+  .then((response) => response.text())
+  .then((txt) => {
+    const data = JSON.parse(txt);
     const seen = new Set();
     var newOrgs = { data: [] };
 
     // Add orgs from direct memberships
     const memberships =
-      membershipData["data"]["user"]["organizations"]["nodes"] || [];
+      data["data"]["user"]["organizations"]["nodes"] || [];
     for (var i = 0; i < memberships.length; i++) {
       var obj = memberships[i];
       if (!seen.has(obj["login"])) {
@@ -256,7 +241,7 @@ Promise.all([
 
     // Add orgs from repositories contributed to
     const contribs =
-      contribData["data"]["user"]["repositoriesContributedTo"]["nodes"] || [];
+      data["data"]["user"]["repositoriesContributedTo"]["nodes"] || [];
     for (var i = 0; i < contribs.length; i++) {
       var obj = contribs[i]["owner"];
       if (obj["__typename"] === "Organization" && !seen.has(obj["login"])) {
