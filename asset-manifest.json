@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.37f7feb6.chunk.css",
-    "main.js": "/static/js/main.06a51ae2.chunk.js",
-    "main.js.map": "/static/js/main.06a51ae2.chunk.js.map",
+    "main.css": "/static/css/main.c5077885.chunk.css",
+    "main.js": "/static/js/main.82aef484.chunk.js",
+    "main.js.map": "/static/js/main.82aef484.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f0c648fb.js",
     "runtime-main.js.map": "/static/js/runtime-main.f0c648fb.js.map",
     "static/js/2.784b351e.chunk.js": "/static/js/2.784b351e.chunk.js",
     "static/js/2.784b351e.chunk.js.map": "/static/js/2.784b351e.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.31dd5ed4302fac9ad2892239789a1157.js": "/precache-manifest.31dd5ed4302fac9ad2892239789a1157.js",
+    "precache-manifest.33ebaa4a69596004031406cc244912da.js": "/precache-manifest.33ebaa4a69596004031406cc244912da.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.37f7feb6.chunk.css.map": "/static/css/main.37f7feb6.chunk.css.map",
+    "static/css/main.c5077885.chunk.css.map": "/static/css/main.c5077885.chunk.css.map",
     "static/media/index.css": "/static/media/Montserrat-Regular.ee653992.ttf",
     "static/media/Columbia_logo.png": "/static/media/Columbia_logo.51944508.png",
     "static/media/address_image.svg": "/static/media/address_image.16559172.svg",
@@ -65,7 +65,7 @@
   "entrypoints": [
     "static/js/runtime-main.f0c648fb.js",
     "static/js/2.784b351e.chunk.js",
-    "static/css/main.37f7feb6.chunk.css",
-    "static/js/main.06a51ae2.chunk.js"
+    "static/css/main.c5077885.chunk.css",
+    "static/js/main.82aef484.chunk.js"
   ]
 }
