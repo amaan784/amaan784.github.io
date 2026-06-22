@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.c5077885.chunk.css",
-    "main.js": "/static/js/main.82aef484.chunk.js",
-    "main.js.map": "/static/js/main.82aef484.chunk.js.map",
+    "main.css": "/static/css/main.ff2d4d63.chunk.css",
+    "main.js": "/static/js/main.1f998b66.chunk.js",
+    "main.js.map": "/static/js/main.1f998b66.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f0c648fb.js",
     "runtime-main.js.map": "/static/js/runtime-main.f0c648fb.js.map",
-    "static/js/2.784b351e.chunk.js": "/static/js/2.784b351e.chunk.js",
-    "static/js/2.784b351e.chunk.js.map": "/static/js/2.784b351e.chunk.js.map",
+    "static/js/2.7f59db0a.chunk.js": "/static/js/2.7f59db0a.chunk.js",
+    "static/js/2.7f59db0a.chunk.js.map": "/static/js/2.7f59db0a.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.33ebaa4a69596004031406cc244912da.js": "/precache-manifest.33ebaa4a69596004031406cc244912da.js",
+    "precache-manifest.78f0a234b864c6ce6172ea7be401a24d.js": "/precache-manifest.78f0a234b864c6ce6172ea7be401a24d.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.c5077885.chunk.css.map": "/static/css/main.c5077885.chunk.css.map",
-    "static/media/index.css": "/static/media/Montserrat-Regular.ee653992.ttf",
+    "static/css/main.ff2d4d63.chunk.css.map": "/static/css/main.ff2d4d63.chunk.css.map",
     "static/media/Columbia_logo.png": "/static/media/Columbia_logo.51944508.png",
     "static/media/address_image.svg": "/static/media/address_image.16559172.svg",
     "static/media/animated_logo.svg": "/static/media/animated_logo.dcd6dee2.svg",
@@ -60,12 +59,13 @@
     "static/media/ucsc_logo.jpg": "/static/media/ucsc_logo.09b80ce1.jpg",
     "static/media/ucsc_seal.jpg": "/static/media/ucsc_seal.217da790.jpg",
     "static/media/ucsc_seal_new.webp": "/static/media/ucsc_seal_new.83704b61.webp",
-    "static/media/ui_ux_design.svg": "/static/media/ui_ux_design.d6363089.svg"
+    "static/media/ui_ux_design.svg": "/static/media/ui_ux_design.d6363089.svg",
+    "static/media/zs.png": "/static/media/zs.b03c067d.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f0c648fb.js",
-    "static/js/2.784b351e.chunk.js",
-    "static/css/main.c5077885.chunk.css",
-    "static/js/main.82aef484.chunk.js"
+    "static/js/2.7f59db0a.chunk.js",
+    "static/css/main.ff2d4d63.chunk.css",
+    "static/js/main.1f998b66.chunk.js"
   ]
 }

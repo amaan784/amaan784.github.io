@@ -1,59 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fef5060d00704d77cd4906fafd65df94",
+    "revision": "61f1bf3fc969e8dfc4c1aecc0fcd8d3f",
     "url": "/index.html"
   },
   {
-    "revision": "e5de993bd9daaa19e640",
-    "url": "/static/css/main.c5077885.chunk.css"
+    "revision": "ee5dbf601c2a97689e08",
+    "url": "/static/css/main.ff2d4d63.chunk.css"
   },
   {
-    "revision": "74eb1a849bf1fddd2eac",
-    "url": "/static/js/2.784b351e.chunk.js"
+    "revision": "80bdcff97fa4de92862c",
+    "url": "/static/js/2.7f59db0a.chunk.js"
   },
   {
-    "revision": "e5de993bd9daaa19e640",
-    "url": "/static/js/main.82aef484.chunk.js"
+    "revision": "ee5dbf601c2a97689e08",
+    "url": "/static/js/main.1f998b66.chunk.js"
   },
   {
     "revision": "a3027cb36ca42bd4283e",
     "url": "/static/js/runtime-main.f0c648fb.js"
   },
   {
-    "revision": "21f233e19402cc4a66866a7f31191f0d",
-    "url": "/static/media/Agustina.21f233e1.woff"
-  },
-  {
     "revision": "51944508a33d53f20e71045cfaff087c",
     "url": "/static/media/Columbia_logo.51944508.png"
-  },
-  {
-    "revision": "4457817ac2b9993c65e81aa05828fe9c",
-    "url": "/static/media/GoogleSans-Bold.4457817a.ttf"
-  },
-  {
-    "revision": "90773b6158663ab0fe78b32680733677",
-    "url": "/static/media/GoogleSans-BoldItalic.90773b61.ttf"
-  },
-  {
-    "revision": "0ecddcdeccb7761ce899aa9ad9f0ac3f",
-    "url": "/static/media/GoogleSans-Italic.0ecddcde.ttf"
-  },
-  {
-    "revision": "8d57e4014b18edef070d285746485115",
-    "url": "/static/media/GoogleSans-Medium.8d57e401.ttf"
-  },
-  {
-    "revision": "8fd3737925e83c87d78a13700ccf9a62",
-    "url": "/static/media/GoogleSans-MediumItalic.8fd37379.ttf"
-  },
-  {
-    "revision": "b5c77a6aed75cdad9489effd0d5ea411",
-    "url": "/static/media/GoogleSans-Regular.b5c77a6a.ttf"
-  },
-  {
-    "revision": "ee6539921d713482b8ccd4d0d23961bb",
-    "url": "/static/media/Montserrat-Regular.ee653992.ttf"
   },
   {
     "revision": "16559172ca1d4d552390b48f19e102ba",
@@ -302,5 +270,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d63630893eb8cb64af65f395d393c481",
     "url": "/static/media/ui_ux_design.d6363089.svg"
+  },
+  {
+    "revision": "b03c067d837a1d3f9cb405594d607c3f",
+    "url": "/static/media/zs.b03c067d.png"
   }
 ]);
