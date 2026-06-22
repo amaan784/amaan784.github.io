@@ -1,6 +1,4 @@
-/* Flat hairline pills for competitive profiles. Monochrome the iconify
-   glyphs — the inline brand colors set via portfolio.js style props are
-   overridden so the row stays calm and typographic. */
+/* Flat hairline pills for competitive profiles, with full-color brand icons. */
 .competitive-sites {
   display: flex;
   flex-wrap: wrap;
@@ -20,14 +18,9 @@
   color: var(--text);
 }
 
-/* Monochrome icon — override the inline brand color from portfolio.js. */
+/* Full-color brand icons (colors come from the inline styles in portfolio.js). */
 .competitive-site-icon {
   font-size: 1.2rem;
-  color: var(--text-faint) !important;
-  transition: color 0.2s var(--ease);
-}
-.competitive-site:hover .competitive-site-icon {
-  color: var(--text) !important;
 }
 
 .competitive-site-name {

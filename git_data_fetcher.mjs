@@ -11,126 +11,146 @@ const openSource = {
 
 const query_pr = {
   query: `
-	query {
-	  user(login: "${openSource.githubUserName}"){
-	    pullRequests(last: 100, orderBy: {field: CREATED_AT, direction: DESC}){
-      totalCount
-      nodes{
-        id
-        title
-        url
-        state
-	      mergedBy {
-	          avatarUrl
-	          url
-	          login
-	      }
-	      createdAt
-	      number
-        changedFiles
-	      additions
-	      deletions
-        baseRepository {
-	          name
-	          url
-	          owner {
-	            avatarUrl
-	            login
-	            url
-	          }
-	        }
-      }
-    }
-	}
-}
-	`,
-};
-
-const query_issue = {
-  query: `query{
-
-		user(login: "${openSource.githubUserName}") {
-    issues(last: 100, orderBy: {field:CREATED_AT, direction: DESC}){
-      totalCount
-      nodes{
-      	id
-        closed
-        title
-        createdAt
-        url
-        number
-        assignees(first:100){
-          nodes{
+  query {
+    user(login: "${openSource.githubUserName}"){
+      pullRequests(last: 100, orderBy: {field: CREATED_AT, direction: DESC}){
+        totalCount
+        nodes{
+          id
+          title
+          url
+          state
+          mergedBy {
             avatarUrl
+            url
+            login
+          }
+          createdAt
+          number
+          changedFiles
+          additions
+          deletions
+          baseRepository {
             name
             url
-          }
-        }
-        repository{
-          name
-          url
-          owner{
-            login
-            avatarUrl
-            url
+            owner {
+              avatarUrl
+              login
+              url
+            }
           }
         }
       }
     }
   }
+  `,
+};
 
-	}`,
+const query_issue = {
+  query: `query{
+    user(login: "${openSource.githubUserName}") {
+      issues(last: 100, orderBy: {field:CREATED_AT, direction: DESC}){
+        totalCount
+        nodes{
+          id
+          closed
+          title
+          createdAt
+          url
+          number
+          assignees(first:100){
+            nodes{
+              avatarUrl
+              name
+              url
+            }
+          }
+          repository{
+            name
+            url
+            owner{
+              login
+              avatarUrl
+              url
+            }
+          }
+        }
+      }
+    }
+  }`,
 };
 
 const query_org = {
   query: `query{
-	user(login: "${openSource.githubUserName}") {
-	    organizations(first: 100){
-	      totalCount
-	      nodes{
-	        login
-	        avatarUrl
-	      }
-	    }
-	    repositoriesContributedTo(last: 100){
-	      totalCount
-	      nodes{
-	        owner{
-	          login
-	          avatarUrl
-	          __typename
-	        }
-	      }
-	    }
-	  }
-	}`,
+    user(login: "${openSource.githubUserName}") {
+      organizations(first: 100){
+        totalCount
+        nodes{
+          login
+          avatarUrl
+        }
+      }
+      repositoriesContributedTo(last: 100){
+        totalCount
+        nodes{
+          owner{
+            login
+            avatarUrl
+            __typename
+          }
+        }
+      }
+      pullRequests(last: 100, orderBy: {field: CREATED_AT, direction: DESC}){
+        nodes{
+          baseRepository{
+            owner{
+              login
+              avatarUrl
+              __typename
+            }
+          }
+        }
+      }
+      issues(last: 100, orderBy: {field: CREATED_AT, direction: DESC}){
+        nodes{
+          repository{
+            owner{
+              login
+              avatarUrl
+              __typename
+            }
+          }
+        }
+      }
+    }
+  }`,
 };
 
 const query_pinned_projects = {
   query: `
-	query { 
-	  user(login: "${openSource.githubUserName}") { 
-	    pinnedItems(first: 6, types: REPOSITORY) {
-	      totalCount
-	      nodes{
-	        ... on Repository{
-	          id
-		          name
-		          createdAt,
-		          url,
-		          description,
-		          isFork,
-		          languages(first:10){
-		            nodes{
-		              name
-		            }
-		          }
-	        }
-	      }
-		  }
-	  }
-	}
-	`,
+  query {
+    user(login: "${openSource.githubUserName}") {
+      pinnedItems(first: 6, types: REPOSITORY) {
+        totalCount
+        nodes{
+          ... on Repository{
+            id
+            name
+            createdAt,
+            url,
+            description,
+            isFork,
+            languages(first:10){
+              nodes{
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  `,
 };
 
 const baseUrl = "https://api.github.com/graphql";
@@ -221,37 +241,41 @@ fetch(baseUrl, {
   .then((response) => response.text())
   .then((txt) => {
     const data = JSON.parse(txt);
+    const user = data["data"]["user"];
     const seen = new Set();
-    var newOrgs = { data: [] };
+    const newOrgs = { data: [] };
 
-    // Add orgs from direct memberships
-    const memberships =
-      data["data"]["user"]["organizations"]["nodes"] || [];
-    for (var i = 0; i < memberships.length; i++) {
-      var obj = memberships[i];
-      if (!seen.has(obj["login"])) {
-        seen.add(obj["login"]);
-        newOrgs["data"].push({
-          login: obj["login"],
-          avatarUrl: obj["avatarUrl"],
-          __typename: "Organization",
-        });
+    const addOrg = (login, avatarUrl) => {
+      if (login && !seen.has(login)) {
+        seen.add(login);
+        newOrgs.data.push({ login, avatarUrl, __typename: "Organization" });
       }
-    }
+    };
 
-    // Add orgs from repositories contributed to
-    const contribs =
-      data["data"]["user"]["repositoriesContributedTo"]["nodes"] || [];
-    for (var i = 0; i < contribs.length; i++) {
-      var obj = contribs[i]["owner"];
-      if (obj["__typename"] === "Organization" && !seen.has(obj["login"])) {
-        seen.add(obj["login"]);
-        newOrgs["data"].push(obj);
-      }
-    }
+    // Direct org memberships (always organizations).
+    (user.organizations.nodes || []).forEach((o) => addOrg(o.login, o.avatarUrl));
+
+    // Orgs from repositories contributed to (merged contributions).
+    (user.repositoriesContributedTo.nodes || []).forEach((n) => {
+      const o = n.owner;
+      if (o && o.__typename === "Organization") addOrg(o.login, o.avatarUrl);
+    });
+
+    // Orgs from any pull request you opened (open / closed / merged) — covers
+    // contributions that GitHub's repositoriesContributedTo leaves out.
+    ((user.pullRequests && user.pullRequests.nodes) || []).forEach((n) => {
+      const o = n.baseRepository && n.baseRepository.owner;
+      if (o && o.__typename === "Organization") addOrg(o.login, o.avatarUrl);
+    });
+
+    // Orgs from any issue you opened.
+    ((user.issues && user.issues.nodes) || []).forEach((n) => {
+      const o = n.repository && n.repository.owner;
+      if (o && o.__typename === "Organization") addOrg(o.login, o.avatarUrl);
+    });
 
     console.log(
-      `Fetching the Contributed Organization Data. Found ${newOrgs["data"].length} organizations.\n`
+      `Fetching the Contributed Organization Data. Found ${newOrgs.data.length} organizations.\n`
     );
     fs.writeFile(
       "./src/shared/opensource/organizations.json",
@@ -288,7 +312,6 @@ fetch(baseUrl, {
   .then((response) => response.text())
   .then((txt) => {
     const data = JSON.parse(txt);
-    // console.log(txt);
     const projects = data["data"]["user"]["pinnedItems"]["nodes"];
     var newProjects = { data: [] };
     for (var i = 0; i < projects.length; i++) {

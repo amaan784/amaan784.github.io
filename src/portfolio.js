@@ -387,15 +387,20 @@ const degrees = {
   degrees: [
     {
       title: "Columbia University",
-      subtitle: "M.S. in Computer Science - Machine Learning",
+      subtitle: "M.S. in Computer Science (Machine Learning Track)",
       logo_path: "Columbia_logo.png",
       alt_name: "Columbia University",
-      duration: "2025 - Present",
-      descriptions: ["⚡ Machine Learning Specialization"],
+      duration: "Aug 2025 - Present",
+      descriptions: [
+        "GPA: 3.81",
+        "Columbia AI Alignment Club (CAIAC) Technical Fellow",
+      ],
       coursework: [
         "High Performance Machine Learning",
+        "Advanced Spoken Language Processing",
         "Deep Learning for Computer Vision",
         "Natural Language Processing",
+        "Cloud Computing",
         "Analysis of Algorithms",
       ],
       website_link: "https://www.columbia.edu/",
@@ -405,11 +410,10 @@ const degrees = {
       subtitle: "B.S. in Computer Science",
       logo_path: "uc_seal_hd.png",
       alt_name: "University of California, Santa Cruz",
-      duration: "2019 - 2023",
+      duration: "Sep 2019 - Jun 2023",
       descriptions: [
-        "⚡ I have taken a variety of courses related to Software Engineering, Artificial Intelligence, Systems",
-        "⚡ I was a tutor and a grader for CSE 101: Data Structures and Algorithms and grader for CSE 183: Web Applications",
-        "⚡ Honors: Undergraduate Dean's Scholarship, Dean's Honors (4 times), Honors in the Major",
+        "GPA: 3.55, graduated with Honors in the Major",
+        "Undergraduate Dean's Scholarship and Dean's Honors (four times)",
       ],
       website_link: "https://www.ucsc.edu/",
     },
@@ -509,7 +513,7 @@ const experience = {
   title: "Experience",
   subtitle: "Work, Internship and Volunteership",
   description:
-    "I have worked with many evolving startups and MNCs as a Data Science Intern and in Data and Software Engineering roles.",
+    "I've worked across applied AI, software engineering, and data science, from early-stage startups to large enterprises and a university research lab.",
   header_image_path: "experience.svg",
   sections: [
     {
