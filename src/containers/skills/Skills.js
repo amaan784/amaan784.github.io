@@ -6,15 +6,22 @@ import { Fade } from "react-reveal";
 export default function Skills(props) {
   const theme = props.theme;
   return (
-    <div className="main" id="skills">
-      <div className="skills-header-div">
-        <Fade bottom duration={2000} distance="20px">
-          <h1 className="skills-header" style={{ color: theme.text }}>
-            What I Do?
-          </h1>
+    <section className="skills-section section" id="skills">
+      <div className="container">
+        <Fade bottom duration={1000} distance="20px">
+          <div className="skills-header">
+            <span className="eyebrow">What I do</span>
+            <h2 className="section-title" style={{ color: theme.text }}>
+              Skills &amp; <span className="grad-text">capabilities</span>
+            </h2>
+            <p className="section-lead">
+              I build end-to-end systems across machine learning, full-stack
+              engineering and cloud infrastructure.
+            </p>
+          </div>
         </Fade>
+        <SkillSection theme={theme} />
       </div>
-      <SkillSection theme={theme} />
-    </div>
+    </section>
   );
 }

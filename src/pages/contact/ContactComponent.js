@@ -3,59 +3,52 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import TopButton from "../../components/topButton/TopButton";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
-import Button from "../../components/button/Button";
-import BlogsImg from "./BlogsImg";
-import AddressImg from "./AddressImg";
 import { Fade } from "react-reveal";
 import "./ContactComponent.css";
 import { greeting, contactPageData } from "../../portfolio.js";
 
 const ContactData = contactPageData.contactSection;
-const blogSection = contactPageData.blogSection;
-const addressSection = contactPageData.addressSection;
-const phoneSection = contactPageData.phoneSection;
 
 class Contact extends Component {
   render() {
     const theme = this.props.theme;
     return (
       <div className="contact-main">
-        <Header theme={theme} />
-        <div className="basic-contact">
-          <Fade bottom duration={1000} distance="40px">
-            <div className="contact-heading-div">
-              <div className="contact-heading-img-div">
-                <img
-                  src={require(`../../assets/images/${ContactData["profile_image_path"]}`)}
-                  alt=""
-                />
-              </div>
-              <div className="contact-heading-text-div">
-                <h1
-                  className="contact-heading-text"
-                  style={{ color: theme.text }}
-                >
-                  {ContactData["title"]}
+        <Header
+          theme={theme}
+          isDark={this.props.isDark}
+          toggleTheme={this.props.toggleTheme}
+        />
+        <section className="section contact-section">
+          <div className="container">
+            <Fade bottom duration={1000} distance="32px">
+              <div className="contact-header">
+                <span className="eyebrow">Say hello</span>
+                <h1 className="section-title" style={{ color: theme.text }}>
+                  Let&rsquo;s <span className="grad-text">connect</span>
                 </h1>
-                <p
-                  className="contact-header-detail-text subTitle"
-                  style={{ color: theme.secondaryText }}
-                >
-                  {ContactData["description"]}
-                </p>
+                <p className="section-lead">{ContactData["description"]}</p>
+              </div>
+
+              <div className="card contact-card">
                 <SocialMedia theme={theme} />
-                <div className="resume-btn-div">
-                  <Button
-                    text="See My Resume"
-                    newTab={true}
+                <div className="contact-cta">
+                  <a
+                    className="btn btn-primary"
                     href={greeting.resumeLink}
-                    theme={theme}
-                  />
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Resume
+                  </a>
+                  <a className="btn btn-ghost" href="mailto:amaan784@gmail.com">
+                    Email me
+                  </a>
                 </div>
               </div>
-            </div>
-          </Fade>
-        </div>
+            </Fade>
+          </div>
+        </section>
         <Footer theme={this.props.theme} onToggle={this.props.onToggle} />
         <TopButton theme={this.props.theme} />
       </div>

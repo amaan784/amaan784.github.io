@@ -1,18 +1,25 @@
 .pr-chart {
   width: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-canvas {
+.pr-chart canvas {
   margin: 0 auto;
 }
 
 .pr-chart-header {
-  font-family: "Google Sans Regular";
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--text);
 }
 
 @media (max-width: 768px) {
   .pr-chart-header {
-    font-size: 20px;
+    font-size: 1.05rem;
   }
 }

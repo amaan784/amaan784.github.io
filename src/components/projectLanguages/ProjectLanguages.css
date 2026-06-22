@@ -1,22 +1,32 @@
-.dev-icons-languages {
-  padding-left: 0;
+.repo-languages {
   list-style: none;
-  font-size: 2rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  text-align: right;
+  margin: auto 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.software-skill-inline-languages {
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 0px;
-  font-family: "Google Sans Regular";
+.repo-language-chip {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .software-skill-inline-languages {
-    margin-right: 10px;
-    margin-bottom: 0px;
-  }
+/* Monochrome the language glyphs so the cards stay calm and typographic.
+   The `logos-*` Iconify icons bake in their own fills (ignore `color`), so we
+   neutralize them with grayscale; `color` still covers the few simple-icons. */
+.repo-language-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+  color: var(--text-faint) !important;
+  filter: grayscale(1);
+  opacity: 0.85;
+  transition: filter 0.2s var(--ease), opacity 0.2s var(--ease),
+    color 0.2s var(--ease);
+}
+.repo-language-chip:hover .repo-language-icon {
+  color: var(--text) !important;
+  filter: grayscale(0);
+  opacity: 1;
 }

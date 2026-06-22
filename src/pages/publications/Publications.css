@@ -1,0 +1,26 @@
+.publications-main {
+  width: 100%;
+}
+
+.publications-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: clamp(36px, 5vw, 56px);
+}
+.publications-header .section-lead {
+  text-align: center;
+}
+
+.publications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+@media (max-width: 768px) {
+  .publications-grid {
+    grid-template-columns: 1fr;
+  }
+}

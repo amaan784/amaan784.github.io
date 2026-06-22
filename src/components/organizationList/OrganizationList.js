@@ -13,7 +13,6 @@ class OrganizationList extends Component {
               <OverlayTrigger
                 key={logo["login"]}
                 placement={"top"}
-                style={{ marginBottom: "5px" }}
                 overlay={
                   <Tooltip id={`tooltip-top`}>
                     <strong>{logo["login"]}</strong>
@@ -21,12 +20,14 @@ class OrganizationList extends Component {
                 }
               >
                 <li className="organizations-inline" name={logo["login"]}>
-                  <Fade bottom duration={2000} distance="40px">
-                    <img
-                      className="organizations-img"
-                      src={logo["avatarUrl"]}
-                      alt={logo["login"]}
-                    />
+                  <Fade bottom duration={1500} distance="24px">
+                    <span className="organizations-tile card">
+                      <img
+                        className="organizations-img"
+                        src={logo["avatarUrl"]}
+                        alt={logo["login"]}
+                      />
+                    </span>
                   </Fade>
                 </li>
               </OverlayTrigger>

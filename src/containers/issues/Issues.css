@@ -1,25 +1,23 @@
-.issues-header {
-  font-size: 40px;
-  line-height: 1.1;
-  font-family: "Google Sans Regular";
-  text-align: center;
-  margin-left: 10px;
-  margin-right: 10px;
+.issues-section {
+  position: relative;
 }
 
-.issues-body-div {
+.os-section-header {
   text-align: center;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: clamp(32px, 4vw, 48px);
 }
 
-@media (max-width: 1380px) {
-  .issues-header {
-    font-size: 35px;
-  }
+.issues-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
 }
 
 @media (max-width: 768px) {
-  .issues-header {
-    font-size: 25px;
+  .issues-grid {
+    grid-template-columns: 1fr;
   }
 }

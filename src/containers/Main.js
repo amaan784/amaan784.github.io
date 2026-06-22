@@ -7,11 +7,18 @@ import Experience from "../pages/experience/Experience";
 import Opensource from "../pages/opensource/Opensource";
 import Contact from "../pages/contact/ContactComponent";
 import Projects from "../pages/projects/Projects";
+import Publications from "../pages/publications/Publications";
 import { settings } from "../portfolio.js";
 import Error404 from "../pages/errors/error404/Error";
 
 export default class Main extends Component {
   render() {
+    // Common props handed to every page: the active theme + the dark/light toggle.
+    const shared = {
+      theme: this.props.theme,
+      isDark: this.props.isDark,
+      toggleTheme: this.props.toggleTheme,
+    };
     return (
       <BrowserRouter basename="/">
         <Switch>
@@ -20,55 +27,49 @@ export default class Main extends Component {
             exact
             render={(props) =>
               settings.isSplash ? (
-                <Splash {...props} theme={this.props.theme} />
+                <Splash {...props} {...shared} />
               ) : (
-                <Home {...props} theme={this.props.theme} />
+                <Home {...props} {...shared} />
               )
             }
           />
-          <Route
-            path="/home"
-            render={(props) => <Home {...props} theme={this.props.theme} />}
-          />
+          <Route path="/home" render={(props) => <Home {...props} {...shared} />} />
           <Route
             path="/experience"
             exact
-            render={(props) => (
-              <Experience {...props} theme={this.props.theme} />
-            )}
+            render={(props) => <Experience {...props} {...shared} />}
           />
           <Route
             path="/education"
-            render={(props) => (
-              <Education {...props} theme={this.props.theme} />
-            )}
+            render={(props) => <Education {...props} {...shared} />}
           />
-          <Route
-            path="/opensource"
-            render={(props) => (
-              <Opensource {...props} theme={this.props.theme} />
-            )}
-          />
+          {settings.showOpenSource && (
+            <Route
+              path="/opensource"
+              render={(props) => <Opensource {...props} {...shared} />}
+            />
+          )}
           <Route
             path="/contact"
-            render={(props) => <Contact {...props} theme={this.props.theme} />}
+            render={(props) => <Contact {...props} {...shared} />}
           />
 
           {settings.isSplash && (
             <Route
               path="/splash"
-              render={(props) => <Splash {...props} theme={this.props.theme} />}
+              render={(props) => <Splash {...props} {...shared} />}
             />
           )}
 
           <Route
             path="/projects"
-            render={(props) => <Projects {...props} theme={this.props.theme} />}
+            render={(props) => <Projects {...props} {...shared} />}
           />
           <Route
-            path="*"
-            render={(props) => <Error404 {...props} theme={this.props.theme} />}
+            path="/publications"
+            render={(props) => <Publications {...props} {...shared} />}
           />
+          <Route path="*" render={(props) => <Error404 {...props} {...shared} />} />
         </Switch>
       </BrowserRouter>
     );

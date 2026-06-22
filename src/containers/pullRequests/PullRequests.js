@@ -8,20 +8,29 @@ class PullRequests extends Component {
   render() {
     const theme = this.props.theme;
     return (
-      <div>
-        <div className="pull-requests-header-div">
-          <Fade bottom duration={2000} distance="20px">
-            <h1 className="pull-requests-header" style={{ color: theme.text }}>
-              Pull Requests
-            </h1>
+      <section className="section-tight pull-requests-section">
+        <div className="container">
+          <Fade bottom duration={1000} distance="20px">
+            <div className="os-section-header">
+              <span className="eyebrow">Code I shipped</span>
+              <h2 className="section-title" style={{ color: theme.text }}>
+                Pull <span className="grad-text">Requests</span>
+              </h2>
+            </div>
           </Fade>
+          <div className="pull-request-grid">
+            {pullRequestsData["data"].map((pullRequest) => {
+              return (
+                <PullRequestCard
+                  key={pullRequest["id"]}
+                  pullRequest={pullRequest}
+                  theme={theme}
+                />
+              );
+            })}
+          </div>
         </div>
-        <div className="pull-request-body-div">
-          {pullRequestsData["data"].map((pullRequest) => {
-            return <PullRequestCard pullRequest={pullRequest} />;
-          })}
-        </div>
-      </div>
+      </section>
     );
   }
 }

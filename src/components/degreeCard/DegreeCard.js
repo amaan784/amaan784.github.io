@@ -1,92 +1,73 @@
 import React, { Component } from "react";
 import "./DegreeCard.css";
-import { Fade, Flip } from "react-reveal";
+import { Fade } from "react-reveal";
 
 class DegreeCard extends Component {
   render() {
     const degree = this.props.degree;
     const theme = this.props.theme;
     return (
-      <div className="degree-card">
-        {degree.logo_path && (
-          <Flip left duration={2000}>
-            <div className="card-img">
-              <img
-                style={{
-                  maxWidth: "100%",
-                  maxHeight: "100%",
-                  transform: "scale(0.9)",
-                }}
-                src={require(`../../assets/images/${degree.logo_path}`)}
-                alt={degree.alt_name}
-              />
-            </div>
-          </Flip>
-        )}
-        <Fade right duration={2000} distance="40px">
-          <div
-            className="card-body"
-            style={{ width: degree.logo_path ? "90%" : "100%" }}
-          >
-            <div
-              className="body-header"
-              style={{ backgroundColor: theme.headerColor }}
-            >
-              <div className="body-header-title">
-                <h2 className="card-title" style={{ color: theme.text }}>
-                  {degree.title}
-                </h2>
-                <h3 className="card-subtitle" style={{ color: theme.text }}>
-                  {degree.subtitle}
-                </h3>
+      <Fade bottom duration={900} distance="24px">
+        <article className="degree-card card">
+          <div className="degree-card-head">
+            {degree.logo_path && (
+              <div className="degree-logo-tile">
+                <img
+                  src={require(`../../assets/images/${degree.logo_path}`)}
+                  alt={degree.alt_name}
+                />
               </div>
-              <div className="body-header-duration">
-                <h3 className="duration" style={{ color: theme.text }}>
-                  {degree.duration}
-                </h3>
-              </div>
-            </div>
-            <div className="body-content">
-              {degree.descriptions.map((sentence) => {
-                return (
-                  <p className="content-list" style={{ color: theme.text }}>
-                    {sentence}
-                  </p>
-                );
-              })}
-              {degree.coursework && degree.coursework.length > 0 && (
-                <div className="coursework-section">
-                  <p className="coursework-label" style={{ color: theme.text }}>
-                    Relevant Coursework:
-                  </p>
-                  <p
-                    className="coursework-list"
-                    style={{ color: theme.secondaryText }}
-                  >
-                    {degree.coursework.join(" | ")}
-                  </p>
-                </div>
-              )}
-              {degree.website_link && (
-                <a
-                  href={degree.website_link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div
-                    className="visit-btn"
-                    style={{ backgroundColor: theme.headerColor }}
-                  >
-                    <p className="btn" style={{ color: theme.text }}>
-                      Visit Website
-                    </p>
-                  </div>
-                </a>
+            )}
+            <div className="degree-head-text">
+              <h3 className="degree-title" style={{ color: theme.text }}>
+                {degree.title}
+              </h3>
+              <p className="degree-subtitle" style={{ color: theme.secondaryText }}>
+                {degree.subtitle}
+              </p>
+              {degree.duration && (
+                <span className="chip degree-duration">{degree.duration}</span>
               )}
             </div>
           </div>
-        </Fade>
-      </div>
+
+          {degree.descriptions && degree.descriptions.length > 0 && (
+            <ul className="degree-points">
+              {degree.descriptions.map((sentence, j) => (
+                <li key={j} style={{ color: theme.secondaryText }}>
+                  {sentence.replace(/^⚡\s*/, "")}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {degree.coursework && degree.coursework.length > 0 && (
+            <div className="degree-coursework">
+              <p className="degree-coursework-label" style={{ color: theme.text }}>
+                Relevant Coursework
+              </p>
+              <div className="degree-coursework-tags">
+                {degree.coursework.map((course, k) => (
+                  <span key={k} className="chip">
+                    {course}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {degree.website_link && (
+            <a
+              className="btn btn-ghost degree-link"
+              href={degree.website_link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit website
+            </a>
+          )}
+        </article>
+      </Fade>
     );
   }
 }

@@ -5,7 +5,6 @@ import TopButton from "../../components/topButton/TopButton";
 import Educations from "../../containers/education/Educations";
 import Certifications from "../../containers/certifications/Certifications";
 import CompetitiveSites from "../../components/competitiveSites/CompetitiveSites";
-import EducationImg from "./EducationImg";
 import { competitiveSites } from "../../portfolio";
 import { certifications } from "../../portfolio";
 import "./EducationComponent.css";
@@ -16,33 +15,41 @@ class Education extends Component {
     const theme = this.props.theme;
     return (
       <div className="education-main">
-        <Header theme={this.props.theme} />
-        <div className="basic-education">
-          <Fade bottom duration={2000} distance="40px">
-            <div className="heading-div">
-              <div className="heading-img-div">
-                {/* <img
-									src={require("../../assets/images/education.svg")}
-									alt=""
-								/> */}
-                <EducationImg theme={theme} />
-              </div>
-              <div className="heading-text-div">
-                <h1 className="heading-text" style={{ color: theme.text }}>
-                  Education
+        <Header
+          theme={this.props.theme}
+          isDark={this.props.isDark}
+          toggleTheme={this.props.toggleTheme}
+        />
+        <section className="section education-section">
+          <div className="container">
+            <Fade bottom duration={1000} distance="20px">
+              <div className="education-header">
+                <span className="eyebrow">Education</span>
+                <h1 className="section-title" style={{ color: theme.text }}>
+                  Education &amp; <span className="grad-text">credentials</span>
                 </h1>
-                <h3 className="heading-sub-text" style={{ color: theme.text }}>
-                  Basic Qualification and Certifcations
-                </h3>
+                <p className="section-lead">
+                  My academic background and the profiles where I practice.
+                </p>
+              </div>
+            </Fade>
+
+            <Fade bottom duration={1000} distance="20px" delay={120}>
+              <div className="competitive-block">
+                <h2 className="competitive-title" style={{ color: theme.text }}>
+                  Competitive profiles
+                </h2>
                 <CompetitiveSites logos={competitiveSites.competitiveSites} />
               </div>
-            </div>
-          </Fade>
-          <Educations theme={this.props.theme} />
-          {certifications.certifications.length > 0 ? (
-            <Certifications theme={this.props.theme} />
-          ) : null}
-        </div>
+            </Fade>
+
+            <Educations theme={this.props.theme} />
+
+            {certifications.certifications.length > 0 ? (
+              <Certifications theme={this.props.theme} />
+            ) : null}
+          </div>
+        </section>
         <Footer theme={this.props.theme} />
         <TopButton theme={this.props.theme} />
       </div>

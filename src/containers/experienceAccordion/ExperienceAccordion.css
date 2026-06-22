@@ -1,13 +1,40 @@
+/* ============================ Experience accordion ============================
+   Grouped timeline. Group titles are serif (var(--font-display)) with a thin
+   1px accent marker instead of a filled tile. Whitespace-forward.
+   ============================================================================ */
 .experience-accord {
-  margin: 50px;
+  position: relative;
 }
 
-.accord-panel {
-  font-family: "Google Sans Regular";
+.experience-group {
+  margin-top: clamp(44px, 6vw, 68px);
 }
 
-@media (max-width: 768px) {
-  .experience-accord {
-    margin: 20px;
-  }
+.experience-group:first-child {
+  margin-top: 0;
+}
+
+/* Serif group heading with a small 1px accent dash, not a filled block. */
+.experience-group-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 28px;
+}
+
+.experience-group-title::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  flex: none;
+  background: var(--accent);
+}
+
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
 }

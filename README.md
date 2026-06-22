@@ -1,229 +1,225 @@
-<p align="center"> 
-    <img src="images/masterportfolio-banner-light.png" align="center" height="150"></img>
+# Amaan Sheikh — Personal Portfolio
+
+My personal portfolio, live at **[amaan784.github.io](https://amaan784.github.io)**.
+
+A minimal, typographic, recruiter-focused single-application site built with React.
+It has a light/dark toggle, a multi-page layout, a filterable projects section, and
+an (optional) Open Source page driven by GitHub data.
+
+<p align="left">
+  <a href="https://amaan784.github.io"><img alt="Live" src="https://img.shields.io/badge/live-amaan784.github.io-2747a8?style=flat-square" /></a>
+  <a href="https://reactjs.org/"><img alt="React" src="https://img.shields.io/badge/built%20with-React-61DAFB?style=flat-square" /></a>
+  <a href="./LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" /></a>
 </p>
 
-<h1 align="center"> Software Developer Master Portfolio 🔥 </h1> 
-<h3 align="center"> A clean, beautiful, responsive, and 100% customizable portfolio <br /> template for Software Developers! </h3>
+---
 
-<p align="center">
-  <a href="http://hits.dwyl.com/ashutosh1919/masterPortfolio"><img alt="HitCounts" src="http://hits.dwyl.com/ashutosh1919/masterPortfolio.svg" /></a>
-  <a href="https://nodejs.org/en/blog/release/v20.11.1"><img alt="NodeJS" src="https://img.shields.io/badge/node-20.11.1-important?style=flat-square" /></a>
-  <a href="https://www.npmjs.com/package/npm/v/10.2.4"><img alt="NPM" src="https://img.shields.io/badge/npm-10.2.4-blueviolet?style=flat-square" /></a>
-  <a href="https://reactjs.org/"><img alt="Made With React" src="https://img.shields.io/badge/made%20with-react-61DAFB?style=flat-square" /></a>
-  <a href="https://join.slack.com/t/masterportfolio/shared_invite/zt-g772n1fo-Ns4usanURF8jVb8wk2lRAA"><img alt="Join Slack Channel For Support" src="https://img.shields.io/badge/slack-masterPortfolio-yellow.svg?logo=slack?style=flat-square" /></a>
-  <a href="https://github.com/prettier/prettier"><img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square?style=flat-square" /></a>
-  <br/>
-  <a href="https://app.netlify.com/sites/ashutosh1919portfolio/deploys"><img alt="Netlify Status" src="https://api.netlify.com/api/v1/badges/abf59f82-3251-4040-b24c-949b86691642/deploy-status?style=flat-square" /></a>
-  <a href="https://travis-ci.org/badges/badgerbadgerbadger"><img alt="Build Status" src="http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square?style=flat-square" /></a>
-  <a href="http://badges.mit-license.org/"><img alt="License" src="http://img.shields.io/:license-mit-blue.svg?style=flat-square?style=flat-square" /></a>
-  <a href="https://github.com/ashutosh1919/masterPortfolio/commits/master"><img alt="Maintenance" src="https://img.shields.io/badge/maintained-yes-green.svg?style=flat-square" /></a>
-  <a href="http://badges.mit-license.org/"><img alt="Website" src="https://img.shields.io/badge/website-up-yellow?style=flat-square" /></a>
-  <a href="https://ashutoshhathidara.com/"><img alt="License" src="http://img.shields.io/:license-mit-blue.svg?style=flat-square?style=flat-square" /></a>
-  <a href="https://img.shields.io/badge/price-free-ff69b4"><img alt="Price" src="https://img.shields.io/badge/price-free-ff69b4?style=flat-square" /></a>
-</p>
-<p align="center">If you want to discuss about something, you can ask on my <a href="https://discord.com/invite/GkcbM5bwZr">Discord Server</a>.</p>
+## Contents
 
-<p align="center"> 
-    <a href="https://ashutosh1919.github.io" target="_blank">
-    <img src="images/masterPortfolioThemes.png"></img>
-  </a>
-</p>
+- [Pages & features](#pages--features)
+- [Tech stack](#tech-stack)
+- [Getting started](#getting-started)
+- [Project structure](#project-structure)
+- [Editing the content](#editing-the-content)
+- [Refreshing GitHub data](#refreshing-github-data)
+- [Run with Docker](#run-with-docker)
+- [Deployment](#deployment)
+- [License & credits](#license--credits)
 
-:star: Star us on GitHub — it helps!
+---
 
-# Sections 📚
+## Pages & features
 
-✔️ Summary and About me\
-✔️ Skills \
-✔️ Open Source Projects Connected with Github\
-✔️ Experience\
-✔️ Certifications 🏆\
-✔️ Blogs\
-✔️ Education\
-✔️ Contact me
+- **Home** — hero (name, role, summary, profile photo), a highlights strip, featured experience (3 most recent roles), featured projects (top 3), skills, and a contact call to action.
+- **Education** — degrees with coursework, plus competitive-coding profiles.
+- **Experience** — a timeline grouped into Full-time, Part-time, Internships, and Freelance & Volunteering.
+- **Projects** — a card grid with a category filter (GenAI, Agentic, NLP, CV, ML, DL, Full-Stack, Data).
+- **Publications** — research, writing, and articles, on its own page.
+- **Open Source** — organizations, pull requests, issues, and charts from GitHub data. Optional (see `settings.showOpenSource`).
+- **Contact** — social links, résumé, and email.
+- **Light / dark mode** — toggle in the header; the choice is saved to `localStorage` and defaults to light.
 
-To view a live example, **[click here](https://ashutosh1919.github.io/)**
+---
 
-# Clone and Use 📋
+## Tech stack
 
-- The website is completely built on `react-js` library of `javascript` and that's why we need `nodejs` and `npm` installed
-- While installing `nodejs` and `npm`, try to install versions which are equal or greater than the versions mentioned in badges above
-- In case you want to help developing it or simply saving it, you can fork the repository just by clicking the button on the top-right corner of this page
-- After the successful installation of `nodejs` and `npm`, clone the repository into your local system using below command:
-  ```bash
-   git clone https://github.com/ashutosh1919/masterPortfolio.git
-  ```
-  This will clone the whole repository in your system.
-- To download required dependencies to your system, navigate to the directory where the cloned repository resides and execute following command:
-  ```node
-  npm install
-  ```
-- Now the project is ready to use
-- You can check it using `npm start`, it will open the website locally on your browser.
+- [React](https://reactjs.org/) (Create React App / `react-scripts`)
+- [React Router](https://reactrouter.com/) for the multi-page routing
+- [styled-components](https://styled-components.com/) + CSS variables for theming
+- [react-reveal](https://www.react-reveal.com/) for scroll animations
+- [chart.js](https://www.chartjs.org/) / [react-chartjs-2](https://github.com/reactchartjs/react-chartjs-2) for the Open Source charts
+- [baseui](https://baseweb.design/) (a few UI primitives)
+- [Iconify](https://iconify.design/) + [Font Awesome](https://fontawesome.com/) for icons
+- Google Fonts: Newsreader (display), Inter (body), JetBrains Mono (labels)
 
-# Customize it to make your own portfolio ✏️
+---
 
-In this project, there are basically 4 things that you need to change to customize this to anyone else's portfolio: **package.json**, **Personal Information**, **Github Information** and **Splash Logo**.
+## Getting started
 
-### package.json
+You need [Node.js](https://nodejs.org/) (18+ recommended; CI builds on 22) and npm.
 
-Open this file, which is in the main cloned directory, choose any "name" and change "homepage " to `https://<your-github-username>.github.io`. Do not forget the `https://`, otherwise fonts will not load.
+```bash
+# 1. Clone
+git clone https://github.com/amaan784/amaan784.github.io.git
+cd amaan784.github.io
 
-### Personal Information
+# 2. Install dependencies
+npm install
 
-You will find `src/portfolio.js` file which contains the complete information about the user. The file looks something like below:
+# 3. Run the dev server (http://localhost:3000)
+npm start
 
-```javascript
-// Home Page
-const greeting = {
-    ...
+# 4. Create a production build (outputs to ./build)
+npm run build
+```
+
+> The `start` and `build` scripts include `--openssl-legacy-provider` so they work
+> with modern Node versions.
+
+---
+
+## Project structure
+
+```
+public/
+  index.html              # <head>, fonts, meta, favicon, theme bootstrap
+  profile.jpg             # (optional) your hero photo — see "Editing the content"
+  icons/                  # favicons / PWA icons
+src/
+  portfolio.js            # ALL editable content (the file you'll touch most)
+  theme.js                # light + dark color palettes
+  index.css               # design system: tokens, typography, components
+  App.js                  # theme state + light/dark toggle
+  containers/Main.js      # routes
+  components/             # header, footer, cards, etc.
+  containers/ , pages/    # the page sections and routes
+  shared/opensource/      # JSON data for Projects + Open Source page
+  assets/images/          # logos and images used by the cards
+git_data_fetcher.mjs      # pulls GitHub data into src/shared/opensource/
+.github/workflows/deploy.yml   # auto-deploy on push to main
+```
+
+---
+
+## Editing the content
+
+Almost everything is in **`src/portfolio.js`**:
+
+| What | Where in `portfolio.js` |
+| --- | --- |
+| Name, role, summary, résumé link, profile photo | `greeting` |
+| Highlights strip on Home | `highlights` |
+| Social links (GitHub, LinkedIn, Scholar, Hugging Face, email) | `socialMediaLinks` |
+| Skills and tools | `skills` |
+| Degrees + competitive profiles | `degrees`, `competitiveSites` |
+| Work history (sections + entries) | `experience` |
+| Publications | `publications` |
+| Contact copy | `contactPageData` |
+| Splash screen + Open Source toggle | `settings` |
+
+A few specifics:
+
+- **Profile photo** — drop an image at `public/profile.jpg`. If it's missing, the hero shows an "AS" monogram. To use a different filename, change `greeting.profileImage`.
+- **Show / hide the Open Source page** — set `settings.showOpenSource` to `true` or `false`. This controls the nav link, the route, and the footer link in one place.
+- **Theme** — colors live in `theme.js` (`lightTheme` / `darkTheme`) and `index.css` (CSS variables keyed on `html[data-theme]`). The default mode is light.
+- **Company / institution logos** — add the image to `src/assets/images/` and set the entry's `logo_path` (experience cards fall back to an initials monogram if the file is missing).
+
+### Projects
+
+Projects are read from **`src/shared/opensource/projects.json`**. The list is hand-curated and ordered by priority (best first); the Home page features the first three. Each entry has a `tags` array that powers the category filter on the Projects page:
+
+```json
+{
+  "name": "my-project",
+  "url": "https://github.com/...",
+  "createdAt": "2026-01-01T00:00:00Z",
+  "description": "What it does.",
+  "languages": [{ "name": "Python", "iconifyClass": "logos-python" }],
+  "tags": ["GenAI", "NLP"]
 }
-
-// Social Media
-const socialMediaLinks = {
-    ...
-}
-
-...
 ```
 
-You can change the personal information, experience, education, social media, certifications, blog information, contact information etc. in `src/portfolio.js` to directly reflect them in portfolio website.
+The filter categories and their order are defined by `CATEGORY_ORDER` in `src/pages/projects/Projects.js`.
 
-### How to change the icons on homepage under what i do section?
+### Skill icons
 
-1. This section pulls data from `skills` in portfolio.js file.
-2. Visit this website: https://icon-sets.iconify.design/
-3. Search for the skill you are looking to add.
-4. Select the icon of your choice.
-5. Copy the text beside **Selected Icon** and replace it with `fontAwesomeClassName` of that particular softwareSkill.
+The "Skills" section uses Iconify. To change an icon, find it on
+[icon-sets.iconify.design](https://icon-sets.iconify.design/) and put its name in the
+skill's `fontAwesomeClassname`. For a custom image instead, drop a file in
+`public/skills/` and use the `imageSrc` field.
 
-#### How to use custom images instead of Iconify Icons?
+---
 
-1. Add a valid image file into the `public/skills` folder
-2. Insert the image name into the `imageSrc` attribute of the particular softwareSkill
-3. Remove the `fontAwesomeClassName` property or leave it empty because it takes precedence over `imageSrc`
-4. Add custom styling to the `img` using the `style` Property
+## Refreshing GitHub data
 
-### Github Information
+`git_data_fetcher.mjs` pulls **organizations, pull requests, and issues** into
+`src/shared/opensource/` for the Open Source page.
 
-You will find `git_data_fetcher.mjs` file in the main directory of the repository. This file is used to fetch the data (Pull requests, Issues, Organizations, Pinned projects etc.) from your github.
+1. Copy `env.example` to `.env` and fill in:
+   ```bash
+   GITHUB_TOKEN=your_token       # a GitHub personal access token
+   GITHUB_USERNAME=your_username
+   ```
+   ([How to create a token.](https://docs.github.com/en/authentication/keeping-your-account-secure/managing-your-personal-access-tokens)) Keep the token secret — never commit `.env`.
+2. Run it:
+   ```bash
+   node git_data_fetcher.mjs
+   ```
 
-In the project you will see a `env.example` file, create a new file named `.env` and copy contents of `env.example` into it. In that file, you will see the following environment variables
+> **Note:** `projects.json` is now hand-curated (custom descriptions, tags, and
+> ordering). The fetcher would overwrite it with your GitHub pinned repos, so if you
+> re-run it, re-apply your project edits afterward.
 
-```javascript
-GITHUB_TOKEN = your_token;
-GITHUB_USERNAME = your_username;
+---
+
+## Run with Docker
+
+```bash
+docker compose up
 ```
 
-You can get a github token as described [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token). Give all permissions while generating token. Add your github username and the token generated in `GITHUB_USERNAME` and `GITHUB_TOKEN` variables in the .env file.
+This builds the image and serves the dev server at **http://localhost:3001**.
 
-Now, you need to run following command. (Make sure you executed `npm install` before this)
+---
 
-**Warning:** Treat your tokens like passwords and keep them secret. When working with the API, use tokens as environment variables instead of hardcoding them into your programs.
+## Deployment
 
-```node
-node git_data_fetcher.mjs
-```
+The site is a [GitHub Pages **user site**](https://docs.github.com/en/pages) served at
+`https://amaan784.github.io` (the repo is named `amaan784.github.io`, and `CNAME`
+pins the domain).
 
-This will fetch all the data from your github and it will automatically replace my data with yours.
-Whenever you want to update the github related information on the website you need to run this command.
+### Automatic (primary)
 
-### Splash Logo
+Every push to **`main`** triggers `.github/workflows/deploy.yml`, which:
 
-Note here that if you click [my portfolio](https://ashutosh1919.github.io), you can see animating the logo at the beginning. I have designed that logo in [`Figma`](https://www.figma.com/) and then animated it using css.
-Therefore, this part of portfolio is not customizable. But don't worry we have a solution to this problem. You have below two alternatives:
+1. checks out the repo and sets up Node,
+2. runs `npm install` and `npm run build`,
+3. publishes the `./build` folder to the **`gh-pages`** branch via
+   [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages).
 
-- If you want to design your own logo, then you can design it using `Figma` or `Adobe XD` or `Adobe Illustrator` or `Inkscape`. If you want to animate it, you can refer to `./src/components/Loader` directory which contains `js` and `css` files which animates the logo
-- If you don't want Splash screen or you don't know how to design logo, then this option is for you
+GitHub Pages is configured to serve from **`gh-pages` branch → root**, so a push to
+`main` is all that's needed.
 
-  - You can open `src/portfolio.js` file and at the top of this file you will see `settings` component as below:
-    ```javascript
-    // Website related settings
-    const settings = {
-      isSplash: true,
-    };
-    ```
-  - Change `isSplash` from `true` to `false`
-  - Now, if you see your website using `npm start`, it will directly open `home` rather than animating logo `splash` screen
-  - If you design your logo in future, then edit the files in `./src/components/Loader` and then revert `isSplash` to `true` in `src/portfolio.js`.
+### Manual (fallbacks)
 
-## Other
+If you ever need to deploy by hand, helper scripts are included:
 
-- You need to change the website title and other descriptions in `public/index.html`
-- You can define your own favicon in `public/icons` directory. If you don't have a favicon, you can generate favicons from [Favicon Generator](https://www.favicon-generator.org/) and [Favicon IO](https://favicon.io/)
-- You can also edit your website preview (known as description image). Run your site locally, take a screenshot and replace with `public/icons/desc.png`. Note that your screenshot should be 1280x640 for better preview.
+- **`./deploy_gh_pages.sh`** — runs `npm run build` then `npm run deploy` (the
+  [`gh-pages`](https://www.npmjs.com/package/gh-pages) package pushes `./build` to the
+  `gh-pages` branch). Equivalent to just running `npm run deploy`.
+- **`./deploy_master.sh`** — builds, then force-pushes the `./build` folder to the
+  `master` branch (only useful if Pages is set to serve from `master → root`).
 
-# Choose Theme 🌈
+After a manual deploy, make sure the GitHub Pages source branch in repo settings
+matches the branch you pushed to.
 
-- You can take a look at `src/theme.js` file where all available themes are mentioned with their respective color codes
-- At the bottom of this file you will see the below code:
-  - `export const chosenTheme = blueTheme;`
-  - You need to change the name from `blueTheme` to whatever theme you want to set your website to
-  - You can define new theme similarly as other themes and you can assign name of that new defined theme to `chosenTheme`
-- That's it. You just need to change the theme name and the code will take care of everything else
-- Run `npm start` to check if everything is ok.
+---
 
-# Deployment 📦
+## License & credits
 
-- Once you are done with your setup and have successfully completed all steps above, you need to put your website online!
-- I highly recommend using [Github Pages](https://create-react-app.dev/docs/deployment/#github-pages) to achieve this the EASIEST WAY.
-- To deploy your website, you have two options. First you need to create a github repository with the name `<your-github-username>.github.io`. Please don't give it any other name.
-- Now, you need to generate a production build and deploy the website.
+Licensed under the [MIT License](./LICENSE).
 
-**Option 1:**
-
-- Run `npm run build` to generate the production build folder.
-- Enter the build folder, `git init` and push the generated code to the `master` branch of your new repository on github. That's it. It's Done.
-- You may need to `git init` and force push at every new build.
-
-**Option 2 (will not work with [user pages](https://docs.github.com/en/github/working-with-github-pages/about-github-pages)):**
-
-- Run `npm run deploy` to build and create a branch called `gh-pages`. It will push the `build` files to that branch.
-- The last step in deploying is to enable `Github Pages` in settings of the repository and select `gh-pages` branch.
-
-Now, your website is successfully deployed and you can visit it at `<your-github-username>.github.io`.  
-If you are stuck somewhere and want to observe the deployment process in depth, then please watch below video.
-
-<p align="center"> 
-    <a href="http://www.youtube.com/watch?v=IwBS39TOmpA" target="_blank">
-    <img src="http://img.youtube.com/vi/IwBS39TOmpA/0.jpg"></img>
-  </a>
-</p>
-
-# Technologies used 🛠️
-
-- [React](https://reactjs.org/)
-- [graphql](https://graphql.org/)
-- [apollo-boost](https://www.apollographql.com/docs/react/get-started/)
-- [baseui](https://github.com/uber/baseweb)
-- [react-reveal](https://www.react-reveal.com/)
-- [styled-components](https://styled-components.com/)
-
-
-# illustrations 🍥
-
-- [UnDraw](https://undraw.co/illustrations)
-
-# License 📄
-
-This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
-
-# References 👏🏻
-
-- This repo is a modified clone of https://github.com/ashutosh1919/masterPortfolio
-- Some Design and Implementation Ideas are taken from [Saad Pasta's Portfolio Project](https://github.com/saadpasta/developerFolio).
-- The Logo of MasterPortfolio is inspired from [prettier-logo](https://github.com/prettier/prettier-logo) for [prettier](https://github.com/prettier/prettier) designed by @ianstormtaylor.
-
-# References for Icons-
-- [Icons Set](https://icon-sets.iconify.design/)
-- [Simple Icons](https://simpleicons.org/)
-
-# References for University Images-
-- [UCSC Logo Website](https://communications.ucsc.edu/visual-design/logos-imagery/)
-- [Baskin Engineering Logo Website](https://toolkit.engineering.ucsc.edu/baskin-engineering-brand/)
-- [Baskin Day Website](https://baskinday.soe.ucsc.edu/)
-
-# References for Company Images-
-- [Brand Fetch (the best one for sure)](https://brandfetch.com/)
-- [Clean PNG](https://www.cleanpng.com/)
-- [Companies Logo](https://companieslogo.com/)
+Built on the open-source [masterPortfolio](https://github.com/ashutosh1919/masterPortfolio)
+by Ashutosh Hathidara, which itself draws on
+[developerFolio](https://github.com/saadpasta/developerFolio) by Saad Pasta. Icons from
+[Iconify](https://icon-sets.iconify.design/) and [Simple Icons](https://simpleicons.org/).

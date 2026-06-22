@@ -1,11 +1,57 @@
+/* =====================================================================
+   Floating scroll-to-top button — minimal flat circle, bottom-right.
+   Solid accent background with an on-accent arrow. No gradient, no glow.
+   Visibility is toggled in JS via #topButton.style.visibility.
+   ===================================================================== */
+
 #topButton {
   visibility: hidden;
   position: fixed;
-  bottom: 1.2rem;
-  right: 1.5rem;
-  cursor: pointer;
-  padding: 15px;
+  bottom: 1.6rem;
+  right: 1.6rem;
+  z-index: 200;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  border: 1px solid var(--accent);
   outline: none;
-  border-radius: 2rem;
-  font-size: 1.5rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+
+  background: var(--accent);
+  color: var(--on-accent);
+
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+#topButton:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+#topButton:active {
+  transform: translateY(0);
+}
+
+#arrow {
+  color: var(--on-accent);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  #topButton {
+    bottom: 1.2rem;
+    right: 1.2rem;
+    width: 44px;
+    height: 44px;
+  }
+  #arrow {
+    font-size: 1.05rem;
+  }
 }

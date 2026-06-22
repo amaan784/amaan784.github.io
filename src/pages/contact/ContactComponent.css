@@ -1,194 +1,63 @@
+/* ============================ Contact ============================
+   Minimal & typographic: a centered serif title, a calm sans/mono lead,
+   and a single flat hairline card holding the social icons + two buttons.
+   No gradients, shadows or orbs — whitespace and a hairline do the work.
+   ================================================================ */
 .contact-main {
   width: 100%;
 }
 
-.basic-contact {
-  margin-left: 5%;
-  margin-right: 5%;
+.contact-section {
+  position: relative;
 }
 
-.contact-heading-div {
+/* ---- Centered header ---- */
+.contact-header {
+  text-align: center;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-header .eyebrow {
+  justify-content: center;
+}
+.contact-header .section-lead {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.blog-heading-div {
+/* ---- Centered flat card ---- */
+.contact-card {
+  width: min(100%, 560px);
+  margin: clamp(36px, 5vw, 56px) auto 0;
+  padding: clamp(32px, 5vw, 48px);
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(26px, 4vw, 36px);
+  text-align: center;
 }
 
-.address-heading-div {
+.contact-card .social-media-div {
+  justify-content: center;
+}
+
+/* ---- Call to action ---- */
+.contact-cta {
   display: flex;
-  margin-top: 80px;
-}
-
-.blog-heading-div > * {
-  flex: 1;
-}
-
-.contact-heading-div > * {
-  flex: 1;
-}
-
-.address-heading-div > * {
-  flex: 1;
-}
-
-.contact-heading-img-div {
-  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-
-.blog-heading-img-div {
-  align-items: center;
-  justify-content: center;
-}
-
-.contact-heading-text-div {
-  text-align: center;
-}
-
-.blog-heading-text-div {
-  text-align: center;
-}
-
-.address-heading-text-div {
-  text-align: center;
-}
-
-.contact-heading-img-div > * {
-  max-width: 100%;
-  height: auto;
-}
-
-.blog-heading-img-div > * {
-  max-width: 100%;
-  height: auto;
-}
-
-.contact-heading-text {
-  font-size: 56px;
-  font-weight: 400;
-  font-family: "Google Sans Medium";
-  line-height: 1.1;
-  text-align: center;
-  margin-top: 60px;
-}
-
-.blog-heading-text {
-  font-size: 56px;
-  font-weight: 400;
-  font-family: "Google Sans Medium";
-  line-height: 1.1;
-  text-align: center;
-  margin-top: 40px;
-}
-
-.address-heading-text {
-  font-size: 30px;
-  font-family: "Google Sans Regular";
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.contact-header-detail-text {
-  font-size: 20px;
-  line-height: 30px;
-  margin-top: 0px;
-  margin-left: 20px;
-  margin-right: 20px;
-  font-family: "Google Sans Medium";
-}
-
-.blog-header-detail-text {
-  font-size: 20px;
-  line-height: 30px;
-  margin-top: 0px;
-  margin-left: 20px;
-  margin-right: 20px;
-  font-family: "Google Sans Medium";
-}
-
-.resume-btn-div {
+  gap: 14px;
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
-.blogsite-btn-div {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.address-btn-div {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 0;
-}
-
-@media (max-width: 1380px) {
-  .contact-heading-text {
-    font-size: 50px;
-    margin-top: 60px;
-  }
-
-  .blog-heading-text {
-    font-size: 50px;
-    margin-top: 40px;
-  }
-}
-
+/* ============================ Responsive ============================ */
 @media (max-width: 768px) {
-  .contact-heading-text {
-    font-size: 30px;
-    margin-top: 0px;
-  }
-
-  .blog-heading-text {
-    font-size: 30px;
-    margin-top: 0px;
-  }
-
-  .address-heading-text {
-    font-size: 20px;
-  }
-
-  .blog-heading-div {
-    flex-direction: column-reverse;
-    margin-top: 60px;
-  }
-
-  .address-heading-div {
-    flex-direction: column;
-    margin-top: 60px;
-  }
-
-  .blog-heading-text-div {
-    margin-top: 40px;
-  }
-
-  .address-heading-text-div {
-    margin-top: 40px;
-  }
-
-  .contact-heading-div {
+  .contact-cta {
     flex-direction: column;
   }
-
-  .contact-header-detail-text {
-    font-size: 16px;
-    margin-left: 0px;
-    margin-right: 0px;
-    line-height: normal;
-    text-align: center;
-  }
-
-  .blog-header-detail-text {
-    font-size: 16px;
-    margin-left: 0px;
-    margin-right: 0px;
-    line-height: normal;
-    text-align: center;
+  .contact-cta .btn {
+    width: 100%;
   }
 }

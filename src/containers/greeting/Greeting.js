@@ -1,58 +1,79 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Greeting.css";
+import { Link } from "react-router-dom";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
-import Button from "../../components/button/Button";
-import { greeting } from "../../portfolio";
+import { greeting, highlights } from "../../portfolio";
 import { Fade } from "react-reveal";
-import FeelingProud from "./FeelingProud";
 
-export default function Greeting(props) {
-  const theme = props.theme;
+export default function Greeting() {
+  const [imgOk, setImgOk] = useState(true);
+  const photo = `${process.env.PUBLIC_URL}${greeting.profileImage}`;
+
   return (
-    <Fade bottom duration={2000} distance="40px">
-      <div className="greet-main" id="greeting">
-        <div className="greeting-main">
-          <div className="greeting-text-div">
-            <div>
-              <h1 className="greeting-text" style={{ color: theme.text }}>
-                {greeting.title}
+    <>
+      <section className="hero" id="greeting">
+        <div className="container hero-grid">
+          <Fade bottom duration={800} distance="20px">
+            <div className="hero-text">
+              <span className="eyebrow">Hello, I'm</span>
+              <h1 className="hero-name">
+                Amaan <span className="grad-text">Sheikh</span>
               </h1>
-              {greeting.nickname && (
-                <h2 className="greeting-nickname" style={{ color: theme.text }}>
-                  ( {greeting.nickname} )
-                </h2>
-              )}
-              <p
-                className="greeting-text-p subTitle"
-                style={{ color: theme.secondaryText }}
-              >
-                {greeting.subTitle}
-              </p>
-              <SocialMedia theme={theme} />
-              <div className="portfolio-repo-btn-div">
-                <Button
-                  text="⭐ Star Me On Github"
-                  newTab={true}
-                  href={greeting.portfolio_repository}
-                  theme={theme}
-                  className="portfolio-repo-btn"
-                />
+              <p className="hero-role">{greeting.role}</p>
+              <p className="hero-summary">{greeting.summary}</p>
+
+              <div className="hero-cta">
+                <a
+                  className="btn btn-primary"
+                  href={greeting.resumeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Résumé
+                </a>
+                <Link className="btn btn-ghost" to="/contact">
+                  Get in touch
+                </Link>
               </div>
-              {/* <div className="button-greeting-div">
-              <Button text="Contact me" href="#contact" />
-              <Button text="See my resume" newTab={true} href={greeting.resumeLink} />
-            </div> */}
+
+              <SocialMedia />
+            </div>
+          </Fade>
+
+          <Fade bottom duration={800} delay={120} distance="20px">
+            <div className="hero-photo-wrap">
+              <div className="hero-photo">
+                {imgOk ? (
+                  <img
+                    src={photo}
+                    alt="Amaan Sheikh"
+                    onError={() => setImgOk(false)}
+                  />
+                ) : (
+                  <span className="hero-monogram" aria-label="Amaan Sheikh">
+                    AS
+                  </span>
+                )}
+              </div>
+            </div>
+          </Fade>
+        </div>
+      </section>
+
+      {highlights && highlights.length > 0 && (
+        <section className="highlights" id="highlights">
+          <div className="container">
+            <div className="highlights-row">
+              {highlights.map((h, i) => (
+                <div className="highlight-item" key={i}>
+                  <p className="highlight-label">{h.label}</p>
+                  <p className="highlight-value">{h.value}</p>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="greeting-image-div">
-            {/* <img
-							alt="saad sitting on table"
-							src={require("../../assets/images/feelingProud.svg")}
-						></img> */}
-            <FeelingProud theme={theme} />
-          </div>
-        </div>
-      </div>
-    </Fade>
+        </section>
+      )}
+    </>
   );
 }

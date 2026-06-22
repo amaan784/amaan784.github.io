@@ -1,3 +1,20 @@
 .opensource-main {
   width: 100%;
 }
+
+/* ---- Subpage header ---- */
+.opensource-hero {
+  position: relative;
+  padding-bottom: clamp(28px, 4vw, 44px);
+  border-bottom: 1px solid var(--border);
+}
+
+.opensource-hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.opensource-hero .section-lead {
+  margin-top: 14px;
+}
