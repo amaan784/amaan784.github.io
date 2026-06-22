@@ -48,8 +48,8 @@
 }
 .hero-photo {
   position: relative;
-  width: clamp(200px, 28vw, 300px);
-  height: clamp(200px, 28vw, 300px);
+  width: clamp(240px, 32vw, 360px);
+  height: clamp(240px, 32vw, 360px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   display: grid;
