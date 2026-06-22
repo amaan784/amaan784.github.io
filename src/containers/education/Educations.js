@@ -12,7 +12,7 @@ class Educations extends Component {
         <Fade bottom duration={1000} distance="20px">
           <span className="eyebrow">Degrees</span>
           <h2 className="section-title" style={{ color: theme.text }}>
-            Degrees <span className="grad-text">received</span>
+            Degrees &amp; <span className="grad-text">coursework</span>
           </h2>
         </Fade>
         <div className="educations-grid">
