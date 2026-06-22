@@ -90,9 +90,10 @@ const skills = {
       title: "Data Science & AI",
       fileName: "DataScienceImg",
       skills: [
-        "⚡ Developing highly scalable production ready models for various deeplearning and statistical use cases",
-        "⚡ Experience of working with Computer Vision and NLP projects",
-        "⚡ Experience with building frameworks for forecasting and time series analysis",
+        "Building and fine-tuning large language models and agentic AI systems",
+        "Computer vision and NLP, from object detection and scene graphs to sentiment and summarization",
+        "Retrieval-augmented generation, model evaluation, and inference optimization with quantization",
+        "Forecasting and time-series analysis",
       ],
       softwareSkills: [
         {
@@ -150,15 +151,40 @@ const skills = {
           skillName: "Deeplearning",
           imageSrc: "deeplearning_ai_logo.png",
         },
+        {
+          skillName: "PyTorch",
+          fontAwesomeClassname: "simple-icons:pytorch",
+          style: { color: "#EE4C2C" },
+        },
+        {
+          skillName: "OpenCV",
+          fontAwesomeClassname: "logos-opencv",
+          style: { backgroundColor: "transparent" },
+        },
+        {
+          skillName: "NumPy",
+          fontAwesomeClassname: "logos-numpy",
+          style: { backgroundColor: "transparent" },
+        },
+        {
+          skillName: "Jupyter",
+          fontAwesomeClassname: "logos-jupyter",
+          style: { backgroundColor: "transparent" },
+        },
+        {
+          skillName: "Mistral AI",
+          fontAwesomeClassname: "simple-icons:mistralai",
+          style: { color: "#FA520F" },
+        },
       ],
     },
     {
       title: "Full Stack Development",
       fileName: "FullStackImg",
       skills: [
-        "⚡ Building responsive website front end using React-Redux",
-        "⚡ Developing cross platform applications using React Native",
-        "⚡ Creating application backend in Node, Express & Fastapi",
+        "Backends and APIs with FastAPI, Node and Express",
+        "Shipping interactive data and ML apps with Streamlit",
+        "Responsive front ends with React",
       ],
       softwareSkills: [
         {
@@ -232,18 +258,35 @@ const skills = {
             color: "#2C8EBB",
           },
         },
+        {
+          skillName: "TypeScript",
+          fontAwesomeClassname: "simple-icons:typescript",
+          style: { color: "#3178C6" },
+        },
+        {
+          skillName: "Git",
+          fontAwesomeClassname: "simple-icons:git",
+          style: { color: "#F05032" },
+        },
       ],
     },
     {
       title: "Cloud Infra-Architecture",
       fileName: "CloudInfraImg",
       skills: [
-        "⚡ Experience working on multiple cloud platforms",
-        "⚡ Hosting and maintaining websites on virtual machine instances along with integration of databases",
-        "⚡ Deploying deep learning models on cloud",
-        "⚡ Migrating and Engineering big data from EDL to CDL",
+        "Working across Azure, AWS and GCP",
+        "Deploying and serving ML models on cloud GPUs and in Docker containers",
+        "Data engineering and big-data pipelines on Databricks, including EDL to CDL migration",
+        "Databases and vector search with PostgreSQL, Neo4j and Mosaic AI Vector Search",
       ],
       softwareSkills: [
+        {
+          skillName: "Azure",
+          fontAwesomeClassname: "simple-icons:microsoftazure",
+          style: {
+            color: "#0089D6",
+          },
+        },
         {
           skillName: "GCP",
           fontAwesomeClassname: "simple-icons:googlecloud",
@@ -256,13 +299,6 @@ const skills = {
           fontAwesomeClassname: "simple-icons:amazonaws",
           style: {
             color: "#FF9900",
-          },
-        },
-        {
-          skillName: "Azure",
-          fontAwesomeClassname: "simple-icons:microsoftazure",
-          style: {
-            color: "#0089D6",
           },
         },
         {
@@ -292,6 +328,16 @@ const skills = {
           style: {
             color: "#1488C6",
           },
+        },
+        {
+          skillName: "MLflow",
+          fontAwesomeClassname: "simple-icons:mlflow",
+          style: { color: "#0194E2" },
+        },
+        {
+          skillName: "Weights & Biases",
+          fontAwesomeClassname: "simple-icons:weightsandbiases",
+          style: { color: "#FACC15" },
         },
       ],
     },
