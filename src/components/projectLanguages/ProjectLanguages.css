@@ -13,20 +13,9 @@
   cursor: pointer;
 }
 
-/* Monochrome the language glyphs so the cards stay calm and typographic.
-   The `logos-*` Iconify icons bake in their own fills (ignore `color`), so we
-   neutralize them with grayscale; `color` still covers the few simple-icons. */
+/* Full-color language glyphs (the `logos-*` Iconify icons carry their own
+   brand colors). */
 .repo-language-icon {
   font-size: 1.05rem;
   line-height: 1;
-  color: var(--text-faint) !important;
-  filter: grayscale(1);
-  opacity: 0.85;
-  transition: filter 0.2s var(--ease), opacity 0.2s var(--ease),
-    color 0.2s var(--ease);
-}
-.repo-language-chip:hover .repo-language-icon {
-  color: var(--text) !important;
-  filter: grayscale(0);
-  opacity: 1;
 }

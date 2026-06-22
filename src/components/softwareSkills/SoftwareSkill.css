@@ -21,26 +21,16 @@
   line-height: 1;
 }
 
-/* Monochrome the tech glyphs so the section stays calm and typographic.
-   The inline brand colors set in portfolio.js are overridden here. */
+/* Full-color tech glyphs (brand colors come from the inline styles in
+   portfolio.js; multi-color `logos-*` icons carry their own). */
 .software-skill-inline .iconify {
   font-size: 1.6rem;
-  color: var(--text-faint) !important;
-  transition: color 0.2s var(--ease);
-}
-.software-skill-inline:hover .iconify {
-  color: var(--text) !important;
+  background-color: transparent !important;
 }
 
 .skill-image {
   height: 22px;
   width: auto;
-  filter: grayscale(1);
-  opacity: 0.8;
-  transition: opacity 0.2s var(--ease);
-}
-.software-skill-inline:hover .skill-image {
-  opacity: 1;
 }
 
 @media (max-width: 768px) {
