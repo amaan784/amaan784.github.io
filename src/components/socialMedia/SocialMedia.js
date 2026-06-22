@@ -1,37 +1,32 @@
 import React from "react";
 import "./SocialMedia.css";
 import { socialMediaLinks } from "../../portfolio";
-import styled from "styled-components";
 
-const IconWrapper = styled.span`
-  i {
-    background-color: ${(props) => props.backgroundColor};
-  }
-  &:hover i {
-    background-color: ${({ theme }) => theme.text};
-    transition: 0.3s ease-in;
-  }
-`;
-
-export default function socialMedia(props) {
+export default function SocialMedia() {
   return (
     <div className="social-media-div">
-      {socialMediaLinks.map((media, i) => {
-        return (
-          <a
-            key={i}
-            href={media.link}
-            className={`icon-button`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <IconWrapper {...media} {...props}>
-              <i className={`fab ${media.fontAwesomeIcon}`}></i>
-            </IconWrapper>
-            {/* <span></span> */}
-          </a>
-        );
-      })}
+      {socialMediaLinks.map((media, i) => (
+        <a
+          key={i}
+          href={media.link}
+          className="social-icon"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={media.name}
+          title={media.name}
+          style={{ "--brand": media.backgroundColor }}
+        >
+          {media.iconify ? (
+            <span
+              className="iconify"
+              data-icon={media.iconify}
+              data-inline="false"
+            ></span>
+          ) : (
+            <i className={`fab ${media.fontAwesomeIcon}`}></i>
+          )}
+        </a>
+      ))}
     </div>
   );
 }

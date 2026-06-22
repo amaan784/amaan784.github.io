@@ -1,23 +1,46 @@
-.dev-icons {
-  padding-left: 0;
-  list-style: none;
-  font-size: 3rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  text-align: center;
+/* Flat hairline pills for competitive profiles. Monochrome the iconify
+   glyphs — the inline brand colors set via portfolio.js style props are
+   overridden so the row stays calm and typographic. */
+.competitive-sites {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.competitive-sites-inline {
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  font-family: "Google Sans Regular";
+/* Inherits .chip (transparent, 1px hairline border, pill radius). */
+.competitive-site {
+  padding: 11px 18px;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+.competitive-site:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
 }
 
-.competitive-sites-inline > i {
-  color: #868e96;
+/* Monochrome icon — override the inline brand color from portfolio.js. */
+.competitive-site-icon {
+  font-size: 1.2rem;
+  color: var(--text-faint) !important;
+  transition: color 0.2s var(--ease);
+}
+.competitive-site:hover .competitive-site-icon {
+  color: var(--text) !important;
 }
 
-.competitive-sites-inline > i:hover {
-  color: #645beb;
+.competitive-site-name {
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .competitive-sites {
+    gap: 10px;
+  }
+
+  .competitive-site {
+    flex: 1 1 calc(50% - 10px);
+    justify-content: center;
+  }
 }

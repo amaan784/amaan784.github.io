@@ -3,6 +3,9 @@
 // Website related settings
 const settings = {
   isSplash: false, // Change this to false if you don't want Splash screen.
+  // Master switch for the Open Source section. Flip to `false` to hide the
+  // Open Source nav link + page everywhere; `true` shows it.
+  showOpenSource: true,
 };
 
 //SEO Related settings
@@ -24,12 +27,28 @@ const greeting = {
   nickname: "amaan784",
   subTitle:
     "Inquisitive about Tech and Data to unleash it and make a difference!",
+  // Short tagline shown under the name in the hero.
+  role: "Software Engineer · Machine Learning Engineer",
+  // Professional summary recruiters read first. Edit freely.
+  summary:
+    "I'm a Computer Science master's student at Columbia University focused on Machine Learning. I'm currently an Applied AI Scientist Intern at ZS and was previously a Software Engineer at Kenvue. I enjoy building and shipping ML, agentic AI, and full-stack systems.",
+  // Profile photo: drop your image at public/profile.jpg (or change this path).
+  // If the file is missing, the hero gracefully shows an "AS" monogram instead.
+  profileImage: "/profile.jpg",
   resumeLink:
     "https://drive.google.com/file/d/1b8XLxrE2E0SWsGSwD4ZX4aHGif-e4yzj/view?usp=sharing",
 
   portfolio_repository: "https://github.com/amaan784/amaan784.github.io/",
   githubProfile: "https://github.com/amaan784/",
 };
+
+// Quick at-a-glance credibility signals shown high on the home page.
+const highlights = [
+  { icon: "🎓", label: "M.S. Computer Science", value: "Columbia University" },
+  { icon: "🤖", label: "Currently", value: "Applied AI Scientist Intern · ZS" },
+  { icon: "💼", label: "Software Engineer", value: "Kenvue (prev.)" },
+  { icon: "⚡", label: "Core focus", value: "ML · NLP · Computer Vision" },
+];
 
 const socialMediaLinks = [
   /* Your Social Media Link */
@@ -44,6 +63,18 @@ const socialMediaLinks = [
     link: "https://www.linkedin.com/in/amaansheikh21/",
     fontAwesomeIcon: "fa-linkedin-in", // Reference https://fontawesome.com/icons/linkedin-in?style=brands
     backgroundColor: "#0077B5", // Reference https://simpleicons.org/?q=linkedin
+  },
+  {
+    name: "Google Scholar",
+    link: "https://scholar.google.com/citations?user=bv7hfH8AAAAJ&hl=en",
+    iconify: "simple-icons:googlescholar", // rendered via Iconify (not in Font Awesome)
+    backgroundColor: "#4285F4",
+  },
+  {
+    name: "Hugging Face",
+    link: "https://huggingface.co/amaan784",
+    iconify: "simple-icons:huggingface", // rendered via Iconify (not in Font Awesome)
+    backgroundColor: "#FFD21E",
   },
   {
     name: "Gmail",
@@ -436,7 +467,7 @@ const experience = {
   header_image_path: "experience.svg",
   sections: [
     {
-      title: "Full Time and Part Time Jobs",
+      title: "Full-time",
       work: true,
       experiences: [
         {
@@ -445,19 +476,35 @@ const experience = {
           company_url: "https://www.kenvue.com/",
           logo_path: "kenvue_standalone.jpeg",
           duration: "Oct 2023 - Aug 2025",
-          location: "Skillman, NJ, USA",
-          description: "Part of the Supply Chain Technology and Data team",
+          location: "Summit, NJ, USA",
+          description:
+            "Software Engineer on the Digital Core team within the Supply Chain Data & Technology organization.",
+          color: "#000000",
+        },
+      ],
+    },
+    {
+      title: "Part-time",
+      experiences: [
+        {
+          title: "Graduate Research Assistant",
+          company: "Columbia University",
+          company_url: "https://www.columbia.edu/",
+          logo_path: "Columbia_logo.png",
+          duration: "Jan 2026 - May 2026",
+          location: "New York, NY, USA",
+          description: "Machine Learning research with the CRIS Lab.",
           color: "#000000",
         },
         {
           title: "Academic Tutor and Grader",
-          company: "UCSC Baskin School of Engineering",
+          company: "Baskin Engineering at UCSC",
           company_url: "https://engineering.ucsc.edu/",
           logo_path: "ucsc_baskin_engineering.png",
           duration: "Feb 2023 - Jun 2023",
           location: "Santa Cruz, CA, USA",
           description:
-            "Academic Tutor and Grader for CSE 101: Data Structures and Algorithms and CSE 183: Web Applications",
+            "Tutored and graded for CSE 101: Introduction to Data Structures and Algorithms; graded for CSE 183: Web Applications.",
           color: "#000000",
         },
       ],
@@ -465,6 +512,17 @@ const experience = {
     {
       title: "Internships",
       experiences: [
+        {
+          title: "Applied AI Scientist Intern",
+          company: "ZS",
+          company_url: "https://www.zs.com/",
+          logo_path: "zs.png",
+          duration: "Jun 2026 - Present",
+          location: "Bellevue, WA, USA",
+          description:
+            "Part of the ZAIDYN personalization group, working on Agentic AI and Generative AI development.",
+          color: "#000000",
+        },
         {
           title: "Intern",
           company: "Cloud Brigade",
@@ -560,32 +618,28 @@ const projectsHeader = {
 
 const publicationsHeader = {
   title: "Publications",
-  description: "Some of my published Articles, Blogs and Research.",
+  description: "Research, writing and articles.",
   avatar_image_path: "projects_image.svg",
 };
 
+// Placeholders — replace each entry with your own paper / blog / article.
+// (id can be anything unique; createdAt is an ISO date; url is the link.)
 const publications = {
   data: [
     {
-      id: "neuro-symbolic-sudoku-solver",
-      name: "Neuro-Symbolic Sudoku Solver",
-      createdAt: "2023-07-02T00:00:00Z",
-      description: "Paper published in KDD KiML 2023",
-      url: "https://arxiv.org/abs/2307.00653",
+      id: "beyond-static-leaderboards",
+      name: "Beyond Static Leaderboards: Predictive Validity for the Evaluation of LLM Agents",
+      createdAt: "2026-06-23T00:00:00Z",
+      description: "Research on evaluating LLM agents beyond static leaderboards. Published on arXiv.",
+      url: "https://arxiv.org/abs/2606.19704",
     },
     {
-      id: "mdp-diffusion",
-      name: "MDP-Diffusion",
-      createdAt: "2023-09-19T00:00:00Z",
-      description: "Blog published in Paperspace",
-      url: "https://blog.paperspace.com/mdp-diffusion/",
-    },
-    {
-      id: "consistency-models",
-      name: "Consistency Models",
-      createdAt: "2023-10-12T00:00:00Z",
-      description: "Blog published in Paperspace",
-      url: "https://blog.paperspace.com/consistency-models/",
+      id: "publication-placeholder-2",
+      name: "Add your next publication",
+      createdAt: "2026-01-01T00:00:00Z",
+      description:
+        "Placeholder. Add a paper, blog or article here (edit publications.data in src/portfolio.js).",
+      url: "#",
     },
   ],
 };
@@ -603,6 +657,7 @@ export {
   settings,
   seo,
   greeting,
+  highlights,
   socialMediaLinks,
   skills,
   competitiveSites,

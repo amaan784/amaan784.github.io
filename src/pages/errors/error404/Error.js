@@ -11,26 +11,28 @@ export default class Error extends Component {
     const theme = this.props.theme;
     return (
       <div className="error-main">
-        <Header theme={this.props.theme} />
-        <div className="error-class">
-          <Fade bottom duration={2000} distance="40px">
-            <h1>Woops</h1>
-            <h1 className="error-404">404</h1>
-            <p>The requested page is unavailable at the moment!</p>
-            <Link
-              className="main-button"
-              to="/home"
-              style={{
-                color: theme.body,
-                backgroundColor: theme.text,
-                border: `solid 1px ${theme.text}`,
-                display: "inline-flex",
-              }}
-            >
-              Go Home
-            </Link>
-          </Fade>
-        </div>
+        <Header
+          theme={this.props.theme}
+          isDark={this.props.isDark}
+          toggleTheme={this.props.toggleTheme}
+        />
+        <section className="section error-section">
+          <div className="container error-inner">
+            <Fade bottom duration={1100} distance="40px">
+              <span className="eyebrow">Error 404</span>
+              <h1 className="error-code grad-text">404</h1>
+              <h2 className="error-woops" style={{ color: theme.text }}>
+                Woops
+              </h2>
+              <p className="error-message section-lead">
+                The requested page is unavailable at the moment!
+              </p>
+              <Link className="btn btn-primary error-home-btn" to="/home">
+                Go Home
+              </Link>
+            </Fade>
+          </div>
+        </section>
         <Footer theme={this.props.theme} />
         <TopButton theme={this.props.theme} />
       </div>

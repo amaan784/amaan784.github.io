@@ -8,20 +8,23 @@ class Issues extends Component {
   render() {
     const theme = this.props.theme;
     return (
-      <div>
-        <div className="issues-header-div">
-          <Fade bottom duration={2000} distance="20px">
-            <h1 className="issues-header" style={{ color: theme.text }}>
-              Issues
-            </h1>
+      <section className="section-tight issues-section">
+        <div className="container">
+          <Fade bottom duration={1000} distance="20px">
+            <div className="os-section-header">
+              <span className="eyebrow">Tracked &amp; resolved</span>
+              <h2 className="section-title" style={{ color: theme.text }}>
+                <span className="grad-text">Issues</span>
+              </h2>
+            </div>
           </Fade>
+          <div className="issues-grid">
+            {issuesData["data"].map((issue) => {
+              return <IssueCard key={issue["id"]} issue={issue} theme={theme} />;
+            })}
+          </div>
         </div>
-        <div className="issues-body-div">
-          {issuesData["data"].map((issue) => {
-            return <IssueCard issue={issue} />;
-          })}
-        </div>
-      </div>
+      </section>
     );
   }
 }

@@ -1,0 +1,116 @@
+.featured-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: clamp(28px, 4vw, 44px);
+}
+.featured-head .section-title {
+  margin-top: 10px;
+}
+.featured-link {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  padding-bottom: 6px;
+  transition: gap 0.2s var(--ease);
+}
+.featured-link:hover {
+  gap: 12px;
+}
+
+/* ---- Featured experience ---- */
+.featured-exp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+.featured-exp-card {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-radius: 0;
+  padding: 28px clamp(18px, 2.2vw, 28px);
+  display: flex;
+  flex-direction: column;
+}
+.featured-exp-card:nth-child(3n) {
+  border-right: 0;
+}
+.featured-exp-logo {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+.featured-exp-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  font-size: 0;
+  color: transparent;
+}
+.featured-exp-title {
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.featured-exp-company {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 0.95rem;
+  color: var(--accent);
+  width: max-content;
+}
+.featured-exp-company:hover {
+  text-decoration: underline;
+}
+.featured-exp-meta {
+  margin: 10px 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--text-faint);
+}
+.featured-exp-desc {
+  margin: 14px 0 0;
+  font-size: 0.93rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* ---- Featured projects ---- */
+.featured-proj-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* ============================ Responsive ============================ */
+@media (max-width: 900px) {
+  .featured-exp-grid,
+  .featured-proj-grid {
+    grid-template-columns: 1fr;
+  }
+  .featured-exp-card {
+    border-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .featured-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

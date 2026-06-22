@@ -1,216 +1,43 @@
 // theme.js
-export const blueTheme = {
-  body: "#EDF9FE",
-  text: "#001C55",
-  expTxtColor: "#000a12",
-  highlight: "#A6E1FA",
-  dark: "#00072D",
-  secondaryText: "#7F8DAA",
-  imageHighlight: "#0E6BA8",
-  compImgHighlight: "#E6E6E6",
-  jacketColor: "#0A2472",
-  headerColor: "#0E6BA877",
-  splashBg: "#001C55",
+// Minimal & typographic palette. Surfaces, borders and the accent live in CSS
+// variables (see index.css, keyed on html[data-theme]); these objects carry the
+// semantic *text* colors that components read inline via the `theme` prop.
+
+export const darkTheme = {
+  name: "dark",
+  body: "#0E1013",
+  text: "#EBEDF0",
+  secondaryText: "#9AA1AD",
+  expTxtColor: "#C3C9D2",
+  highlight: "#88A4FF",
+  dark: "#08090B",
+  accent: "#88A4FF",
+  accent2: "#88A4FF",
+  accent3: "#88A4FF",
+  imageHighlight: "#88A4FF",
+  compImgHighlight: "#1A1E24",
+  jacketColor: "#88A4FF",
+  headerColor: "rgba(14,16,19,0.78)",
+  splashBg: "#0E1013",
 };
 
-export const brownTheme = {
-  body: "#FFFEFD",
-  text: "#5D2A42",
-  expTxtColor: "#000a12",
-  highlight: "#FFF9EC",
-  dark: "#00072D",
-  secondaryText: "#8D697A",
-  imageHighlight: "#E29F95",
-  compImgHighlight: "#E6E6E6",
-  jacketColor: "#FB6376",
-  headerColor: "#E29F9577",
-  splashBg: "#5D2A42",
+export const lightTheme = {
+  name: "light",
+  body: "#FDFDFC",
+  text: "#16181D",
+  secondaryText: "#565D68",
+  expTxtColor: "#2C313A",
+  highlight: "#27408B",
+  dark: "#16181D",
+  accent: "#27408B",
+  accent2: "#27408B",
+  accent3: "#27408B",
+  imageHighlight: "#27408B",
+  compImgHighlight: "#EFEFEA",
+  jacketColor: "#27408B",
+  headerColor: "rgba(253,253,252,0.82)",
+  splashBg: "#FDFDFC",
 };
 
-export const purpleTheme = {
-  body: "#F8EFF4",
-  text: "#231942",
-  expTxtColor: "#000a12",
-  highlight: "#E0B1CB",
-  dark: "#00072D",
-  secondaryText: "#655E7A",
-  imageHighlight: "#BE95C4",
-  compImgHighlight: "#E6E6E6",
-  jacketColor: "#5E548E",
-  headerColor: "#BE95C477",
-  splashBg: "#231942",
-};
-
-export const greenTheme = {
-  body: "#FFFFEB",
-  text: "#003F2F",
-  expTxtColor: "#000a12",
-  highlight: "#dddf00",
-  dark: "#00072D",
-  secondaryText: "#4CA58F",
-  imageHighlight: "#55a630",
-  compImgHighlight: "#E6E6E6",
-  jacketColor: "#007f5f",
-  headerColor: "#55a63077",
-  splashBg: "#003F2F",
-};
-
-export const redTheme = {
-  body: "#FFF8E6",
-  text: "#6a040f",
-  expTxtColor: "#000a12",
-  highlight: "#ffba08",
-  dark: "#03071e",
-  secondaryText: "#964F56",
-  imageHighlight: "#dc2f02",
-  compImgHighlight: "#E6E6E6",
-  jacketColor: "#9d0208",
-  headerColor: "#dc2f0277",
-  splashBg: "#6a040f",
-};
-
-export const blackTheme = {
-  body: "#E5E5E5",
-  text: "#14213d",
-  expTxtColor: "#000a12",
-  highlight: "#ffffff",
-  dark: "#000000",
-  secondaryText: "#5A6377",
-  imageHighlight: "#fca311",
-  compImgHighlight: "#E6E6E6",
-  jacketColor: "#8d99ae",
-  headerColor: "#fca31177",
-  splashBg: "#14213d",
-};
-
-export const pinkTheme = {
-  body: "#FEE9F2",
-  text: "#620E34",
-  expTxtColor: "#000a12",
-  highlight: "#FBA7CD",
-  dark: "#31071A",
-  secondaryText: "#ef476f",
-  imageHighlight: "#ef476f",
-  compImgHighlight: "#E6E6E6",
-  jacketColor: "#8d99ae",
-  headerColor: "#ef476f77",
-  splashBg: "#620E34",
-};
-
-export const violetTheme = {
-  body: "#F4EEFC",
-  text: "#430A58",
-  expTxtColor: "#000a12",
-  highlight: "#D6BEF4",
-  dark: "#21052C",
-  secondaryText: "#875599",
-  imageHighlight: "#9b5de5",
-  compImgHighlight: "#E6E6E6",
-  jacketColor: "#763D8B",
-  headerColor: "#9b5de577",
-  splashBg: "#430A58",
-};
-
-export const tealTheme = {
-  body: "#E6FAF5",
-  text: "#084c61",
-  expTxtColor: "#000a12",
-  highlight: "#9BEED8",
-  dark: "#031E26",
-  secondaryText: "#528190",
-  imageHighlight: "#07beb8",
-  compImgHighlight: "#E6E6E6",
-  jacketColor: "#56a3a6",
-  headerColor: "#07beb877",
-  splashBg: "#084c61",
-};
-
-export const orangeTheme = {
-  body: "#FFF0EA",
-  text: "#99401F",
-  expTxtColor: "#000a12",
-  highlight: "#FFB59A",
-  dark: "#33150A",
-  secondaryText: "#CC552A",
-  imageHighlight: "#FF6B35",
-  compImgHighlight: "#E6E6E6",
-  jacketColor: "#d7263d",
-  headerColor: "#FF6B3577",
-  splashBg: "#99401F",
-};
-
-export const yellowTheme = {
-  body: "#FFD95D",
-  text: "#5f4339",
-  expTxtColor: "#000a12",
-  highlight: "#ffff73",
-  dark: "#8d6e63",
-  secondaryText: "#5f4339",
-  imageHighlight: "#ffea3d",
-  compImgHighlight: "#E6E6E6",
-  jacketColor: "#4e342e",
-  headerColor: "#FFEA3D",
-  splashBg: "#5f4339",
-};
-
-export const materialDarkTheme = {
-  body: "#263238",
-  text: "#aeaeae",
-  expTxtColor: "#000a12",
-  highlight: "#4f5b62",
-  dark: "#000a12",
-  secondaryText: "#aeaeae",
-  imageHighlight: "#607d8b",
-  compImgHighlight: "#E6E6E6",
-  jacketColor: "#8eacbb",
-  headerColor: "#34515e",
-  splashBg: "#4f5b62",
-};
-
-export const materialLightTheme = {
-  body: "#ffffff",
-  text: "#4c2b91",
-  expTxtColor: "#000000",
-  highlight: "#E9E3F5",
-  dark: "#1d0c41",
-  secondaryText: "#7d56c2",
-  imageHighlight: "#2b1958",
-  compImgHighlight: "#E1E2E1",
-  jacketColor: "#E1E2E1",
-  headerColor: "#E1E2E1",
-  splashBg: "#7d56c2",
-};
-
-export const materialTealTheme = {
-  body: "#ffffff",
-  text: "#05505E",
-  expTxtColor: "#000000",
-  highlight: "#a1dded",
-  dark: "#07292c",
-  secondaryText: "#05505E",
-  imageHighlight: "#0a343c",
-  compImgHighlight: "#E1E2E1",
-  jacketColor: "#E1E2E1",
-  headerColor: "#E1E2E1",
-  splashBg: "#05505E",
-};
-
-export const dark_blueTheme = {
-  body: "#0A0E17",
-  text: "#DDE6F6",
-  expTxtColor: "#A8B3C9",
-  highlight: "#3C91E6",
-  dark: "#00040F",
-  secondaryText: "#7A859E",
-  imageHighlight: "#144F9E",
-  compImgHighlight: "#1C2438",
-  jacketColor: "#123366",
-  headerColor: "#3C91E688",
-  splashBg: "#001A34",
-};
-
-
-// default theme -
-// export const chosenTheme = blueTheme;
-
-export const chosenTheme = materialTealTheme;
+// Default theme (kept for any back-compat import).
+export const chosenTheme = lightTheme;

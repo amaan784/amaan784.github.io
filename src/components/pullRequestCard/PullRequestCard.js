@@ -6,26 +6,27 @@ import { Fade } from "react-reveal";
 class PullRequestCard extends Component {
   render() {
     const pullRequest = this.props.pullRequest;
+    const theme = this.props.theme;
     var iconPR;
-    var bgColor;
+    var stateLabel;
     if (pullRequest["state"] === "OPEN") {
       iconPR = {
         iconifyClass: "octicon:git-pull-request",
         style: { color: "#28a745" },
       };
-      bgColor = "#dcffe4";
+      stateLabel = "Open";
     } else if (pullRequest["state"] === "MERGED") {
       iconPR = {
         iconifyClass: "octicon:git-merge",
         style: { color: "#6f42c1" },
       };
-      bgColor = "#f5f0ff";
+      stateLabel = "Merged";
     } else {
       iconPR = {
         iconifyClass: "octicon:git-pull-request",
         style: { color: "#d73a49" },
       };
-      bgColor = "#ffdce0";
+      stateLabel = "Closed";
     }
 
     var subtitleString =
@@ -40,7 +41,6 @@ class PullRequestCard extends Component {
         <OverlayTrigger
           key={name}
           placement={"top"}
-          style={{ marginBottom: "5px" }}
           overlay={
             <Tooltip id={`tooltip-top`}>
               <strong>{`Merged by ${name}`}</strong>
@@ -65,13 +65,10 @@ class PullRequestCard extends Component {
     }
 
     return (
-      <Fade bottom duration={2000} distance="40px">
+      <Fade bottom duration={1500} distance="24px">
         <div
-          className="pull-request-card"
-          style={{
-            backgroundColor: bgColor,
-            border: `1px solid ${iconPR.style.color}`,
-          }}
+          className="pull-request-card card"
+          style={{ "--pr-state": iconPR.style.color }}
         >
           <div className="pr-top">
             <div className="pr-header">
@@ -87,6 +84,7 @@ class PullRequestCard extends Component {
                     href={pullRequest["url"]}
                     target="_blank"
                     rel="noopener noreferrer"
+                    style={theme ? { color: theme.text } : undefined}
                   >
                     {pullRequest["title"]}
                   </a>
@@ -95,13 +93,13 @@ class PullRequestCard extends Component {
               </div>
             </div>
             <div className="files-changed-header">
-              <p
-                className="files-changed-text"
-                style={{ backgroundColor: iconPR.style.color }}
-              >
+              <span className="pr-state-pill" style={iconPR.style}>
+                {stateLabel}
+              </span>
+              <span className="files-changed-text">
                 {pullRequest["changedFiles"]}
-              </p>
-              <p className="files-changed-text-2">Files Changed</p>
+              </span>
+              <span className="files-changed-text-2">Files Changed</span>
             </div>
           </div>
           <div className="pr-down">
@@ -117,12 +115,12 @@ class PullRequestCard extends Component {
                 </a>
               </p>
               <div className="changes-files">
-                <p className="additions-files">
+                <span className="additions-files">
                   <strong>{pullRequest["additions"]} + </strong>
-                </p>
-                <p className="deletions-files">
+                </span>
+                <span className="deletions-files">
                   <strong>{pullRequest["deletions"]} - </strong>
-                </p>
+                </span>
                 {mergedBy}
               </div>
             </div>

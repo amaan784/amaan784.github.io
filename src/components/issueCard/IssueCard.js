@@ -6,20 +6,21 @@ import { Fade } from "react-reveal";
 class IssueCard extends Component {
   render() {
     const issue = this.props.issue;
+    const theme = this.props.theme;
     var iconPR;
-    var bgColor;
+    var stateLabel;
     if (issue["closed"] === false) {
       iconPR = {
         iconifyClass: "octicon:issue-opened",
         style: { color: "#28a745" },
       };
-      bgColor = "#dcffe4";
+      stateLabel = "Open";
     } else {
       iconPR = {
         iconifyClass: "octicon:issue-closed",
         style: { color: "#d73a49" },
       };
-      bgColor = "#ffdce0";
+      stateLabel = "Closed";
     }
 
     var subtitleString =
@@ -31,7 +32,6 @@ class IssueCard extends Component {
         <OverlayTrigger
           key={name}
           placement={"top"}
-          style={{ marginBottom: "5px" }}
           overlay={
             <Tooltip id={`tooltip-top`}>
               <strong>{`Assigned to ${name}`}</strong>
@@ -56,13 +56,10 @@ class IssueCard extends Component {
     }
 
     return (
-      <Fade bottom duration={2000} distance="40px">
+      <Fade bottom duration={1500} distance="24px">
         <div
-          className="issue-card"
-          style={{
-            backgroundColor: bgColor,
-            border: `1px solid ${iconPR.style.color}`,
-          }}
+          className="issue-card card"
+          style={{ "--issue-state": iconPR.style.color }}
         >
           <div className="issue-top">
             <div className="issue-header">
@@ -78,6 +75,7 @@ class IssueCard extends Component {
                     href={issue["url"]}
                     target="_blank"
                     rel="noopener noreferrer"
+                    style={theme ? { color: theme.text } : undefined}
                   >
                     {issue["title"]}
                   </a>
@@ -85,15 +83,11 @@ class IssueCard extends Component {
                 <p className="issue-subtitle">{subtitleString}</p>
               </div>
             </div>
-            {/* <div className="files-changed-header">
-							<p
-								className="files-changed-text"
-								style={{ backgroundColor: iconPR.style.color }}
-							>
-								{pullRequest["changedFiles"]}
-							</p>
-							<p className="files-changed-text-2">Files Changed</p>
-						</div> */}
+            <div className="issue-state-header">
+              <span className="issue-state-pill" style={iconPR.style}>
+                {stateLabel}
+              </span>
+            </div>
           </div>
           <div className="issue-down">
             <div className="assignee-repo">
@@ -107,15 +101,7 @@ class IssueCard extends Component {
                   {issue["repository"]["name"]}
                 </a>
               </p>
-              <div className="assignee-info">
-                {/* <p className="additions-files">
-									<strong>{pullRequest["additions"]} + </strong>
-								</p>
-								<p className="deletions-files">
-									<strong>{pullRequest["deletions"]} - </strong>
-								</p> */}
-                {assignee}
-              </div>
+              <div className="assignee-info">{assignee}</div>
             </div>
             <div className="owner-img-div">
               <a

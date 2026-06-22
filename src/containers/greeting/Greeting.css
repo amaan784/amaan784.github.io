@@ -1,95 +1,153 @@
-.main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 4rem;
-}
-.greet-main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
+/* ============================ Hero ============================ */
+.hero {
+  padding: clamp(56px, 9vw, 104px) 0 clamp(36px, 5vw, 56px);
 }
 
-.gretting-main {
-  width: 90%;
-  padding: 20px 10px;
-  margin: 0px auto;
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  align-items: center;
+  gap: clamp(36px, 7vw, 88px);
 }
 
-.greeting-main {
+/* ---- Text column ---- */
+.hero-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(3rem, 8vw, 5.2rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 18px 0 0;
+}
+.hero-role {
+  margin: 18px 0 0;
+  font-family: var(--font-mono);
+  font-size: clamp(0.82rem, 1.6vw, 0.95rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+.hero-summary {
+  margin: 22px 0 28px;
+  max-width: 58ch;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+.hero-cta {
   display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
-.greeting-main > * {
-  flex: 1;
-  margin-bottom: 30px;
+/* ---- Photo column ---- */
+.hero-photo-wrap {
+  display: grid;
+  place-items: center;
 }
-.button-greeting-div {
+.hero-photo {
+  position: relative;
+  width: clamp(200px, 28vw, 300px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.hero-monogram {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(3.5rem, 9vw, 5.5rem);
+  color: var(--text-faint);
+  letter-spacing: -0.02em;
+}
+
+/* ============================ Highlights ============================ */
+.highlights {
+  padding: clamp(10px, 2vw, 24px) 0 clamp(18px, 3vw, 36px);
+}
+.highlights-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.highlight-item {
   display: flex;
-  margin-top: 20px;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 22px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.25s var(--ease);
+}
+.highlight-item:hover {
+  border-color: var(--border-strong);
+}
+.highlight-label {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.highlight-label::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.highlight-value {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  color: var(--text);
 }
 
-.greeting-text {
-  margin-top: 80px;
-  font-size: 70px;
-  line-height: 1.1;
-  font-family: "Google Sans Bold";
-}
-
-.greeting-nickname {
-  font-size: 30px;
-  line-height: 0px;
-  font-family: "Google Sans Bold Italic";
-}
-
-.greeting-text-p {
-  font-size: 40px;
-  line-height: 40px;
-  margin-right: 40px;
-  font-family: "Google Sans Medium";
-}
-
-.greeting-image-div > * {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Media Query */
-@media (max-width: 1380px) {
-  .greeting-text {
-    font-size: 50px;
-  }
-  .greeting-text-p {
-    font-size: 20px;
-  }
-}
-@media (max-width: 768px) {
-  .button-greeting-div {
-    justify-content: space-around;
-  }
-  .greeting-text {
-    font-size: 30px;
-    margin-top: 0px;
+/* ============================ Responsive ============================ */
+@media (max-width: 920px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
     text-align: center;
   }
-  .greeting-nickname {
-    font-size: 25px;
-    text-align: center;
+  .hero-summary {
+    margin-left: auto;
+    margin-right: auto;
   }
-  .greeting-text-p {
-    font-size: 16px;
-    margin-right: 0px;
-    line-height: normal;
-    text-align: center;
-  }
-  .greeting-main {
-    display: block;
-  }
-
-  .portfolio-repo-btn-div {
-    width: 100%;
-    display: flex;
+  .hero-cta {
     justify-content: center;
+  }
+  .hero-photo-wrap {
+    order: -1;
+    margin-bottom: 6px;
+  }
+  .social-media-div {
+    justify-content: center;
+  }
+  .highlights-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .highlights-row {
+    grid-template-columns: 1fr;
   }
 }

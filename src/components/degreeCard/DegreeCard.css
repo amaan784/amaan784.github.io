@@ -1,164 +1,138 @@
+/* Flat, hairline degree card — no shadow. Typographic, calm, lots of
+   whitespace. Inherits .card (var(--surface) + 1px var(--border)). */
 .degree-card {
+  height: 100%;
+  padding: 30px 28px;
   display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 22px;
 }
 
-.card-title {
-  font-family: "Google Sans Medium";
-  font-size: 23px;
-  /* color: #000000; */
-}
-
-.card-subtitle {
-  font-family: "Google Sans Medium";
-  font-size: 18px;
-  /* color: #000000; */
-  margin-top: 7px;
-  margin-bottom: 5px;
-}
-
-.card-img {
-  width: 200px;
-  height: auto;
-  border-radius: 50%;
-  padding: 10px;
-  border: 1px solid #d9dbdf;
-  /* background-color: #6c63ff; */
-  /* background: transparent; */
-  box-shadow: 5px 5px 5px #d9dbdf;
-}
-
-.body-header {
-  max-width: inherit;
+.degree-card-head {
   display: flex;
-  /* width: 100%; */
-  /* background-color:#6c63ff99; */
-  border-radius: 7px 7px 0px 0px;
-  padding: 10px;
-}
-
-.body-header-title {
   align-items: flex-start;
-  width: 80%;
+  gap: 16px;
 }
 
-.body-header-duration {
-  width: 20%;
-}
-.duration {
-  font-family: "Google Sans Regular";
-  font-size: 16px;
-  /* color: #212121; */
-  padding-right: 10px;
-  float: right;
-}
-
-.body-content {
-  max-width: inherit;
-  /* width: 100%; */
-  border-radius: 0px 0px 7px 7px;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  /* box-shadow: 5px 5px 5px #d3d3d3; */
+/* Small, flat, hairline logo tile. */
+.degree-logo-tile {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  padding: 9px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  overflow: hidden;
 }
 
-.content-list {
-  padding-left: 10px;
-  padding-right: 10px;
-  font-family: "Google Sans Regular";
+.degree-logo-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* keep a failed image from spilling its alt-text over the title */
+  font-size: 0;
+  color: transparent;
 }
 
-.coursework-section {
-  padding: 5px 10px 10px 10px;
+.degree-head-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  min-width: 0;
 }
 
-.coursework-label {
-  font-family: "Google Sans Medium";
-  font-size: 15px;
-  margin-bottom: 5px;
+.degree-title {
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
-.coursework-list {
-  font-family: "Google Sans Regular";
-  font-size: 14px;
+.degree-subtitle {
+  margin: 0;
+  font-size: 0.96rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Duration as a flat mono label inside a hairline chip. */
+.degree-duration {
+  margin-top: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.degree-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.degree-points li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
-.card-body {
-  /* background-color: #00FF00; */
-  border-bottom: 1px solid #d9dbdf;
-  border-left: 1px solid #d9dbdf;
-  border-right: 1px solid #d9dbdf;
-  border-radius: 7px;
-  margin: 10px;
-  box-shadow: 5px 5px 5px #d9dbdf;
+/* Thin 1px accent dash marker (not a filled square). */
+.degree-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 9px;
+  height: 1px;
+  background: var(--accent);
 }
 
-.visit-btn {
-  /* background-color: #6c63ff99; */
-  display: inline-block;
-  margin: 0px 10px 10px 0px;
-  padding: 10px;
-  border-radius: 7px;
-  border: 0px;
-  float: right;
+.degree-coursework {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
 }
 
-.visit-btn:hover {
-  /* background-color:#6c63ffcc; */
+.degree-coursework-label {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
 }
 
-.btn {
-  margin: 0px;
-  padding: 0px;
-  font-family: "Google Sans Regular";
-  /* color: #000000; */
+.degree-coursework-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
 }
 
-@media (max-width: 1380px) {
+/* Flat hairline chips (inherits .chip). */
+.degree-coursework-tags .chip {
+  font-size: 0.82rem;
+}
+
+.degree-link {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 10px 20px;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
   .degree-card {
-    flex-direction: column;
-  }
-
-  .body-header {
-    flex-direction: column;
-  }
-
-  .body-header-title {
-    width: 100%;
-  }
-
-  .body-header-duration {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-  }
-
-  .duration {
-    padding: 0px;
-    margin: 0px;
-    float: left;
-  }
-
-  .card-img {
-    width: 200px;
-  }
-
-  .card-body {
-    width: 100% !important;
-  }
-
-  .card-title {
-    font-size: 20px;
-  }
-
-  .card-subtitle {
-    font-size: 16px;
+    padding: 26px 22px;
   }
 }

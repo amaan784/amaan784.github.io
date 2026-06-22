@@ -6,13 +6,14 @@ import IssueData from "../../shared/opensource/issues.json";
 
 class IssueChart extends Component {
   render() {
+    const theme = this.props.theme;
     const data = {
       labels: ["Open", "Closed"],
       datasets: [
         {
           data: [IssueData["open"], IssueData["closed"]],
-          backgroundColor: ["#28a745", "#d73a49"],
-          hoverBackgroundColor: ["#28a745dd", "#d73a49dd"],
+          backgroundColor: ["#5b78e6", "#9aa1ad"],
+          hoverBackgroundColor: ["#3f5fd6", "#828a97"],
         },
       ],
     };
@@ -20,7 +21,12 @@ class IssueChart extends Component {
     return (
       <div className="issue-chart">
         <Fade bottom duration={2000} distance="20px">
-          <h2 className="issue-chart-header">Issue Distribution</h2>
+          <h2
+            className="issue-chart-header"
+            style={theme ? { color: theme.text } : undefined}
+          >
+            Issue Distribution
+          </h2>
         </Fade>
         <Doughnut
           data={data}

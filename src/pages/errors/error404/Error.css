@@ -1,30 +1,55 @@
+/* =====================================================================
+   404 / Not-found page — minimal & typographic, centered.
+   Big editorial serif 404 with a single accent, muted message,
+   one solid accent button back home. No orbs, no glow, no shadow.
+   ===================================================================== */
+
 .error-main {
-  width: 100vw;
+  width: 100%;
 }
 
-.error-main > .error-class {
-  width: 90%;
-  margin: auto 5%;
-  /* min-height: calc(100vh - 192px); */
+.error-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 72px);
+}
+
+.error-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  display: block;
 }
 
-.error-main > .error-class > .error-404 {
-  font-size: 7em;
-  overflow: hidden;
-  padding-top: 10px 0;
-  margin: 10px 0;
+/* big serif code — the .grad-text utility paints it accent */
+.error-code {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(6rem, 26vw, 13rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin: 22px 0 0;
 }
 
-.error-main > .error-class p {
-  font-size: 1.4em;
-  margin-top: 0;
+.error-woops {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  letter-spacing: -0.01em;
+  margin: 6px 0 0;
 }
 
-@media screen and (min-width: 1364px) {
-  .error-main > .error-class > .error-404 {
-    height: 175px;
-    padding-top: 60px;
+.error-message {
+  margin: 14px auto 0;
+}
+
+.error-home-btn {
+  margin-top: 34px;
+}
+
+@media (max-width: 768px) {
+  .error-section {
+    min-height: calc(100vh - 64px);
   }
 }
