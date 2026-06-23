@@ -47,7 +47,11 @@ const highlights = [
   { icon: "🎓", label: "M.S. Computer Science", value: "Columbia University" },
   { icon: "🤖", label: "Currently", value: "Applied AI Scientist Intern · ZS" },
   { icon: "💼", label: "Software Engineer", value: "Kenvue (prev.)" },
-  { icon: "⚡", label: "Core focus", value: "ML · NLP · Computer Vision" },
+  {
+    icon: "⚡",
+    label: "Core focus",
+    value: "Agentic AI · Inference Optimization · ML · NLP · CV",
+  },
 ];
 
 const socialMediaLinks = [
