@@ -10,11 +10,11 @@ const settings = {
 
 //SEO Related settings
 const seo = {
-  title: "Amaan's Portfolio",
+  title: "Amaan Sheikh · Machine Learning & Software Engineer",
   description:
     "A passionate individual who always thrives to work on end to end products which develop sustainable and scalable social and technical systems to create impact.",
   og: {
-    title: "Amaan Sheikh Portfolio",
+    title: "Amaan Sheikh · Machine Learning & Software Engineer",
     type: "website",
     url: "https://amaan784.github.io",
   },
