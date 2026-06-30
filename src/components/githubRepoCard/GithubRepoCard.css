@@ -7,6 +7,27 @@
   text-align: left;
 }
 
+/* Award ribbon — accent hairline pill, e.g. "Hackathon Winner". */
+.repo-award {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.repo-award i {
+  font-size: 0.72rem;
+}
+
 .repo-card-head {
   display: flex;
   align-items: center;

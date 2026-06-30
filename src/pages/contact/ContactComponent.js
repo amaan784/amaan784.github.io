@@ -28,6 +28,12 @@ class Contact extends Component {
                   Let&rsquo;s <span className="grad-text">connect</span>
                 </h1>
                 <p className="section-lead">{ContactData["description"]}</p>
+                {greeting.location && (
+                  <p className="contact-location">
+                    <i className="fas fa-location-dot" aria-hidden="true"></i>
+                    Based in {greeting.location}
+                  </p>
+                )}
               </div>
 
               <div className="card contact-card">
