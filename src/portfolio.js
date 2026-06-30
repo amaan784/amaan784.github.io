@@ -29,6 +29,8 @@ const greeting = {
     "Inquisitive about Tech and Data to unleash it and make a difference!",
   // Short tagline shown under the name in the hero.
   role: "Software Engineer · Machine Learning Engineer",
+  // Where you're based — shown in the hero and on the contact page.
+  location: "New York, USA",
   // Professional summary recruiters read first. Edit freely.
   summary:
     "I'm a Computer Science master's student at Columbia University focused on Machine Learning. I'm currently an Applied AI Scientist Intern at ZS and was previously a Software Engineer at Kenvue. I enjoy building and shipping ML, agentic AI, and full-stack systems.",

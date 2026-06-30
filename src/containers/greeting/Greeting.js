@@ -20,6 +20,12 @@ export default function Greeting() {
                 Amaan <span className="grad-text">Sheikh</span>
               </h1>
               <p className="hero-role">{greeting.role}</p>
+              {greeting.location && (
+                <p className="hero-location">
+                  <i className="fas fa-location-dot" aria-hidden="true"></i>
+                  {greeting.location}
+                </p>
+              )}
               <p className="hero-summary">{greeting.summary}</p>
 
               <div className="hero-cta">

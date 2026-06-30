@@ -11,6 +11,7 @@ import "./Projects.css";
 // Preferred display order for the category filter.
 const CATEGORY_ORDER = [
   "All",
+  "Hackathon",
   "GenAI",
   "Agentic",
   "NLP",

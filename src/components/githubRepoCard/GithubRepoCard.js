@@ -13,6 +13,13 @@ export default function GithubRepoCard({ repo, theme }) {
       className="repo-card card"
       onClick={() => openRepoinNewTab(repo.url)}
     >
+      {repo.award && (
+        <span className="repo-award">
+          <i className="fas fa-trophy" aria-hidden="true"></i>
+          {repo.award}
+        </span>
+      )}
+
       <div className="repo-card-head">
         <span className="repo-icon" aria-hidden="true">
           <svg
