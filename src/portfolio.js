@@ -697,6 +697,11 @@ const publications = {
       name: "Paper accepted in AIChE",
       description: "Publication details will be released in November 2026.",
     },
+    {
+      id: "agentic-systems-optimization-paper",
+      name: "Working on a paper on agentic systems optimization",
+      description: "Details will be released around February 2027.",
+    },
   ],
 };
 
