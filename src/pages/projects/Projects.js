@@ -14,6 +14,7 @@ const CATEGORY_ORDER = [
   "Hackathon",
   "GenAI",
   "Agentic",
+  "Inference",
   "NLP",
   "CV",
   "ML",

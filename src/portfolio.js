@@ -33,7 +33,7 @@ const greeting = {
   location: "New York, USA",
   // Professional summary recruiters read first. Edit freely.
   summary:
-    "I'm a Computer Science master's student at Columbia University focused on Machine Learning. I'm currently an Applied AI Scientist Intern at ZS and was previously a Software Engineer at Kenvue. I enjoy building and shipping ML, agentic AI, and full-stack systems.",
+    "I'm a Computer Science master's student at Columbia University focused on Machine Learning. Most recently I was an Applied AI Scientist Intern at ZS, and before that a Software Engineer at Kenvue. I enjoy building and shipping ML, agentic AI, and full-stack systems.",
   // Profile photo: drop your image at public/profile.jpg (or change this path).
   // If the file is missing, the hero gracefully shows an "AS" monogram instead.
   profileImage: "/profile.jpg",
@@ -47,7 +47,7 @@ const greeting = {
 // Quick at-a-glance credibility signals shown high on the home page.
 const highlights = [
   { icon: "🎓", label: "M.S. Computer Science", value: "Columbia University" },
-  { icon: "🤖", label: "Currently", value: "Applied AI Scientist Intern · ZS" },
+  { icon: "🤖", label: "Most recently", value: "Applied AI Scientist Intern · ZS" },
   { icon: "💼", label: "Software Engineer", value: "Kenvue (prev.)" },
   {
     icon: "⚡",
@@ -406,6 +406,9 @@ const degrees = {
         "Advanced Spoken Language Processing",
         "Deep Learning for Computer Vision",
         "Natural Language Processing",
+        "Neural Networks and Deep Learning",
+        "LLM-based Generative AI Systems",
+        "Topics in Agentic Systems",
         "Cloud Computing",
         "Analysis of Algorithms",
       ],
@@ -573,7 +576,7 @@ const experience = {
           company: "ZS",
           company_url: "https://www.zs.com/",
           logo_path: "zs.png",
-          duration: "Jun 2026 - Present",
+          duration: "Jun 2026 - Aug 2026",
           location: "Bellevue, WA, USA",
           description:
             "Part of the ZAIDYN personalization group, working on Agentic AI and Generative AI development.",
@@ -668,7 +671,7 @@ const experience = {
 const projectsHeader = {
   title: "Projects",
   description:
-    "My projects makes use of vast variety of latest technology tools. My best experience is to create Data Science projects and deploy them to web applications using cloud infrastructure.",
+    "Things I've built across agentic AI, LLM inference optimization, computer vision and NLP. They range from hackathon builds to course and research projects, and many go end to end, from the model to a deployed app.",
   avatar_image_path: "projects_image.svg",
 };
 
@@ -678,8 +681,8 @@ const publicationsHeader = {
   avatar_image_path: "projects_image.svg",
 };
 
-// Placeholders — replace each entry with your own paper / blog / article.
-// (id can be anything unique; createdAt is an ISO date; url is the link.)
+// Papers, blogs and articles. id must be unique; createdAt (ISO date) shows as
+// "Published on"; url is the link. Leave out createdAt/url for papers not out yet.
 const publications = {
   data: [
     {
@@ -690,12 +693,9 @@ const publications = {
       url: "https://arxiv.org/abs/2606.19704",
     },
     {
-      id: "publication-placeholder-2",
-      name: "Add your next publication",
-      createdAt: "2026-01-01T00:00:00Z",
-      description:
-        "Placeholder. Add a paper, blog or article here (edit publications.data in src/portfolio.js).",
-      url: "#",
+      id: "aiche-paper",
+      name: "Paper accepted in AIChE",
+      description: "Publication details will be released in November 2026.",
     },
   ],
 };

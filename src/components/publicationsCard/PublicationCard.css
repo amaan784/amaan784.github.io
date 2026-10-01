@@ -6,6 +6,9 @@
   gap: 12px;
   text-align: left;
 }
+.publication-card.is-static {
+  cursor: default;
+}
 
 .publication-name {
   font-family: var(--font-display);
