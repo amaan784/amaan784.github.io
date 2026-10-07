@@ -243,6 +243,11 @@ code {
 .card:hover {
   border-color: var(--border-strong);
 }
+/* Cards that are links: visible ring for keyboard users. */
+a.card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 
 /* ---------- Chips / tags ---------- */
 .chip {

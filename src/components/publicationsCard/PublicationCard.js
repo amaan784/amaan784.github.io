@@ -2,19 +2,26 @@ import React from "react";
 import "./PublicationCard.css";
 
 export default function PublicationCard({ pub, theme }) {
-  // Papers that aren't out yet have no link or date: render a static card.
+  // Linked papers render as a real link (hover shows the URL, right-click /
+  // middle-click / keyboard work). Papers not out yet render a static card.
   const hasLink = pub.url && pub.url !== "#";
-
-  function openPubinNewTab(url) {
-    var win = window.open(url, "_blank", "noopener,noreferrer");
-    if (win) win.focus();
-  }
+  const Card = hasLink ? "a" : "div";
+  const linkProps = hasLink
+    ? { href: pub.url, target: "_blank", rel: "noopener noreferrer" }
+    : {};
 
   return (
-    <div
+    <Card
       className={`publication-card card${hasLink ? "" : " is-static"}`}
-      onClick={hasLink ? () => openPubinNewTab(pub.url) : undefined}
+      {...linkProps}
     >
+      {pub.status && (
+        <span className="publication-status">
+          <i className="fas fa-hourglass-half" aria-hidden="true"></i>
+          {pub.status}
+        </span>
+      )}
+
       <h3 className="publication-name" style={{ color: theme.text }}>
         {pub.name}
       </h3>
@@ -28,6 +35,6 @@ export default function PublicationCard({ pub, theme }) {
           Published on {pub.createdAt.split("T")[0]}
         </p>
       )}
-    </div>
+    </Card>
   );
 }

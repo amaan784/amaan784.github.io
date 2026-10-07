@@ -3,15 +3,14 @@ import ProjectLanguages from "../../components/projectLanguages/ProjectLanguages
 import "./GithubRepoCard.css";
 
 export default function GithubRepoCard({ repo, theme }) {
-  function openRepoinNewTab(url) {
-    var win = window.open(url, "_blank", "noopener,noreferrer");
-    if (win) win.focus();
-  }
-
+  // A real link (not a click handler) so hover shows the URL and
+  // right-click / middle-click / keyboard all work.
   return (
-    <div
+    <a
       className="repo-card card"
-      onClick={() => openRepoinNewTab(repo.url)}
+      href={repo.url}
+      target="_blank"
+      rel="noopener noreferrer"
     >
       {repo.award && (
         <span className="repo-award">
@@ -49,6 +48,6 @@ export default function GithubRepoCard({ repo, theme }) {
       </p>
 
       <ProjectLanguages logos={repo.languages} />
-    </div>
+    </a>
   );
 }

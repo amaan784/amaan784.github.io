@@ -9,6 +9,32 @@
 .publication-card.is-static {
   cursor: default;
 }
+/* No hover highlight on cards that can't be opened. */
+.publication-card.is-static:hover {
+  border-color: var(--border);
+}
+
+/* Status pill for work that isn't out yet, e.g. "In progress". Muted and
+   dashed so it reads as provisional, unlike the accent award pill. */
+.publication-status {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px dashed var(--border-strong);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.publication-status i {
+  font-size: 0.7rem;
+}
 
 .publication-name {
   font-family: var(--font-display);

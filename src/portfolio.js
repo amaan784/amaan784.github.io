@@ -682,7 +682,8 @@ const publicationsHeader = {
 };
 
 // Papers, blogs and articles. id must be unique; createdAt (ISO date) shows as
-// "Published on"; url is the link. Leave out createdAt/url for papers not out yet.
+// "Published on"; url is the link. Leave out createdAt/url for papers not out yet,
+// and set status (e.g. "In progress") to show a pill on the card.
 const publications = {
   data: [
     {
@@ -694,13 +695,16 @@ const publications = {
     },
     {
       id: "aiche-paper",
-      name: "Paper accepted in AIChE",
-      description: "Publication details will be released in November 2026.",
+      name: "Genetic Algorithm Based Inherently Safer Process Flow Diagram Generation",
+      description:
+        "Accepted at the 2026 AIChE Annual Meeting, to be presented on November 9, 2026. A genetic algorithm searches process flow structures for inherently safer designs, balancing cost, safety and complexity, with safety scored through event tree risk analysis.",
+      url: "https://aiche.confex.com/aiche/2026/meetingapp.cgi/Paper/737307",
     },
     {
       id: "agentic-systems-optimization-paper",
       name: "Working on a paper on agentic systems optimization",
       description: "Details will be released around February 2027.",
+      status: "In progress",
     },
   ],
 };
