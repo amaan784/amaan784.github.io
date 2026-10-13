@@ -5,6 +5,7 @@ import Greeting from "../../containers/greeting/Greeting";
 import FeaturedExperience from "../../containers/featured/FeaturedExperience";
 import FeaturedProjects from "../../containers/featured/FeaturedProjects";
 import Skills from "../../containers/skills/Skills";
+import OutsideWork from "../../containers/outsideWork/OutsideWork";
 import Footer from "../../components/footer/Footer";
 import TopButton from "../../components/topButton/TopButton";
 import { Fade } from "react-reveal";
@@ -25,6 +26,7 @@ class Home extends Component {
         <FeaturedExperience theme={theme} />
         <FeaturedProjects theme={theme} />
         <Skills theme={theme} />
+        <OutsideWork theme={theme} />
 
         <section className="section-tight home-cta-section">
           <div className="container">

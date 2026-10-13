@@ -1,0 +1,82 @@
+/* One project per row: title | description | languages, year, arrow.
+   Hairline rules between rows, no card chrome. */
+.project-row {
+  position: relative;
+  display: grid;
+  /* Fixed outer columns so every row lines up with the next. */
+  grid-template-columns: 230px minmax(0, 1fr) 150px;
+  align-items: baseline;
+  gap: 8px 32px;
+  padding: 20px 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-row-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  transition: color 0.2s var(--ease);
+}
+.project-row:hover .project-row-title {
+  color: var(--accent);
+}
+
+/* Stretched link: the whole row opens the code. */
+.project-row-link {
+  color: inherit;
+  text-decoration: none;
+}
+.project-row-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.project-row-link:focus-visible {
+  outline: none;
+}
+.project-row-link:focus-visible::after {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.project-row-desc {
+  margin: 0;
+  max-width: 64ch;
+  color: var(--text-muted);
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+.project-row-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  white-space: nowrap;
+}
+.project-row-year {
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+.project-row-arrow {
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .project-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 18px 0;
+  }
+  .project-row-meta {
+    margin-top: 4px;
+    justify-content: flex-start;
+  }
+}

@@ -13,14 +13,11 @@
   text-align: center;
 }
 
-.publications-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 22px;
-}
-
-@media (max-width: 768px) {
-  .publications-grid {
-    grid-template-columns: 1fr;
-  }
+/* A single reading column, like a reference list. */
+.publications-list {
+  list-style: none;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0;
+  border-top: 1px solid var(--border);
 }

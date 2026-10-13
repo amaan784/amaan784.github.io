@@ -42,6 +42,8 @@ html[data-theme="light"] {
   --shadow: none;
   --shadow-sm: none;
   --chip-bg: transparent;
+  /* Lift shadow for clickable cards on hover. */
+  --shadow-hover: 0 14px 30px -18px rgba(39, 64, 139, 0.45);
 
   /* gradient tokens kept for back-compat but resolved to a flat accent */
   --gradient: #27408b;
@@ -68,6 +70,7 @@ html[data-theme="dark"] {
   --shadow: none;
   --shadow-sm: none;
   --chip-bg: transparent;
+  --shadow-hover: 0 14px 30px -18px rgba(0, 0, 0, 0.75);
 
   --gradient: #88a4ff;
   --gradient-tri: #88a4ff;

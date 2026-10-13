@@ -1,19 +1,63 @@
+/* Project card: award + year, title, description, one key result, languages,
+   then the links. The key result is the card's one loud element; everything
+   else stays quiet. */
 .repo-card {
-  padding: 26px 24px;
-  cursor: pointer;
+  position: relative;
+  padding: 26px 24px 22px;
   display: flex;
   flex-direction: column;
   gap: 14px;
   text-align: left;
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
 }
 
-/* Award ribbon — accent hairline pill, e.g. "Hackathon Winner". */
+/* Hover (and keyboard focus): navy border, navy title, small lift. */
+.repo-card:hover,
+.repo-card:focus-within {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+.repo-card:hover .repo-title-link,
+.repo-card:focus-within .repo-title-link {
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .repo-card {
+    transition: border-color 0.2s linear;
+  }
+  .repo-card:hover,
+  .repo-card:focus-within {
+    transform: none;
+  }
+}
+
+/* Top row: award (if any) on the left, year on the right. */
+.repo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+  min-height: 1.4em;
+}
+.repo-year {
+  margin-left: auto;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Award ribbon, e.g. "Best Use of Hugging Face". */
 .repo-award {
-  align-self: flex-start;
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 5px 11px;
+  gap: 6px;
+  padding: 5px 10px;
   border-radius: 999px;
   background: var(--surface-2);
   border: 1px solid var(--accent);
@@ -21,62 +65,102 @@
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 500;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 .repo-award i {
   font-size: 0.72rem;
 }
 
-.repo-card-head {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-/* Flat, monochrome glyph holder — hairline only, no accent fill. */
-.repo-icon {
-  flex: none;
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  border-radius: var(--radius-sm);
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--text-faint);
-  transition: color 0.25s var(--ease), border-color 0.25s var(--ease);
-}
-.repo-card:hover .repo-icon {
-  color: var(--text);
-  border-color: var(--border-strong);
-}
-.repo-svg {
-  fill: currentColor;
-}
-
 .repo-name {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.2;
-  margin: 0;
+  margin: -4px 0 0;
   word-break: break-word;
+}
+
+/* The title link stretches over the whole card, so clicking anywhere opens
+   the code. */
+.repo-title-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s var(--ease);
+}
+.repo-title-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+.repo-title-link:focus-visible {
+  outline: none;
+}
+.repo-title-link:focus-visible::after {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .repo-description {
   margin: 0;
   color: var(--text-muted);
   font-size: 0.95rem;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
-.repo-creation-date {
-  margin: 0;
-  color: var(--text-faint);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+/* Key result: a serif figure with a plain-language label, set off by a
+   single accent rule like a pull quote. */
+.repo-metric {
+  margin: 2px 0 4px;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.repo-metric-value {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--accent);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.repo-metric-label {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+/* Links: code first, then demos / reports. These sit above the stretched
+   title link so each opens its own URL. */
+.repo-actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.repo-actions a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+.repo-actions a:hover {
+  text-decoration: underline;
+}
+.repo-actions a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.repo-actions a span {
+  font-size: 0.8em;
 }

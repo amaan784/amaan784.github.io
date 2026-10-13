@@ -45,11 +45,34 @@
   color: var(--on-accent);
 }
 
-/* ---- Responsive card grid ---- */
+/* ---- Main projects: two wide columns, so descriptions get a readable
+   line length instead of narrow towers of text ---- */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
+}
+
+/* ---- Smaller projects: compact list under the cards ---- */
+.projects-more-list {
+  margin-top: clamp(48px, 7vw, 80px);
+}
+.projects-more-title {
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.projects-more-list ul {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+}
+/* When a filter leaves only small projects, drop the extra top gap. */
+.projects-filter + .projects-more-list {
+  margin-top: 0;
 }
 
 /* ---- "More Projects" link ---- */

@@ -1,21 +1,30 @@
+/* Languages as a quiet inline list: brand-colored glyph + name, no pill
+   borders, so they read as metadata rather than buttons. */
 .repo-languages {
   list-style: none;
   margin: auto 0 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px 16px;
 }
 
-.repo-language-chip {
-  padding: 6px 12px;
-  font-size: 0.8rem;
-  cursor: pointer;
+.repo-language {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.repo-languages.is-icons-only {
+  margin: 0;
+  gap: 8px;
 }
 
 /* Full-color language glyphs (the `logos-*` Iconify icons carry their own
    brand colors). */
 .repo-language-icon {
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: 1;
 }

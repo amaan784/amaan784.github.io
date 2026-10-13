@@ -1,0 +1,46 @@
+/* "Outside work": a two-column hairline list, matching the Featured
+   Experience grid rather than adding another set of cards. */
+.outside-list {
+  list-style: none;
+  margin: clamp(24px, 4vw, 40px) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--border);
+}
+
+.outside-item {
+  padding: 24px clamp(18px, 2.4vw, 32px) 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+.outside-item:nth-child(2n) {
+  padding: 24px 0 24px clamp(18px, 2.4vw, 32px);
+  border-left: 1px solid var(--border);
+}
+
+.outside-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.outside-text {
+  margin: 6px 0 0;
+  max-width: 52ch;
+  color: var(--text-muted);
+  font-size: 0.97rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+  .outside-list {
+    grid-template-columns: 1fr;
+  }
+  .outside-item,
+  .outside-item:nth-child(2n) {
+    padding: 20px 0;
+    border-left: 0;
+  }
+}

@@ -2,52 +2,58 @@ import React from "react";
 import ProjectLanguages from "../../components/projectLanguages/ProjectLanguages";
 import "./GithubRepoCard.css";
 
+// Project card. The title is a stretched link to the code, so the whole card
+// opens it (hover shows the URL, right-click / middle-click / keyboard work).
+// Extra links such as demos and reports sit above that link in the actions row.
 export default function GithubRepoCard({ repo, theme }) {
-  // A real link (not a click handler) so hover shows the URL and
-  // right-click / middle-click / keyboard all work.
+  const title = repo.title || repo.name;
+  const year = (repo.createdAt || "").slice(0, 4);
+  const links = repo.links || [];
+  const external = { target: "_blank", rel: "noopener noreferrer" };
+
   return (
-    <a
-      className="repo-card card"
-      href={repo.url}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {repo.award && (
-        <span className="repo-award">
-          <i className="fas fa-trophy" aria-hidden="true"></i>
-          {repo.award}
-        </span>
+    <article className="repo-card card">
+      {(repo.award || year) && (
+        <div className="repo-meta">
+          {repo.award && (
+            <span className="repo-award">
+              <i className="fas fa-trophy" aria-hidden="true"></i>
+              {repo.award}
+            </span>
+          )}
+          {year && <span className="repo-year">{year}</span>}
+        </div>
       )}
 
-      <div className="repo-card-head">
-        <span className="repo-icon" aria-hidden="true">
-          <svg
-            className="repo-svg"
-            height="18"
-            role="img"
-            viewBox="0 0 12 16"
-            width="14"
-          >
-            <path
-              fillRule="evenodd"
-              d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"
-            ></path>
-          </svg>
-        </span>
-        <h3 className="repo-name" style={{ color: theme.text }}>
-          {repo.name}
-        </h3>
-      </div>
+      <h3 className="repo-name" style={{ color: theme.text }}>
+        <a className="repo-title-link" href={repo.url} {...external}>
+          {title}
+        </a>
+      </h3>
 
       {repo.description && (
         <p className="repo-description">{repo.description}</p>
       )}
 
-      <p className="repo-creation-date">
-        Created on {repo.createdAt.split("T")[0]}
-      </p>
+      {repo.metric && (
+        <p className="repo-metric">
+          <span className="repo-metric-value">{repo.metric.value}</span>
+          <span className="repo-metric-label">{repo.metric.label}</span>
+        </p>
+      )}
 
       <ProjectLanguages logos={repo.languages} />
-    </a>
+
+      <div className="repo-actions">
+        <a href={repo.url} {...external}>
+          View code <span aria-hidden="true">↗</span>
+        </a>
+        {links.map((l) => (
+          <a key={l.url} href={l.url} {...external}>
+            {l.label} <span aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </div>
+    </article>
   );
 }

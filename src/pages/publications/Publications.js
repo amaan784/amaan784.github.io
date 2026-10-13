@@ -28,11 +28,11 @@ class Publications extends Component {
               </div>
             </Fade>
 
-            <div className="publications-grid">
+            <ol className="publications-list">
               {publications.data.map((pub) => (
                 <PublicationCard key={pub.id} pub={pub} theme={theme} />
               ))}
-            </div>
+            </ol>
           </div>
         </section>
         <Footer theme={theme} />

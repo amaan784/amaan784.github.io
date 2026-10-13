@@ -27,8 +27,33 @@
   letter-spacing: 0.02em;
   color: var(--text-muted);
 }
+.hero-meta {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 22px;
+}
+.hero-availability {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-mono);
+  font-size: clamp(0.78rem, 1.5vw, 0.88rem);
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+}
+.hero-availability-dot {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
 .hero-location {
-  margin: 12px 0 0;
+  margin: 0;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -148,7 +173,8 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .hero-cta {
+  .hero-cta,
+  .hero-meta {
     justify-content: center;
   }
   .hero-photo-wrap {

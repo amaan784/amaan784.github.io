@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import GithubRepoCard from "../../components/githubRepoCard/GithubRepoCard";
+import ProjectRow from "../../components/projectRow/ProjectRow";
 import TopButton from "../../components/topButton/TopButton";
 import { Fade } from "react-reveal";
 import { greeting, projectsHeader } from "../../portfolio.js";
@@ -43,6 +44,9 @@ class Projects extends Component {
       filter === "All"
         ? repos
         : repos.filter((r) => (r.tags || []).includes(filter));
+    // Main projects get full cards; smaller ones (`more: true`) a compact list.
+    const main = shown.filter((r) => !r.more);
+    const more = shown.filter((r) => r.more);
 
     return (
       <div className="projects-main">
@@ -80,11 +84,26 @@ class Projects extends Component {
               ))}
             </div>
 
-            <div className="projects-grid">
-              {shown.map((repo) => (
-                <GithubRepoCard key={repo.id} repo={repo} theme={theme} />
-              ))}
-            </div>
+            {main.length > 0 && (
+              <div className="projects-grid">
+                {main.map((repo) => (
+                  <GithubRepoCard key={repo.id} repo={repo} theme={theme} />
+                ))}
+              </div>
+            )}
+
+            {more.length > 0 && (
+              <div className="projects-more-list">
+                <h2 className="projects-more-title" style={{ color: theme.text }}>
+                  More projects
+                </h2>
+                <ul>
+                  {more.map((repo) => (
+                    <ProjectRow key={repo.id} repo={repo} />
+                  ))}
+                </ul>
+              </div>
+            )}
 
             <div className="projects-more">
               <a

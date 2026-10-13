@@ -31,6 +31,8 @@ const greeting = {
   role: "Software Engineer · Machine Learning Engineer",
   // Where you're based — shown in the hero and on the contact page.
   location: "New York, USA",
+  // Shown next to your location in the hero. Leave empty to hide it.
+  availability: "Graduating December 2026, open to full-time roles",
   // Professional summary recruiters read first. Edit freely.
   summary:
     "I'm a Computer Science master's student at Columbia University focused on Machine Learning. Most recently I was an Applied AI Scientist Intern at ZS, and before that a Software Engineer at Kenvue. I enjoy building and shipping ML, agentic AI, and full-stack systems.",
@@ -681,29 +683,41 @@ const publicationsHeader = {
   avatar_image_path: "projects_image.svg",
 };
 
-// Papers, blogs and articles. id must be unique; createdAt (ISO date) shows as
-// "Published on"; url is the link. Leave out createdAt/url for papers not out yet,
-// and set status (e.g. "In progress") to show a pill on the card.
+// Papers, shown as a citation list. Fields: name (title), authors (your name
+// is emphasized automatically), venue, year, description, url + linkLabel,
+// and an optional status ("Accepted", "In progress") shown as a tag.
 const publications = {
   data: [
     {
       id: "beyond-static-leaderboards",
       name: "Beyond Static Leaderboards: Predictive Validity for the Evaluation of LLM Agents",
-      createdAt: "2026-06-23T00:00:00Z",
-      description: "Research on evaluating LLM agents beyond static leaderboards. Published on arXiv.",
+      authors:
+        "Dhaval C. Patel, Kaoutar El Maghraoui, et al. (61 authors, including Amaan Sheikh)",
+      venue: "arXiv preprint, June 2026",
+      year: "2026",
+      description:
+        "Consolidates fourteen studies on an MCP-based industrial-agent benchmark, including a multi-modal visual extension, and argues that agents should be ranked by predictive validity rather than aggregate leaderboard scores.",
       url: "https://arxiv.org/abs/2606.19704",
+      linkLabel: "Read on arXiv",
     },
     {
       id: "aiche-paper",
       name: "Genetic Algorithm Based Inherently Safer Process Flow Diagram Generation",
+      authors:
+        "Sanjeevrajan Nagavelu, Amaan Sheikh, Yujun Qian, Naz Pinar Taskiran, Venkat Venkatasubramanian",
+      venue: "2026 AIChE Annual Meeting, Minneapolis. Presenting November 9, 2026.",
+      year: "2026",
+      status: "Accepted",
       description:
-        "Accepted at the 2026 AIChE Annual Meeting, to be presented on November 9, 2026. A genetic algorithm searches process flow structures for inherently safer designs, balancing cost, safety and complexity, with safety scored through event tree risk analysis.",
+        "A genetic algorithm searches process flow structures for inherently safer designs, balancing cost, safety and complexity, with safety scored through event tree risk analysis.",
       url: "https://aiche.confex.com/aiche/2026/meetingapp.cgi/Paper/737307",
+      linkLabel: "View abstract",
     },
     {
       id: "agentic-systems-optimization-paper",
       name: "Working on a paper on agentic systems optimization",
-      description: "Details will be released around February 2027.",
+      venue: "Details will be released around February 2027.",
+      year: "2027",
       status: "In progress",
     },
   ],
@@ -717,6 +731,27 @@ const contactPageData = {
     description: "Feel free to reach out if you have any questions.",
   },
 };
+
+// "Outside work" on the Home page: a few details beyond the résumé, shown
+// in two columns (personal on the left, side projects on the right).
+const outsideWork = [
+  {
+    title: "Soccer",
+    text: "I love playing soccer, and I'm a big Barça fan.",
+  },
+  {
+    title: "Hackathons",
+    text: "Five hackathons and AI challenges in 2026, including a Best Use of Hugging Face win at the Mistral Worldwide Hackathon.",
+  },
+  {
+    title: "Fitness and travel",
+    text: "I love working out and travelling.",
+  },
+  {
+    title: "Open source",
+    text: "Pull requests to IBM AssetOpsBench, Neo4j GraphAcademy and Zulip.",
+  },
+];
 
 export {
   settings,
@@ -733,4 +768,5 @@ export {
   publicationsHeader,
   publications,
   contactPageData,
+  outsideWork,
 };

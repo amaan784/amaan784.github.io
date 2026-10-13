@@ -20,12 +20,20 @@ export default function Greeting() {
                 Amaan <span className="grad-text">Sheikh</span>
               </h1>
               <p className="hero-role">{greeting.role}</p>
-              {greeting.location && (
-                <p className="hero-location">
-                  <i className="fas fa-location-dot" aria-hidden="true"></i>
-                  {greeting.location}
-                </p>
-              )}
+              <div className="hero-meta">
+                {greeting.location && (
+                  <p className="hero-location">
+                    <i className="fas fa-location-dot" aria-hidden="true"></i>
+                    {greeting.location}
+                  </p>
+                )}
+                {greeting.availability && (
+                  <p className="hero-availability">
+                    <span className="hero-availability-dot" aria-hidden="true" />
+                    {greeting.availability}
+                  </p>
+                )}
+              </div>
               <p className="hero-summary">{greeting.summary}</p>
 
               <div className="hero-cta">
