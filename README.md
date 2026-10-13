@@ -30,11 +30,11 @@ an (optional) Open Source page driven by GitHub data.
 
 ## Pages & features
 
-- **Home** — hero (name, role, summary, profile photo), a highlights strip, featured experience (3 most recent roles), featured projects (top 3), skills, and a contact call to action.
+- **Home** — hero (name, role, location, availability line, summary, profile photo), a highlights strip, featured experience (3 most recent roles), featured projects (top 3), skills, an "Outside work" section, and a contact call to action.
 - **Education** — degrees with coursework, plus competitive-coding profiles.
 - **Experience** — a timeline grouped into Full-time, Part-time, Internships, and Freelance & Volunteering.
-- **Projects** — a card grid with a category filter (GenAI, Agentic, NLP, CV, ML, DL, Full-Stack, Data).
-- **Publications** — research, writing, and articles, on its own page.
+- **Projects** — main projects as two-column cards (title, description, one key result, languages, code / demo / report links), smaller projects as a compact "More projects" list, and a category filter (Hackathon, GenAI, Agentic, Inference, NLP, CV, ML, DL, Full-Stack, Data).
+- **Publications** — a citation-style list: year, title, authors (your name in bold), venue, status, and a link.
 - **Open Source** — organizations, pull requests, issues, and charts from GitHub data. Optional (see `settings.showOpenSource`).
 - **Contact** — social links, résumé, and email.
 - **Light / dark mode** — toggle in the header; the choice is saved to `localStorage` and defaults to light.
@@ -107,8 +107,9 @@ Almost everything is in **`src/portfolio.js`**:
 
 | What | Where in `portfolio.js` |
 | --- | --- |
-| Name, role, summary, résumé link, profile photo | `greeting` |
+| Name, role, location, availability, summary, résumé link, profile photo | `greeting` |
 | Highlights strip on Home | `highlights` |
+| "Outside work" section on Home | `outsideWork` |
 | Social links (GitHub, LinkedIn, Scholar, Hugging Face, email) | `socialMediaLinks` |
 | Skills and tools | `skills` |
 | Degrees + competitive profiles | `degrees`, `competitiveSites` |
@@ -123,23 +124,39 @@ A few specifics:
 - **Show / hide the Open Source page** — set `settings.showOpenSource` to `true` or `false`. This controls the nav link, the route, and the footer link in one place.
 - **Theme** — colors live in `theme.js` (`lightTheme` / `darkTheme`) and `index.css` (CSS variables keyed on `html[data-theme]`). The default mode is light.
 - **Company / institution logos** — add the image to `src/assets/images/` and set the entry's `logo_path` (experience cards fall back to an initials monogram if the file is missing).
+- **Availability line** — `greeting.availability` (e.g. "Graduating December 2026, open to full-time roles"). Leave it empty to hide it.
+- **Publications** — each entry in `publications.data` takes `name`, `authors` (your name, from `greeting.title`, is bolded automatically), `venue`, `year`, `description`, `url` + `linkLabel`, and an optional `status` such as `"Accepted"` or `"In progress"`. Leave out `url` for papers that aren't out yet.
 
 ### Projects
 
-Projects are read from **`src/shared/opensource/projects.json`**. The list is hand-curated and ordered by priority (best first); the Home page features the first three. Each entry has a `tags` array that powers the category filter on the Projects page:
+Projects are read from **`src/shared/opensource/projects.json`**. The list is hand-curated and ordered by priority (best first); the Home page features the first three.
 
 ```json
 {
+  "id": "unique-id",
   "name": "my-project",
+  "title": "My Project",
   "url": "https://github.com/...",
   "createdAt": "2026-01-01T00:00:00Z",
   "description": "What it does.",
+  "metric": { "value": "2x", "label": "lower latency on a single GPU" },
+  "links": [{ "label": "Watch demo", "url": "https://..." }],
+  "award": "Best Use of Hugging Face",
   "languages": [{ "name": "Python", "iconifyClass": "logos-python" }],
   "tags": ["GenAI", "NLP"]
 }
 ```
 
-The filter categories and their order are defined by `CATEGORY_ORDER` in `src/pages/projects/Projects.js`.
+| Field | What it does |
+| --- | --- |
+| `title` | Name shown on the card (falls back to `name`, the repo slug). |
+| `url` | Opens when the card is clicked, and is the "View code" link. |
+| `createdAt` | Only the year is shown. |
+| `metric` | Optional key result, shown as a highlighted figure with a short label. |
+| `links` | Optional extra links (demo, report, write-up) next to "View code". |
+| `award` | Optional prize badge at the top of the card. |
+| `more` | Set to `true` to list the project in the compact "More projects" section instead of as a card. |
+| `tags` | Category filters. Their order is defined by `CATEGORY_ORDER` in `src/pages/projects/Projects.js`. |
 
 ### Skill icons
 
@@ -166,9 +183,10 @@ skill's `fontAwesomeClassname`. For a custom image instead, drop a file in
    node git_data_fetcher.mjs
    ```
 
-> **Note:** `projects.json` is now hand-curated (custom descriptions, tags, and
-> ordering). The fetcher would overwrite it with your GitHub pinned repos, so if you
-> re-run it, re-apply your project edits afterward.
+> **Note:** `projects.json` is hand-curated (titles, key results, links, tags, and
+> ordering), so the fetcher leaves it alone by default. Running
+> `node git_data_fetcher.mjs --overwrite-projects` replaces it with your GitHub
+> pinned repos and loses those edits.
 
 ---
 

@@ -304,7 +304,15 @@ const languages_icons = {
   Rust: "logos-rust",
 };
 
-fetch(baseUrl, {
+// projects.json is hand-curated (titles, key results, links, tags), so it is
+// only replaced with your pinned repos when you pass --overwrite-projects.
+const OVERWRITE_PROJECTS = process.argv.includes("--overwrite-projects");
+
+if (!OVERWRITE_PROJECTS) {
+  console.log(
+    "Skipping projects.json (hand-curated). Pass --overwrite-projects to replace it with your pinned repos.\n"
+  );
+} else fetch(baseUrl, {
   method: "POST",
   headers: headers,
   body: JSON.stringify(query_pinned_projects),
