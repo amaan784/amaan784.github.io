@@ -88,7 +88,8 @@
   font-size: 0.8em;
 }
 
-/* Status tag: solid accent outline when accepted, dashed while in progress. */
+/* Status tag: navy outline when accepted, neutral while under review,
+   dashed while in progress. */
 .publication-status {
   display: inline-flex;
   align-items: center;
@@ -98,6 +99,10 @@
   color: var(--accent);
   font-size: 0.78rem;
   font-weight: 500;
+}
+.publication-status.is-review {
+  border-color: var(--border-strong);
+  color: var(--text);
 }
 .publication-status.is-in-progress {
   border-style: dashed;

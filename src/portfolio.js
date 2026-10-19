@@ -695,6 +695,7 @@ const publications = {
         "Dhaval C. Patel, Kaoutar El Maghraoui, et al. (61 authors, including Amaan Sheikh)",
       venue: "arXiv preprint, June 2026",
       year: "2026",
+      status: "Under review at ACL",
       description:
         "Consolidates fourteen studies on an MCP-based industrial-agent benchmark, including a multi-modal visual extension, and argues that agents should be ranked by predictive validity rather than aggregate leaderboard scores.",
       url: "https://arxiv.org/abs/2606.19704",

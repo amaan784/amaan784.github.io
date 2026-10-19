@@ -23,8 +23,13 @@ function emphasizeName(authors, name) {
 // summary, link. Papers without a link render without one.
 export default function PublicationCard({ pub, theme }) {
   const hasLink = pub.url && pub.url !== "#";
-  const statusClass = pub.status
-    ? ` is-${pub.status.toLowerCase().replace(/\s+/g, "-")}`
+  // Tag style by meaning: accepted (navy), under review (neutral),
+  // in progress (dashed).
+  const status = (pub.status || "").toLowerCase();
+  const statusClass = status.includes("review")
+    ? " is-review"
+    : status.includes("progress")
+    ? " is-in-progress"
     : "";
 
   return (
