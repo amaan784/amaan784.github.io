@@ -33,7 +33,7 @@ an (optional) Open Source page driven by GitHub data.
 - **Home** — hero (name, role, location, availability line, summary, profile photo), a highlights strip, featured experience (3 most recent roles), featured projects (top 3), skills, an "Outside work" section, and a contact call to action.
 - **Education** — degrees with coursework, plus competitive-coding profiles.
 - **Experience** — a timeline grouped into Full-time, Part-time, Internships, and Freelance & Volunteering.
-- **Projects** — main projects as two-column cards (title, description, one key result, languages, code / demo / report links), smaller projects as a compact "More projects" list, and a category filter (Hackathon, GenAI, Agentic, Inference, NLP, CV, ML, DL, Full-Stack, Data).
+- **Projects** — main projects as two-column cards (title, description, one key result, languages, code / demo / report links), smaller projects as a compact "More projects" list, and a category filter (Hackathon, GenAI, Agentic, Inference, AI Safety, NLP, CV, ML, DL, Full-Stack, Data).
 - **Publications** — a citation-style list: year, title, authors (your name in bold), venue, status, and a link.
 - **Open Source** — organizations, pull requests, issues, and charts from GitHub data. Optional (see `settings.showOpenSource`).
 - **Contact** — social links, résumé, and email.

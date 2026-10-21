@@ -16,6 +16,7 @@ const CATEGORY_ORDER = [
   "GenAI",
   "Agentic",
   "Inference",
+  "AI Safety",
   "NLP",
   "CV",
   "ML",
