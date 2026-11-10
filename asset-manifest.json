@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.68eda441.chunk.css",
-    "main.js": "/static/js/main.df142f8a.chunk.js",
-    "main.js.map": "/static/js/main.df142f8a.chunk.js.map",
+    "main.js": "/static/js/main.84e05a30.chunk.js",
+    "main.js.map": "/static/js/main.84e05a30.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f0c648fb.js",
     "runtime-main.js.map": "/static/js/runtime-main.f0c648fb.js.map",
     "static/js/2.2f923672.chunk.js": "/static/js/2.2f923672.chunk.js",
     "static/js/2.2f923672.chunk.js.map": "/static/js/2.2f923672.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.84b471091c5cc7135d2a78f8da8330fa.js": "/precache-manifest.84b471091c5cc7135d2a78f8da8330fa.js",
+    "precache-manifest.b593829ddd1e1e31ca3362afcce790b9.js": "/precache-manifest.b593829ddd1e1e31ca3362afcce790b9.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.68eda441.chunk.css.map": "/static/css/main.68eda441.chunk.css.map",
     "static/media/Columbia_logo.png": "/static/media/Columbia_logo.51944508.png",
@@ -66,6 +66,6 @@
     "static/js/runtime-main.f0c648fb.js",
     "static/js/2.2f923672.chunk.js",
     "static/css/main.68eda441.chunk.css",
-    "static/js/main.df142f8a.chunk.js"
+    "static/js/main.84e05a30.chunk.js"
   ]
 }
