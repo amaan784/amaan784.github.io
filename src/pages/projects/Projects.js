@@ -9,42 +9,52 @@ import { greeting, projectsHeader } from "../../portfolio.js";
 import ProjectsData from "../../shared/opensource/projects.json";
 import "./Projects.css";
 
-// Preferred display order for the category filter.
-const CATEGORY_ORDER = [
-  "All",
-  "Hackathon",
-  "GenAI",
-  "Agentic",
-  "Inference",
-  "AI Safety",
-  "NLP",
-  "CV",
-  "ML",
-  "DL",
-  "Full-Stack",
-  "Data",
+// Filter categories, in display order. `tag` matches the tags in
+// projects.json; `slug` is what appears in the URL (?focus=agents), so a
+// filtered view can be linked to directly.
+const CATEGORIES = [
+  { slug: "agents", tag: "Agents & LLMs" },
+  { slug: "vision", tag: "Computer Vision" },
+  { slug: "inference", tag: "Inference & Efficiency" },
+  { slug: "safety", tag: "AI Safety & Evaluation" },
+  { slug: "ml-data", tag: "ML & Data" },
+  { slug: "apps", tag: "Apps & Full-Stack" },
+  { slug: "hackathons", tag: "Hackathons" },
 ];
+
+function focusFromUrl() {
+  const slug = new URLSearchParams(window.location.search).get("focus");
+  return CATEGORIES.some((c) => c.slug === slug) ? slug : null;
+}
 
 class Projects extends Component {
   constructor(props) {
     super(props);
-    this.state = { filter: "All" };
+    this.state = { focus: focusFromUrl() };
+  }
+
+  setFocus(slug) {
+    this.setState({ focus: slug });
+    const url = slug
+      ? `${window.location.pathname}?focus=${slug}`
+      : window.location.pathname;
+    window.history.replaceState(null, "", url);
   }
 
   render() {
     const theme = this.props.theme;
-    const { filter } = this.state;
+    const { focus } = this.state;
     const repos = ProjectsData.data;
+    const total = repos.length;
 
-    const present = new Set();
-    repos.forEach((r) => (r.tags || []).forEach((t) => present.add(t)));
-    const categories = CATEGORY_ORDER.filter(
-      (c) => c === "All" || present.has(c)
-    );
-    const shown =
-      filter === "All"
-        ? repos
-        : repos.filter((r) => (r.tags || []).includes(filter));
+    const counts = {};
+    repos.forEach((r) => (r.tags || []).forEach((t) => (counts[t] = (counts[t] || 0) + 1)));
+    const categories = CATEGORIES.filter((c) => counts[c.tag]);
+    const active = categories.find((c) => c.slug === focus) || null;
+
+    const shown = active
+      ? repos.filter((r) => (r.tags || []).includes(active.tag))
+      : repos;
     // Main projects get full cards; smaller ones (`more: true`) a compact list.
     const main = shown.filter((r) => !r.more);
     const more = shown.filter((r) => r.more);
@@ -70,19 +80,57 @@ class Projects extends Component {
               </div>
             </Fade>
 
-            <div className="projects-filter" role="tablist" aria-label="Filter projects by category">
-              {categories.map((c) => (
+            <div className="projects-filter">
+              <div className="filter-head">
+                <p className="filter-label" id="filter-label">
+                  <i className="fas fa-sliders" aria-hidden="true"></i>
+                  Filter projects
+                </p>
+                <p className="filter-status" aria-live="polite">
+                  {active ? (
+                    <>
+                      Showing <strong>{shown.length}</strong> of {total} projects
+                      <button
+                        type="button"
+                        className="filter-clear"
+                        onClick={() => this.setFocus(null)}
+                      >
+                        Show all projects
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      Showing all <strong>{total}</strong> projects
+                    </>
+                  )}
+                </p>
+              </div>
+
+              <div
+                className="filter-options"
+                role="group"
+                aria-labelledby="filter-label"
+              >
                 <button
-                  key={c}
                   type="button"
-                  role="tab"
-                  aria-selected={filter === c}
-                  className={`filter-chip${filter === c ? " is-active" : ""}`}
-                  onClick={() => this.setState({ filter: c })}
+                  aria-pressed={!active}
+                  className={`filter-chip${!active ? " is-active" : ""}`}
+                  onClick={() => this.setFocus(null)}
                 >
-                  {c}
+                  All projects <span className="filter-count">{total}</span>
                 </button>
-              ))}
+                {categories.map((c) => (
+                  <button
+                    key={c.slug}
+                    type="button"
+                    aria-pressed={focus === c.slug}
+                    className={`filter-chip${focus === c.slug ? " is-active" : ""}`}
+                    onClick={() => this.setFocus(c.slug)}
+                  >
+                    {c.tag} <span className="filter-count">{counts[c.tag]}</span>
+                  </button>
+                ))}
+              </div>
             </div>
 
             {main.length > 0 && (

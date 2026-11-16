@@ -14,34 +14,111 @@
   text-align: center;
 }
 
-/* ---- Category filter ---- */
+/* ---- Filter panel: a labelled control, so it reads as a filter rather
+   than decoration. Header (label + live result count), then the options. ---- */
 .projects-filter {
+  margin-bottom: clamp(28px, 4vw, 44px);
+  padding: 18px 20px 20px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.filter-head {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: clamp(28px, 4vw, 44px);
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 20px;
+  margin-bottom: 14px;
+}
+.filter-label {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.filter-label i {
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+.filter-status {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+.filter-status strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.filter-clear {
+  margin-left: 12px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-weight: 500;
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.filter-clear:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 .filter-chip {
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  letter-spacing: 0.04em;
-  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 12px 8px 14px;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text-muted);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text);
   cursor: pointer;
   transition: border-color 0.2s var(--ease), color 0.2s var(--ease),
     background 0.2s var(--ease);
 }
 .filter-chip:hover {
-  border-color: var(--border-strong);
-  color: var(--text);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.filter-chip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 .filter-chip.is-active {
   background: var(--accent);
   border-color: var(--accent);
+  color: var(--on-accent);
+}
+/* Project count inside each option. */
+.filter-count {
+  min-width: 1.6em;
+  padding: 1px 7px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-3);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.filter-chip.is-active .filter-count {
+  background: rgba(255, 255, 255, 0.22);
   color: var(--on-accent);
 }
 
@@ -51,6 +128,13 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
+}
+/* A card without an image, sharing a row with one that has an image, keeps
+   its natural height; stretched, it would show a hollow gap inside. Rows
+   where both or neither card has an image still stretch to match. */
+.projects-grid > .repo-card:nth-child(odd):not(.has-media):has(+ .has-media),
+.projects-grid > .has-media:nth-child(odd) + .repo-card:not(.has-media) {
+  align-self: start;
 }
 
 /* ---- Smaller projects: compact list under the cards ---- */

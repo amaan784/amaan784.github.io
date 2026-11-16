@@ -1,0 +1,104 @@
+/* Full-screen image view. Dark in both themes, so screenshots and charts
+   read the same way whatever the site theme is. */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 72px 28px 28px;
+  background: rgba(10, 12, 16, 0.93);
+  cursor: zoom-out;
+  animation: lightbox-in 0.18s ease-out;
+}
+
+.lightbox-figure {
+  margin: 0;
+  max-width: min(1400px, 100%);
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.lightbox-figure img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 190px);
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.8);
+  cursor: default;
+}
+.lightbox-figure figcaption {
+  max-width: 72ch;
+  text-align: center;
+  color: #b9bfc9;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.lightbox-figure figcaption strong {
+  display: block;
+  margin-bottom: 2px;
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.lightbox-close:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lightbox {
+    animation: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .lightbox {
+    padding: 64px 12px 16px;
+  }
+  .lightbox-figure img {
+    max-height: calc(100vh - 170px);
+    border-radius: 6px;
+  }
+  .lightbox-close {
+    top: 12px;
+    right: 12px;
+  }
+}

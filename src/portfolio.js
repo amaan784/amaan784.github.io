@@ -734,7 +734,7 @@ const contactPageData = {
 };
 
 // "Outside work" on the Home page: a few details beyond the résumé, shown
-// in two columns (personal on the left, side projects on the right).
+// in two columns.
 const outsideWork = [
   {
     title: "Soccer",
@@ -742,15 +742,15 @@ const outsideWork = [
   },
   {
     title: "Hackathons",
-    text: "Five hackathons and AI challenges in 2026, including a Best Use of Hugging Face win at the Mistral Worldwide Hackathon.",
+    text: "Eight hackathons and AI challenges in 2026, including a Best Use of Hugging Face win at the Mistral AI Worldwide Hackathon in NYC.",
   },
   {
     title: "Fitness and travel",
     text: "I love working out and travelling.",
   },
   {
-    title: "Open source",
-    text: "Pull requests to IBM AssetOpsBench, Neo4j GraphAcademy and Zulip.",
+    title: "Hiking",
+    text: "I love hiking and getting outdoors.",
   },
 ];
 

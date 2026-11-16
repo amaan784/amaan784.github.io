@@ -33,7 +33,7 @@ an (optional) Open Source page driven by GitHub data.
 - **Home** — hero (name, role, location, availability line, summary, profile photo), a highlights strip, featured experience (3 most recent roles), featured projects (top 3), skills, an "Outside work" section, and a contact call to action.
 - **Education** — degrees with coursework, plus competitive-coding profiles.
 - **Experience** — a timeline grouped into Full-time, Part-time, Internships, and Freelance & Volunteering.
-- **Projects** — main projects as two-column cards (title, description, one key result, languages, code / demo / report links), smaller projects as a compact "More projects" list, and a category filter (Hackathon, GenAI, Agentic, Inference, AI Safety, NLP, CV, ML, DL, Full-Stack, Data).
+- **Projects** — main projects as two-column cards (optional image, title, description, one key result, languages, code / demo / report links), smaller projects as a compact "More projects" list, and a labelled filter with project counts: All projects, Agents & LLMs, Computer Vision, Inference & Efficiency, AI Safety & Evaluation, ML & Data, Apps & Full-Stack, and Hackathons. A filtered view can be linked directly, e.g. `/projects?focus=hackathons`.
 - **Publications** — a citation-style list: year, title, authors (your name in bold), venue, status, and a link.
 - **Open Source** — organizations, pull requests, issues, and charts from GitHub data. Optional (see `settings.showOpenSource`).
 - **Contact** — social links, résumé, and email.
@@ -139,11 +139,12 @@ Projects are read from **`src/shared/opensource/projects.json`**. The list is ha
   "url": "https://github.com/...",
   "createdAt": "2026-01-01T00:00:00Z",
   "description": "What it does.",
+  "image": { "src": "/projects/my-project.webp", "alt": "What the image shows" },
   "metric": { "value": "2x", "label": "lower latency on a single GPU" },
   "links": [{ "label": "Watch demo", "url": "https://..." }],
   "award": "Best Use of Hugging Face",
   "languages": [{ "name": "Python", "iconifyClass": "logos-python" }],
-  "tags": ["GenAI", "NLP"]
+  "tags": ["Agents & LLMs", "Hackathons"]
 }
 ```
 
@@ -152,11 +153,12 @@ Projects are read from **`src/shared/opensource/projects.json`**. The list is ha
 | `title` | Name shown on the card (falls back to `name`, the repo slug). |
 | `url` | Opens when the card is clicked, and is the "View code" link. |
 | `createdAt` | Only the year is shown. |
+| `image` | Optional picture shown as a 16:10 strip at the top of the card (main cards only). Put the file in `public/projects/`; a 1200x750 (or 800x500) WebP keeps it small. Cropped to fill if the shape differs. Clicking it opens a full-screen view (Close, Esc, a click outside, or Back closes it). Add `"full": "/projects/full/my-project.webp"` to show a larger file there; it loads only when opened and can be any shape. |
 | `metric` | Optional key result, shown as a highlighted figure with a short label. |
 | `links` | Optional extra links (demo, report, write-up) next to "View code". |
 | `award` | Optional prize badge at the top of the card. |
 | `more` | Set to `true` to list the project in the compact "More projects" section instead of as a card. |
-| `tags` | Category filters. Their order is defined by `CATEGORY_ORDER` in `src/pages/projects/Projects.js`. |
+| `tags` | Filter categories. Use the exact names from `CATEGORIES` in `src/pages/projects/Projects.js`, which also sets their order and URL slugs. A category with no projects is hidden. |
 
 ### Skill icons
 

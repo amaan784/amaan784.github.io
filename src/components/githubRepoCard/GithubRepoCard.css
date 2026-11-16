@@ -24,12 +24,88 @@
   color: var(--accent);
 }
 
+/* Optional image: a 16:10 strip flush with the card's top and sides. It is a
+   button that opens the full-screen view, so it sits above the stretched
+   title link (z-index) and shows a zoom cursor instead of the link. */
+.repo-media {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: calc(100% + 48px);
+  margin: -26px -24px 2px;
+  padding: 0;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0;
+  background: var(--surface-2);
+  cursor: zoom-in;
+}
+.repo-media:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -4px;
+}
+/* Expand hint in the corner: shown on hover / focus, always on touch screens. */
+.repo-media-expand {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: rgba(22, 24, 29, 0.72);
+  color: #ffffff;
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+  pointer-events: none;
+}
+.repo-media:hover .repo-media-expand,
+.repo-media:focus-visible .repo-media-expand {
+  opacity: 1;
+  transform: none;
+}
+@media (hover: none) {
+  .repo-media-expand {
+    opacity: 0.9;
+    transform: none;
+  }
+}
+.repo-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s var(--ease), filter 0.25s var(--ease);
+}
+.repo-card:hover .repo-media img,
+.repo-card:focus-within .repo-media img {
+  transform: scale(1.03);
+}
+/* Most images are light screenshots and charts; tone them down in dark mode. */
+html[data-theme="dark"] .repo-media img {
+  filter: brightness(0.86);
+}
+html[data-theme="dark"] .repo-card:hover .repo-media img,
+html[data-theme="dark"] .repo-card:focus-within .repo-media img {
+  filter: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .repo-card {
     transition: border-color 0.2s linear;
   }
   .repo-card:hover,
   .repo-card:focus-within {
+    transform: none;
+  }
+  .repo-card:hover .repo-media img,
+  .repo-card:focus-within .repo-media img {
     transform: none;
   }
 }
@@ -140,6 +216,8 @@
 .repo-actions {
   position: relative;
   z-index: 1;
+  /* Pinned to the bottom, so cards side by side line up their links. */
+  margin-top: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 6px 18px;
